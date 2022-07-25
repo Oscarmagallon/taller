@@ -22,7 +22,7 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <ul class="navbar-nav me-auto mb-2 mb-md-0">
-<?php if (tienePrivilegios($datos['usuarioSesion']->id_rol,[1,20])):?>
+<?php if (tienePrivilegios($datos['usuarioSesion']->Rol_idRol,[10,20])):?>
                     <li class="nav-item">
                         <?php if (isset($datos['menuActivo']) && $datos['menuActivo'] == 1 ): ?>
                             <a class="nav-link active" aria-current="page" href="<?php echo RUTA_URL ?>/usuarios">Usuarios</a>

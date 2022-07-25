@@ -11,6 +11,8 @@
             <div class="col-3"></div>
         </div>
         <div class="row mb-4">
+        <a href="<?php echo RUTA_URL?>/vistas/inicios/cliente.php" >pti </a>
+
             <div class="col-4 p-3">SolicitudSocio1</div>
             <div class="col-2">
                 <div class="col">Nombre</div>

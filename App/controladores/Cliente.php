@@ -4,7 +4,7 @@
 
         public function __construct(){
             Sesion::iniciarSesion($this->datos);
-            $this->datos['rolesPermitidos'] = [10];
+            $this->datos['rolesPermitidos'] = [20];
   
            if (!tienePrivilegios($this->datos['usuarioSesion']->Rol_idRol,$this->datos['rolesPermitidos'])) {
                 Sesion::cerrarSesion();
@@ -12,7 +12,7 @@
             }
 
 
-           //$this->AdminModelo = $this->modelo('AdminModelo');
+       
 
        //     $this->datos['menuActivo'] = 1;         // Definimos el menu que sera destacado en la vista
             
@@ -20,7 +20,7 @@
 
 
         public function index(){
-            $this->vista('inicios/cliente',$this->datos);
+            $this->vista('inc/index',$this->datos);
 
         }
 
