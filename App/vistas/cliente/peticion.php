@@ -1,4 +1,4 @@
-<?php require_once RUTA_APP.'/vistas/inc/header.php'; echo "<br>"; print_r($datos["Motos"]); ?>
+<?php require_once RUTA_APP.'/vistas/inc/header.php';?>
 <p>Zona dejar moto</p>
 
 <?php  foreach ($datos["Motos"] as $m ): ?>

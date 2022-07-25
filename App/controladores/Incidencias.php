@@ -40,7 +40,6 @@
         public function verEstado($id){
             $ids = $this->IncidenciasModelo->verEstado($id);
             for ($i=0; $i <sizeof($ids) ; $i++) { 
-                echo "hola";
                 $this->datos['Estado'][$i] = $this->IncidenciasModelo->estado($ids[$i]->idIncidencias);
 
             }

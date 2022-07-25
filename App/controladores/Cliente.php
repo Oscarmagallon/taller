@@ -20,7 +20,8 @@
 
 
         public function index(){
-            $this->vista('inc/index',$this->datos);
+
+            $this->vista('inicios/cliente',$this->datos);
 
         }
 

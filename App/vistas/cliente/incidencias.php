@@ -4,8 +4,6 @@
 <a href=".." class="btn btn-light"><i class="bi bi-chevron-double-left"></i>Volver</a>
 <div class="card bg-light mt-5 w-75 card-center" style=" margin: auto;">
     <h2 class="card-header"> Rellenar tabla con las incidencias</h2>
-    <?php print_r($datos)?>
-
     <form autocomplete="off" action="<?php echo RUTA_URL?>/Incidencias/peticion" method="post" class="card-body">
         <div class="mb-3">
         <label for="tipo">Tipo: <sup>*</sup></label>
