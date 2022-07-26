@@ -22,6 +22,18 @@
 
         }
 
+        public function verPeticiones(){
+        $this->datos['Peticiones'] = $this->PeticionModelo->getPeticiones();
+        $this->datos['Mecanicos'] = $this->PeticionModelo->getMecanicos();
+        $this->vista('admin/peticiones',$this->datos);
+        }
+
+        public function anadirMecanico(){
+            $mecanico = $_POST['mecanico'];
+            print_r($mecanico); 
+        
+       }
+
 
     }
 ?>

@@ -21,19 +21,37 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <?php if($datos['usuarioSesion']->Rol_idRol == 20): ?>
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="Cliente">Home</a>
+          <a class="nav-link active" aria-current="page" href="<?php echo RUTA_URL?>/Cliente">Home</a>
         </li>
 
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="Peticiones">Peticiones</a>
+          <a class="nav-link active" aria-current="page" href="<?php echo RUTA_URL?>/Peticiones">Peticiones</a>
         </li>
       </ul>
-      <form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
+    <?php endif?>
+    <?php if($datos['usuarioSesion']->Rol_idRol == 10): ?>
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="<?php echo RUTA_URL?>/Admin">Home</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="<?php echo RUTA_URL?>/Peticiones/verPeticiones">Peticiones</a>
+        </li>
+      </ul>
+    <?php endif?>
+      <ul class="d-flex navbar-nav ms-auto mb-2 mb-md-0">
+                    <li class="navbar-text">
+                        <?php echo $datos['usuarioSesion']->Nombre ?>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="<?php echo RUTA_URL ?>/login/logout">LogOut</a>
+                    </li>
+
+                </ul>
     </div>
   </div>
 </nav>
