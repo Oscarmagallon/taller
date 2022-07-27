@@ -21,24 +21,33 @@
                 <th>Tipo</th>
                 <th>Descripcion</th>
                 <th>Fecha</th>
+                <th>Mecanicos</th>
                 <th>Acciones</th>
             </tr>
         </thead>
         <tbody>
-            <?php foreach($datos['Peticiones'] as $e): ?>
-            <?php if(empty($e->idPersonal)):?>
+
                 
             <tr>
-                <td><?php echo $e->Tipo ?></td>
-                <td><?php echo $e->Descripcion?></td>
-                <td><?php echo $e->Fecha ?></td>    
-                <td><a href="<?php echo RUTA_URL?>/Peticiones/anadirMecanico/<?php echo $e->idIncidencias ?>">Añadir Mecanico Disponible</a></td>
+                <td><?php echo $datos['peticion'][0]->Tipo?></td>
+                <td><?php echo $datos['peticion'][0]->Descripcion?></td>
+                <td><?php echo $datos['peticion'][0]->Fecha?></td>
+                <form method="POST" action="<?php echo RUTA_URL?>/Peticiones/anadirMecanico/<?php echo $datos['peticion'][0]->idIncidencias ?>">
+                    <td>
+                        <select name="mecanico" id="mecanico">
+                            <?php foreach ($datos['Mecanicos'] as $m):?>
+                                <option value="<?php echo $m->idPersonal ?>"><?php echo $m->Nombre ?></option>
+                            <?php endforeach ?>
+                        </select>
+                    </td> 
+                    <td><button type="submit">Añadir</button></td>   
+                </form>
                  
             </tr>
           
-            <?php endif;?>
-            <?php endforeach; 
-?>
+     
+        
+
 </body>
 
 

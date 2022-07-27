@@ -7,4 +7,5 @@
     </div>
 </div>
 <a href="<?php echo RUTA_URL?>/Peticiones">Hacer Peticion Para Reparar Moto </a>
+<?php  print_r($datos['usuarioSesion']) ?>
 <?php require_once RUTA_APP.'/vistas/inc/footer.php' ?>
