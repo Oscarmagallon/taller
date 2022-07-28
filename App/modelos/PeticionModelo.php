@@ -37,8 +37,19 @@
            // $this->db->query("INSERT INTO incidencias(idPersonal)
                                 //values($meca) where idIncidencias = $id");
                     $this->db->query("UPDATE incidencias SET idPersonal = $meca WHERE idIncidencias = $id;");
-            $this->db->execute();
+                    $this->db->execute();
         }
 
+        public function eliminarPeticionMoto($id){
+            $this->db->query("DELETE from  moto_has_incidencias where idIncidencias = $id");
+            $this->db->execute();
+
+        }
+
+        public function eliminarPeticionIncidencias($id){
+            $this->db->query("DELETE from  incidencias where idIncidencias = $id");
+            $this->db->execute();
+
+        }
 
     }

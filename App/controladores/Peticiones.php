@@ -21,14 +21,26 @@
             $motos = $this->PeticionModelo->getMotos($idPropietario->idPropietario);
             $this->datos["Motos"] = $motos;
             $this->vista('cliente/peticion',$this->datos);
+            }else{
+                redireccionar("/Peticiones/verPeticiones");
             }
-            redireccionar("/Peticiones/verPeticiones");
+            
         }
 
         public function verPeticiones(){
+        
         $this->datos['Peticiones'] = $this->PeticionModelo->getPeticiones();
         $this->datos['Mecanicos'] = $this->PeticionModelo->getMecanicos();
         $this->vista('admin/peticiones',$this->datos);
+        }
+
+        public function verPeticionesProgreso(){
+            $this->datos['Peticiones'] = $this->PeticionModelo->getPeticiones();
+            $this->vista('admin/peticionesEnProgreso',$this->datos);
+            }
+
+        public function peticionTerminada($id){
+            
         }
 
      
@@ -36,7 +48,7 @@
             if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 $mecanico = $_POST['mecanico'];
                 $this->datos['peticion'] = $this->PeticionModelo->addMecanico($id,$mecanico);
-                redireccionar("/Peticiones/verPeticiones");
+                redireccionar("/Peticiones");
 
 
             } else {
@@ -44,6 +56,13 @@
                 $this->datos['Mecanicos'] = $this->PeticionModelo->getMecanicos();
                 $this->vista('admin/addMecanico', $this->datos);
             }
+        }
+
+        public function eliminarPeticion($id){
+            $this->PeticionModelo ->eliminarPeticionMoto($id);
+            $this->PeticionModelo ->eliminarPeticionIncidencias($id);
+            redireccionar("/Peticiones");
+
         }
 
 
