@@ -52,4 +52,22 @@
 
         }
 
+        public function marcarTerminado($id,$fecha){
+            $today = date('Y/m/d');
+            $this->db->query("UPDATE incidencias set Terminado = 1 where idIncidencias = $id");
+            $this->db->execute();
+            $this->db->query("INSERT into reparaciones values (null, '$today', '$fecha')");
+            $this->db->execute();
+        }
+
+        public function getIdReparacion(){
+            $this->db->query("SELECT max(idReparaciones) as idReparaciones FROM reparaciones;");
+            return $this->db->registro();
+        }
+        public function mecanicoRepara($id,$meca){
+           $idmeca = intval ($meca);
+            $this->db->query("INSERT into mecanico_has_reparaciones values ($idmeca, $id)");
+            $this->db->execute();   
+        }
+
     }

@@ -32,7 +32,8 @@
                 <td><?php echo $e->Tipo ?></td>
                 <td><?php echo $e->Descripcion?></td>
                 <td><?php echo $e->Fecha ?></td>    
-                <td><a href="<?php echo RUTA_URL?>/Peticiones/peticionTerminada"><i class="bi bi-check-square-fill"></i></a></td>
+                <td><a href="<?php echo RUTA_URL?>/Peticiones/peticionTerminada/<?php echo $e->idIncidencias ?>/<?php echo $e->idPersonal ?>/<?php echo $e->Fecha?>"><i class="bi bi-check-square-fill"></i></a></td>
+
                  
             </tr>
           

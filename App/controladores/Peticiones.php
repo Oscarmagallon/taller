@@ -39,8 +39,13 @@
             $this->vista('admin/peticionesEnProgreso',$this->datos);
             }
 
-        public function peticionTerminada($id){
-            
+        public function peticionTerminada($id,$meca,$fecha){
+           $this->PeticionModelo->marcarTerminado($id,$fecha);
+           $id = $this->PeticionModelo->getIdReparacion();
+           $this->PeticionModelo->mecanicoRepara($meca,$id);
+           //redireccionar("/Peticiones/verPeticionesProgreso");
+        
+
         }
 
      
