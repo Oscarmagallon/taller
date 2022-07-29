@@ -19,7 +19,7 @@
             <tr>
                 <th>Tipo</th>
                 <th>Descripcion</th>
-                <th>Disciplina</th>
+                <th>Estado</th>
             </tr>
         </thead>
         <tbody>
@@ -30,9 +30,9 @@
                 <td><?php echo $e[$i]->Descripcion?></td>
                 <?php if(empty($e[$i]->idPersonal)){
                     echo "<td> En Espera </td>";
-                }else{
+                }elseif(!empty($e[$i]->idPersonal) && $e[$i]->Terminado == 0 ){
                     echo "<td> En Progreso </td>";
-                } ?>
+                }else{echo  "<td> Terminado </td>";  } ?>
             </tr>
             <?php endforeach; 
 ?>
