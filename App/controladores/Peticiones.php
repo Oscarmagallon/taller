@@ -40,13 +40,16 @@
             }
 
         public function peticionTerminada($id,$meca,$fecha){
-           $this->PeticionModelo->marcarTerminado($id,$fecha);
-           $id = $this->PeticionModelo->getIdReparacion();
-           $this->PeticionModelo->mecanicoRepara($meca,$id);
-           //redireccionar("/Peticiones/verPeticionesProgreso");
-        
+           $this->PeticionModelo->insertarReparacion($fecha);
+           $ids = $this->PeticionModelo->getIdReparacion();
+           $idReparacion = $ids->idReparaciones;
+           $this->PeticionModelo->rellenarIncidencia($id,$idReparacion);
+           $this->PeticionModelo->mecanicoRepara($meca,$idReparacion);
+           redireccionar("/Peticiones/verPeticionesProgreso");
 
         }
+
+       
 
      
         public function anadirMecanico($id){
