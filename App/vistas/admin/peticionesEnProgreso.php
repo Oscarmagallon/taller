@@ -26,7 +26,7 @@
         </thead>
         <tbody>
             <?php foreach($datos['Peticiones'] as $e): ?>
-            <?php if(!empty($e->idPersonal)):?>
+            <?php if(!empty($e->idPersonal) && $e->Terminado == 0):?>
                 
             <tr>
                 <td><?php echo $e->Tipo ?></td>
