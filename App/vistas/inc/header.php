@@ -39,7 +39,10 @@
         </li>
 
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="<?php echo RUTA_URL?>/Peticiones/verPeticiones">Peticiones</a>
+          <a class="nav-link active" aria-current="page" href="<?php echo RUTA_URL?>/Peticiones">Peticiones</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="<?php echo RUTA_URL?>/MotosListas">Motos Listas</a>
         </li>
       </ul>
     <?php endif?>
