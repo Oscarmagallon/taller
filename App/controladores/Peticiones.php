@@ -36,15 +36,18 @@
 
         public function verPeticionesProgreso(){
             $this->datos['Peticiones'] = $this->PeticionModelo->getPeticiones();
+            //cargar esto en modelo y llevarlo a peticiones en progreso
+            //SELECT reparaciones.idreparaciones,incidencias.idIncidencias, incidencias.Tipo, incidencias.Descripcion FROM reparaciones INNER JOIN incidencias ON incidencias.idreparaciones = reparaciones.idreparaciones;
             $this->vista('admin/peticionesEnProgreso',$this->datos);
             }
 
-        public function peticionTerminada($id,$meca,$fecha){
-           $this->PeticionModelo->insertarReparacion($fecha);
+        public function peticionTerminada($meca,$id){
+           
            $ids = $this->PeticionModelo->getIdReparacion();
+           //hay que pasarsela de la pestaña peticiones en progreso.
            $idReparacion = $ids->idReparaciones;
-           $this->PeticionModelo->rellenarIncidencia($id,$idReparacion);
            $this->PeticionModelo->mecanicoRepara($meca,$idReparacion);
+            $this->PeticionModelo->terminada($id);
            redireccionar("/Peticiones/verPeticionesProgreso");
 
         }
@@ -55,7 +58,12 @@
         public function anadirMecanico($id){
             if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 $mecanico = $_POST['mecanico'];
+                $fecha = $_POST['fecha'];
                 $this->datos['peticion'] = $this->PeticionModelo->addMecanico($id,$mecanico);
+                $this->PeticionModelo->insertarReparacion($fecha);
+                $ids = $this->PeticionModelo->getIdReparacion();
+                $idReparacion = $ids->idReparaciones;
+                $this->PeticionModelo->reparaciones($id,$idReparacion);
                 redireccionar("/Peticiones");
 
 

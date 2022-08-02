@@ -58,8 +58,8 @@
             $this->db->execute();
         }
 
-        public function rellenarIncidencia($id,$reparacion){
-            $this->db->query("UPDATE incidencias set Terminado = 1 , idreparaciones = $reparacion where idIncidencias = $id");
+        public function reparaciones($id,$reparacion){
+            $this->db->query("UPDATE incidencias set idreparaciones = $reparacion where idIncidencias = $id");
             $this->db->execute();
         }
 
@@ -71,6 +71,12 @@
            //$idmeca = intval ($meca);
             $this->db->query("INSERT into mecanico_has_reparaciones values ($meca, $id)");
             $this->db->execute();   
+        }
+
+        public function terminada($id){
+            $this->db->query("UPDATE incidencias set Terminado = 1 where idIncidencias = $id");
+            $this->db->execute();
+
         }
 
     }

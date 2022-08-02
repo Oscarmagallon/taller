@@ -32,7 +32,7 @@
                 <td><?php echo $e->Tipo ?></td>
                 <td><?php echo $e->Descripcion?></td>
                 <td><?php echo $e->Fecha ?></td>    
-                <td><a href="<?php echo RUTA_URL?>/Peticiones/anadirMecanico/<?php echo $e->idIncidencias ?>"><i class="bi bi-person-plus"></i></a>
+                <td><a href="<?php echo RUTA_URL?>/Peticiones/anadirMecanico/<?php echo $e->idIncidencias?>"><i class="bi bi-person-plus"></i></a>
                     <a href="<?php echo RUTA_URL?>/Peticiones/eliminarPeticion/<?php echo $e->idIncidencias ?>"><i class="bi bi-trash"></i></a></td>
 
                  

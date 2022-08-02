@@ -39,6 +39,7 @@
                                 <option value="<?php echo $m->idPersonal ?>"><?php echo $m->Nombre ?></option>
                             <?php endforeach ?>
                         </select>
+                        <input type="hidden" name="fecha" value="<?php echo $datos['peticion'][0]->Fecha?>">
                     </td> 
                     <td><button type="submit">Añadir</button></td>   
                 </form>
