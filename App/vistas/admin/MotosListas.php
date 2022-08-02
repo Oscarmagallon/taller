@@ -22,6 +22,7 @@
                 <th>Descripcion</th>
                 <th>Marca</th>
                 <th>Modelo</th>
+                <th>Pago</th>
             </tr>
         </thead>
         <tbody>
@@ -32,7 +33,9 @@
                 <td><?php echo $m->Tipo ?></td>
                 <td><?php echo $m->Descripcion?></td>
                 <td><?php echo $m->Marca ?></td>
-                <td><?php echo $m->Modelo ?></td>    
+                <td><?php echo $m->Modelo ?></td>
+                <td> <a href="<?php echo RUTA_URL?>/Pagos/<?php  ?>"> Añadir Coste</a></td>    
+    
                  
             </tr>
           
