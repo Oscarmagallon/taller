@@ -22,6 +22,10 @@
             $this->db->query("SELECT * from incidencias");
             return $this->db->registros();
         }
+        public function getPeticionesReparaciones(){
+            $this->db->query("SELECT incidencias.Terminado,incidencias.Fecha,incidencias.idPersonal,reparaciones.idreparaciones,incidencias.idIncidencias, incidencias.Tipo, incidencias.Descripcion FROM reparaciones INNER JOIN incidencias ON incidencias.idreparaciones = reparaciones.idreparaciones");
+            return $this->db->registros();
+        }
 
         public function getPeticion($id){
             $this->db->query("SELECT * from incidencias where idIncidencias = $id");

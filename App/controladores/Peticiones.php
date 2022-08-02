@@ -35,7 +35,7 @@
         }
 
         public function verPeticionesProgreso(){
-            $this->datos['Peticiones'] = $this->PeticionModelo->getPeticiones();
+            $this->datos['Peticiones'] = $this->PeticionModelo->getPeticionesReparaciones();
             //cargar esto en modelo y llevarlo a peticiones en progreso
             //SELECT reparaciones.idreparaciones,incidencias.idIncidencias, incidencias.Tipo, incidencias.Descripcion FROM reparaciones INNER JOIN incidencias ON incidencias.idreparaciones = reparaciones.idreparaciones;
             $this->vista('admin/peticionesEnProgreso',$this->datos);
