@@ -22,7 +22,7 @@
             $this->datos["Motos"] = $motos;
             $this->vista('cliente/peticion',$this->datos);
             }else{
-                redireccionar("/Peticiones/verPeticiones");
+                redireccionar("/Peticiones/elegirMoto");
             }
             
         }
@@ -34,15 +34,15 @@
             $this->vista('admin/elegirMoto',$this->datos);
         }
 
-        public function verPeticiones(){
+        public function verPeticiones($id){
         
-        $this->datos['Peticiones'] = $this->PeticionModelo->getPeticiones();
+        $this->datos['Peticiones'] = $this->PeticionModelo->getPeticiones($id);
         $this->datos['Mecanicos'] = $this->PeticionModelo->getMecanicos();
         $this->vista('admin/peticiones',$this->datos);
         }
 
-        public function verPeticionesProgreso(){
-            $this->datos['Peticiones'] = $this->PeticionModelo->getPeticionesReparaciones();
+        public function verPeticionesProgreso($id){
+            $this->datos['Peticiones'] = $this->PeticionModelo->getPeticionesReparaciones($id);
             //cargar esto en modelo y llevarlo a peticiones en progreso
             //SELECT reparaciones.idreparaciones,incidencias.idIncidencias, incidencias.Tipo, incidencias.Descripcion FROM reparaciones INNER JOIN incidencias ON incidencias.idreparaciones = reparaciones.idreparaciones;
             $this->vista('admin/peticionesEnProgreso',$this->datos);

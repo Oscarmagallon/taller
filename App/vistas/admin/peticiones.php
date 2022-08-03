@@ -2,7 +2,7 @@
 <body class="container">
 <h1>Estado</h1>
 <nav class="navbar navbar-light navbar-expand-lg" style="background-color: #e3f2fd;">
-<?php print_r($datos) ?>
+<?php print_r($datos['Peticiones'][0]->idMoto) ?>
 
     <div class="container-fluid px-2">
               <form autocomplete="off" class="d-flex">
@@ -42,7 +42,7 @@
             <?php endforeach;?>
             
 </body>
-<a href="<?php echo RUTA_URL?>/Peticiones/verPeticionesProgreso">Ver reparaciones en Progreso</a>
+<a href="<?php echo RUTA_URL?>/Peticiones/verPeticionesProgreso/<?php echo $datos['Peticiones'][0]->idMoto ?>">Ver reparaciones en Progreso</a>
 
 
 <?php require_once RUTA_APP.'/vistas/inc/footer.php'?>

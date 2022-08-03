@@ -25,6 +25,7 @@
         <form action="<?php echo RUTA_URL ?>/Piezas/add" method="POST">
         <tbody>
             <td>
+            <input type="hidden" name = "idMoto" value=" <?php echo $datos["MotoPeticion"]?>">
             <input type="hidden" name="reparaciones" value="<?php echo $datos["Peticiones"][0]->idreparaciones?>">
             <select name="pieza" id="">
             <?php foreach($datos['Piezas'] as $m): ?>

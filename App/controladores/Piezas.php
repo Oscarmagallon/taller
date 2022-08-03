@@ -15,7 +15,8 @@
         }
 
 
-        public function index($id){
+        public function index($id,$moto){
+            $this->datos["MotoPeticion"] = $moto;
             $this->datos['Piezas'] = $this->PiezasModelo->getPiezas();
             $this->datos['Peticiones'] = $this->PiezasModelo->getPeticiones($id);
             $this->vista("admin/addPiezas", $this->datos);
@@ -25,10 +26,11 @@
         public function add(){
             $pieza = $_POST['pieza'];
             $reparacion = $_POST['reparaciones'];
+            $idMoto = $_POST["idMoto"];
             $coste = $this->PiezasModelo->getPrecio($pieza);
             $this->PiezasModelo->addPieza($pieza, $reparacion, $coste[0]->Precio);
             $this->PiezasModelo->ingreso($coste[0]->Tipo,$coste[0]->Precio,$reparacion);
-            redireccionar("/Peticiones/verPeticionesProgreso");
+            redireccionar("/Peticiones/verPeticionesProgreso/$idMoto");
             
         }
             
