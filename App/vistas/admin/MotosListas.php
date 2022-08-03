@@ -43,7 +43,6 @@
             <?php endforeach;?>
             
 </body>
-<a href="<?php echo RUTA_URL?>/Peticiones/verPeticionesProgreso">Ver reparaciones en Progreso</a>
 
 
 <?php require_once RUTA_APP.'/vistas/inc/footer.php'?>

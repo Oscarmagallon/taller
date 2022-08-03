@@ -48,14 +48,14 @@
             $this->vista('admin/peticionesEnProgreso',$this->datos);
             }
 
-        public function peticionTerminada($meca,$id){
+        public function peticionTerminada($meca,$id,$idMoto){
            
            $ids = $this->PeticionModelo->getIdReparacion();
            //hay que pasarsela de la pestaña peticiones en progreso.
            $idReparacion = $ids->idReparaciones;
            $this->PeticionModelo->mecanicoRepara($meca,$idReparacion);
             $this->PeticionModelo->terminada($id);
-           redireccionar("/Peticiones/verPeticionesProgreso");
+           redireccionar("/Peticiones/verPeticionesProgreso/$idMoto");
 
         }
 
