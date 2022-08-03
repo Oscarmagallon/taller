@@ -1,7 +1,7 @@
 <?php require_once RUTA_APP.'/vistas/inc/header.php' ?>
 <body class="container">
 <h1>Estado</h1>
-<?php print_r($datos) ?>
+<?php print_r($datos)?>
 <nav class="navbar navbar-light navbar-expand-lg" style="background-color: #e3f2fd;">
 
     <div class="container-fluid px-2">
@@ -22,22 +22,23 @@
                 <th>Acciones</th>
             </tr>
         </thead>
-        <form action="<?php echo RUTA_URL ?>/Piezas/add"></form>
+        <form action="<?php echo RUTA_URL ?>/Piezas/add" method="POST">
         <tbody>
             <td>
-            <select name="" id="">
+            <input type="hidden" name="reparaciones" value="<?php echo $datos["Peticiones"][0]->idreparaciones?>">
+            <select name="pieza" id="">
             <?php foreach($datos['Piezas'] as $m): ?>
-                <option value="<?php echo $m->idArticulos ?>"> <?php echo $m->Tipo." ".$m->Precio."$"?> </option>
+                <option value="<?php echo $m->idArticulos?>"> <?php echo $m->Tipo." ".$m->Precio."$"?> </option>
             <?php endforeach;?>
             </select>
             </td>
-            <input type="hidden" value="<?php $datos["Peticiones"][0]->idreparaciones?>">
+            
             
             <td>
-                <a href="<?php echo RUTA_URL?>/Piezas/add"><i class="bi bi-check-square"></i></a>
+               <button type="submit">Aceptar</button>
             </td>
         </tbody>
-            
+        </form>
         
             
 </body>

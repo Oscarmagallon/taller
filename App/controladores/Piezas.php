@@ -23,8 +23,13 @@
             }
 
         public function add(){
-            $datos = $_POST;
-            //rellenar datos Pieza, ingreso.
+            $pieza = $_POST['pieza'];
+            $reparacion = $_POST['reparaciones'];
+            $coste = $this->PiezasModelo->getPrecio($pieza);
+            $this->PiezasModelo->addPieza($pieza, $reparacion, $coste[0]->Precio);
+            $this->PiezasModelo->ingreso($coste[0]->Tipo,$coste[0]->Precio,$reparacion);
+            redireccionar("/Peticiones/verPeticionesProgreso");
+            
         }
             
 
