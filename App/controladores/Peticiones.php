@@ -27,6 +27,13 @@
             
         }
 
+        public function elegirMoto(){
+            $idPropietario = $this->PeticionModelo->getId($this->datos["usuarioSesion"]->idPersonal);
+            $motos = $this->PeticionModelo->getMotos($idPropietario->idPropietario);
+            $this->datos["Motos"] = $motos;
+            $this->vista('admin/elegirMoto',$this->datos);
+        }
+
         public function verPeticiones(){
         
         $this->datos['Peticiones'] = $this->PeticionModelo->getPeticiones();
