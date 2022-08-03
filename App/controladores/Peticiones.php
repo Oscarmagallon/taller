@@ -62,7 +62,7 @@
        
 
      
-        public function anadirMecanico($id){
+        public function anadirMecanico($id,$idMoto){
             if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 $mecanico = $_POST['mecanico'];
                 $fecha = $_POST['fecha'];
@@ -71,10 +71,11 @@
                 $ids = $this->PeticionModelo->getIdReparacion();
                 $idReparacion = $ids->idReparaciones;
                 $this->PeticionModelo->reparaciones($id,$idReparacion);
-                redireccionar("/Peticiones");
+                redireccionar("/Peticiones/verPeticiones/$idMoto");
 
 
             } else {
+                $this->datos['idMoto'] = $idMoto;
                 $this->datos['peticion'] = $this->PeticionModelo->getPeticion($id);
                 $this->datos['Mecanicos'] = $this->PeticionModelo->getMecanicos();
                 $this->vista('admin/addMecanico', $this->datos);

@@ -32,7 +32,7 @@
                 <td><?php echo $datos['peticion'][0]->Tipo?></td>
                 <td><?php echo $datos['peticion'][0]->Descripcion?></td>
                 <td><?php echo $datos['peticion'][0]->Fecha?></td>
-                <form method="POST" action="<?php echo RUTA_URL?>/Peticiones/anadirMecanico/<?php echo $datos['peticion'][0]->idIncidencias ?>">
+                <form method="POST" action="<?php echo RUTA_URL?>/Peticiones/anadirMecanico/<?php echo $datos['peticion'][0]->idIncidencias?>/<?php echo $datos['idMoto']?>">
                     <td>
                         <select name="mecanico" id="mecanico">
                             <?php foreach ($datos['Mecanicos'] as $m):?>
