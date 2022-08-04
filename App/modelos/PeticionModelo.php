@@ -13,8 +13,8 @@
             return $this->db->registro();
         }
 
-        public function getMotos($idp){
-            $this->db->query("SELECT * from moto where idPropietario = $idp");
+        public function getMotos(){
+            $this->db->query("SELECT * from moto ");
             return $this->db->registros();
         }
 

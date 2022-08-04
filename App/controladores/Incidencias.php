@@ -29,7 +29,7 @@
                 'id' =>trim($_POST['idMoto'])
             ];
             $idMoto = $peticion['id'];
-            print_r($idMoto);
+            print_r($peticion);
             $this->IncidenciasModelo->peticionIncidencia($peticion);
             $idIncidencia = $this->IncidenciasModelo->cogerUltimaId();
             $idInciden = $idIncidencia->idIncidencias;
