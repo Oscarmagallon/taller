@@ -29,8 +29,10 @@
             <input type="hidden" name="reparaciones" value="<?php echo $datos["Peticiones"][0]->idreparaciones?>">
             <select name="pieza" id="">
             <?php foreach($datos['Piezas'] as $m): ?>
-                <option value="<?php echo $m->idArticulos?>"> <?php echo $m->Tipo." ".$m->Precio."$"?> </option>
-            <?php endforeach;?>
+                <?php if($m->Vendido == 0 ): ?>
+                    <option value="<?php echo $m->idArticulos?>"> <?php echo $m->Tipo." ".$m->Precio."$"?> </option>
+                <?php endif;?>
+           <?php endforeach;?>
             </select>
             </td>
             
