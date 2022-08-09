@@ -33,6 +33,10 @@
             $this->db->execute();
         }
 
+        public function vendido($id){
+            $this->db->query("UPDATE articulos set Vendido = 1 where idArticulos = $id");
+            $this->db->execute();
+        }
 
         
        

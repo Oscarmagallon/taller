@@ -30,6 +30,7 @@
             $coste = $this->PiezasModelo->getPrecio($pieza);
             $this->PiezasModelo->addPieza($pieza, $reparacion, $coste[0]->Precio);
             $this->PiezasModelo->ingreso($coste[0]->Tipo,$coste[0]->Precio,$reparacion);
+            $this->PiezasModelo->vendido($pieza);
             redireccionar("/Peticiones/verPeticionesProgreso/$idMoto");
             
         }

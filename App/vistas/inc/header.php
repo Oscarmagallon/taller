@@ -37,12 +37,14 @@
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="<?php echo RUTA_URL?>/Admin">Home</a>
         </li>
-
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="<?php echo RUTA_URL?>/Peticiones">Peticiones</a>
         </li>
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="<?php echo RUTA_URL?>/MotosListas">Motos Listas</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="<?php echo RUTA_URL?>/Proveedores">Proveedores</a>
         </li>
       </ul>
     <?php endif?>
