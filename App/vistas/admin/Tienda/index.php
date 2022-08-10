@@ -75,16 +75,12 @@
             </div>
         </div>
 </div>
-
-
-
-    
 <section class="brands">
     <div class="container">
         <div class="row">
             <div class="col-md-12">
                 <div class="bar">
-                    <h2>BRANDS WE STOCK</h2>
+                    <h2>Marcas que tenemos</h2>
                     <img src="../Tienda/img/bar.jpg" alt="">
                 </div>
             </div>
@@ -98,11 +94,12 @@
             <div class="col-md-12">
                 <div class="slider-container">
                     <ul id="slider">
-                        <li><a href="#"><img src="../Tienda/img/brand-img1.jpg"></a></li>
-                        <li><a href="#"><img src="../Tienda/img/brand-img2.jpg"></a></li>
-                        <li><a href="#"><img src="../Tienda/img/brand-img3.jpg"></a></li>
-                        <li><a href="#"><img src="../Tienda/img/brand-img4.jpg"></a></li>
-                        <li><a href="#"><img src="../Tienda/img/brand-img5.jpg"></a></li>
+                        <li><a href="#"><img src="../Tienda/img/marca-kawa.jpg"></a></li>
+                        <li><a href="#"><img src="../Tienda/img/marca-ktm.jpg"></a></li>
+                        <li><a href="#"><img src="../Tienda/img/marca-suzuki.jpg"></a></li>
+                        <li><a href="#"><img src="../Tienda/img/marcas-aprilia.jpg"></a></li>
+                        <li><a href="#"><img src="../Tienda/img/marcas-honda.jpg"></a></li>
+                        <li><a href="#"><img src="../Tienda/img/marcas-yamaha.jpg"></a></li>
                     </ul>
                 </div>
             </div>
