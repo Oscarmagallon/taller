@@ -44,11 +44,11 @@
           <a class="nav-link active" aria-current="page" href="<?php echo RUTA_URL?>/MotosListas">Motos Listas</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="<?php echo RUTA_URL?>/Proveedores">Proveedores</a>
+          <a class="nav-link active" aria-current="page" href="<?php echo RUTA_URL?>/Tienda">Proveedores</a>
         </li>
       </ul>
     <?php endif?>
-      <ul class="d-flex navbar-nav ms-auto mb-2 mb-md-0">
+      <ul class="d-flex navbar-nav ms-auto mb-2 mb-md-0 col-md-2">
                     <li class="navbar-text">
                         <?php echo $datos['usuarioSesion']->Nombre ?>
                     </li>

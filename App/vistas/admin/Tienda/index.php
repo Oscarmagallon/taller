@@ -1,5 +1,6 @@
-<!DOCTYPE html>
 <?php require_once RUTA_APP.'/vistas/inc/header.php' ?>
+<!DOCTYPE html>
+
 
 <html lang="en">
 <head>
@@ -40,7 +41,7 @@
             </div>
             <div class="product">
                 <div class="row">
-                    <div class="col-md-3">
+                    <div class="col-md-3 col-sm-6 col-xs-12">
                         <div class="s_product">
                             <img  width="285" height="213" src="../Tienda/img/chaquetas.jpg">
                             <div class="s_overlay"></div>
@@ -48,7 +49,7 @@
                         </div>
                     </div>
 
-                    <div class="col-md-3">
+                    <div class="col-md-3 col-sm-6 col-xs-12">
                         <div class="s_product">
                             <img alt="" src="../Tienda/img/casco.jpg">
                             <div class="s_overlay"></div>
@@ -56,7 +57,7 @@
                         </div>
                     </div>
 
-                    <div class="col-md-3">
+                    <div class="col-md-3 col-sm-6 col-xs-12">
                         <div class="s_product">
                             <img alt="" src="../Tienda/img/moto.jpg">
                             <div class="s_overlay"></div>
@@ -64,7 +65,7 @@
                         </div>
                     </div>
 
-                    <div class="col-md-3">
+                    <div class="col-md-3 col-sm-6 col-xs-12">
                         <div class="s_product">
                             <img alt="" src="../Tienda/img/piezas.jpg">
                             <div class="s_overlay"></div>
@@ -80,7 +81,7 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="bar">
-                    <h2>Marcas que tenemos</h2>
+                    <h2>Podrás econtrar:</h2>
                     <img src="../Tienda/img/bar.jpg" alt="">
                 </div>
             </div>
@@ -94,12 +95,17 @@
             <div class="col-md-12">
                 <div class="slider-container">
                     <ul id="slider">
-                        <li><a href="#"><img src="../Tienda/img/marca-kawa.jpg"></a></li>
-                        <li><a href="#"><img src="../Tienda/img/marca-ktm.jpg"></a></li>
-                        <li><a href="#"><img src="../Tienda/img/marca-suzuki.jpg"></a></li>
-                        <li><a href="#"><img src="../Tienda/img/marcas-aprilia.jpg"></a></li>
-                        <li><a href="#"><img src="../Tienda/img/marcas-honda.jpg"></a></li>
-                        <li><a href="#"><img src="../Tienda/img/marcas-yamaha.jpg"></a></li>
+                        <li><a class="col-md-2" href="#"><img src="../Tienda/img/marca-kawa.jpg"></a></li>
+                        <div class="col-md-1"></div>
+                        <li><a class="col-2" href="#"><img src="../Tienda/img/marca-ktm.jpg"></a></li>
+                        <div class="col-md-1"></div>
+                        <li><a class="col-md-2" href="#"><img src="../Tienda/img/marca-suzuki.jpg"></a></li>
+                        <div class="col-md-1"></div>
+                        <li><a class="col-2" href="#"><img src="../Tienda/img/marcas-aprilia.jpg"></a></li>
+                        <div class="col-md-1"></div>
+                        <li><a class="col-2" href="#"><img src="../Tienda/img/marcas-yamaha.jpg"></a></li>
+                        <div class="col-md-1"></div>
+                  
                     </ul>
                 </div>
             </div>
@@ -120,3 +126,4 @@
 <script src="../Tienda/js/active.js"></script>  
 </body>
 </html>
+<?php require_once RUTA_APP.'/vistas/inc/footer.php'?>

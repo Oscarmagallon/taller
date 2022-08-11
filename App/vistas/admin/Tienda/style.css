@@ -12,6 +12,10 @@ a{
     transform: rotate(20deg);
     
 }
+.yyyy{
+  margin: 1px;
+  
+}
 .header-top .fa.fa-wifi {
   transform: rotate(50deg);
   -ms-transform: rotate(50deg);
@@ -123,11 +127,9 @@ a{
   color: #da9a32;
 }
 .slider img {
-  height: 445px;
-  width: 100%;
-}
-.slider{
-    position: relative;
+  height: 50px;
+  width: 50px;
+  margin  : 4px;
 }
 .slider h3 {
   color: #fff;
@@ -1295,6 +1297,10 @@ ul.commentlist li .author-name a {
 .product-s-display .s_display:hover > h2{
     opacity: 1
 }
+.kawa{
+  height: 20px;
+  width: 20px;
+}
 .season {
     position: relative
 }
@@ -1594,7 +1600,7 @@ section.featured {
   font-weight: bold;
     color: #fff;
 }
-.fashion > img {
+.fashion > h2 {
   width: 100%;
   height: 330px;
 }
