@@ -19,6 +19,11 @@
            $this->vista("admin/Tienda/index",$this->datos);
             
             }
+
+        public function verArticulos($clase){
+            $this->datos['clase'] = $clase;
+            $this->vista("admin/Tienda/verArticulo", $this->datos);
+        }
             
 
 

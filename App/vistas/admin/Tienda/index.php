@@ -46,15 +46,18 @@
                             <img  width="285" height="213" src="../Tienda/img/chaquetas.jpg">
                             <div class="s_overlay"></div>
                             <h2>Equipaciones de moto</h2>
+                            
                         </div>
+                        <h3><a href="<?php echo RUTA_URL ?>/Tienda/verArticulos/Equipacion">Ver</a></h3>
                     </div>
 
                     <div class="col-md-3 col-sm-6 col-xs-12">
                         <div class="s_product">
                             <img alt="" src="../Tienda/img/casco.jpg">
                             <div class="s_overlay"></div>
-                            <h2>Cascos</h2>                          
+                            <h2>Cascos</h2>
                         </div>
+                        <h3><a href="<?php echo RUTA_URL ?>/Tienda/verArticulos/Casco">Ver</a></h3>
                     </div>
 
                     <div class="col-md-3 col-sm-6 col-xs-12">
@@ -63,6 +66,7 @@
                             <div class="s_overlay"></div>
                             <h2>Motos</h2>
                         </div>
+                        <h3><a href="<?php echo RUTA_URL ?>/Tienda/verArticulos/Moto">Ver</a></h3>
                     </div>
 
                     <div class="col-md-3 col-sm-6 col-xs-12">
@@ -70,8 +74,9 @@
                             <img alt="" src="../Tienda/img/piezas.jpg">
                             <div class="s_overlay"></div>
                             <h2>Piezas</h2>
-                        </div>                         
-                    </div>
+                            
+                        </div> 
+                        <h3><a href="<?php echo RUTA_URL ?>/Tienda/verArticulos/Pieza">Ver</a></h3>                    </div>
                 </div>
             </div>
         </div>
