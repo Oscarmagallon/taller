@@ -22,7 +22,7 @@
 
         public function verArticulos($clase){
             $this->datos['clase'] = $clase;
-            $this->vista("admin/Tienda/verArticulo", $this->datos);
+            $this->vista("admin/Tienda/prueba", $this->datos);
         }
             
 
