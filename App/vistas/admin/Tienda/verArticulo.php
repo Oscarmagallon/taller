@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<?php require_once RUTA_APP.'/vistas/inc/header.php' ?>
+<?php require_once RUTA_APP.'/vistas/inc/header.php';
+json_encode($datos); 
+?>
 <!DOCTYPE html>
 
 
@@ -91,8 +93,17 @@
         </div>
     </div>
 </section>
-<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>  
-<script src="js/bootstrap.min.js"></script>  
-<script src="js/active.js"></script>  
 </body>
+<script>
+     let datoss = '<?php echo json_encode($datos); ?>';
+        let datos = JSON.parse(datoss);
+        console.log(datos);
+     
+
+
+
+</script>
+
+
+  
 </html>
