@@ -7,7 +7,7 @@
            
 
 
-           $this->PiezasModelo = $this->modelo('PiezasModelo');
+           $this->TiendaModelo = $this->modelo('TiendaModelo');
            
 
        //     $this->datos['menuActivo'] = 1;         // Definimos el menu que sera destacado en la vista
@@ -21,8 +21,8 @@
             }
 
         public function verArticulos($clase){
-            $this->datos['clase'] = $clase;
-            $this->vista("admin/Tienda/prueba", $this->datos);
+            $this->datos['articulos'] = $this->TiendaModelo->getArticulos($clase);
+            $this->vista("admin/Tienda/verArticulo", $this->datos);
         }
             
 

@@ -13,10 +13,11 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900" rel="stylesheet">
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/font-awesome.min.css">
-    <link rel="stylesheet" href="../Tienda/style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 </section>
+<?php print_r($datos) ?>
 
     <div class="clear"></div>
     <section class="header">
@@ -37,9 +38,24 @@
                       <li><a href="#">PAGES</a></li>
                     </ul>
                 </div>
+                <style type="text/css">
+.nav.navbar-nav {
+  margin-top: 28px;
+}
+.navbar-nav > li > a {
+  color: #665f5f;
+  font-size: 21px;
+    font-family: 'Roboto', sans-serif;
+}
+.nav.navbar-nav a:hover {
+    background: #fff;
+    color: #f39c12
+}
+</style>
+<p>hola</p>
                 <div class="col-md-2">
                     <div class="cart">
-                        <p><i class="fa fa-cart-arrow-down"></i><sup>0</sup> &#36;&nbsp;&nbsp;0.00</p>
+                        <p><i class="bi bi-cart2"></i><sup>0</sup> &#36;&nbsp;&nbsp;0.00</p>
                     </div>
                 </div>
             </div>
@@ -57,76 +73,19 @@
             </div>
             <div class="product">
                 <div class="row">
+                    <?php foreach ($datos['articulos'] as $a):?>
+
                     <div class="col-md-3">
                         <div class="s_product">
                             <img src="img/marca-ktm.jpg" alt="">
                             <div class="s_overlay"></div>
-                            <h2>SALE!</h2>
-                            <h3>T-SHIRT</h3>
-                            <h4><i class="fa fa-cart-arrow-down" aria-hidden="true"></i>ADD TO CART</h4>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="rate">
-                                    <h3>Pocket Tee</h3>
-                                    <p><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><span><i class="fa fa-star" aria-hidden="true"></i></span></p>
-                                    <h5>$250</h5>
-                                </div>
-                            </div>
+                            <h2><?php echo $a->Tipo?></h2>
+                            <h><?php echo $a->Descripcion?></h>
+                            <h2><?php echo $a->Precio."$" ?></h2>
+                            <h5><i class="fa fa-cart-arrow-down" aria-hidden="true"></i>Añadir al carrito</h5>
                         </div>
                     </div>
-                    <div class="col-md-3">
-                        <div class="s_product">
-                            <img src="../Tienda/img/casco.jpg" alt="">
-                            <div class="s_overlay"></div>
-                            <h3>T-SHIRT</h3>
-                            <h4><i class="fa fa-cart-arrow-down" aria-hidden="true"></i>ADD TO CART</h4>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="rate">
-                                    <h3>Pocket Tee</h3>
-                                    <p><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><span><i class="fa fa-star" aria-hidden="true"></i></span></p>
-                                    <h5>$250</h5>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="s_product">
-                            <img src="img/t-shart-brand1.jpg" alt="">
-                            <div class="s_overlay"></div>
-                            <h3>T-SHIRT</h3>
-                            <h4><i class="fa fa-cart-arrow-down" aria-hidden="true"></i>ADD TO CART</h4>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="rate">
-                                    <h3>Pocket Tee</h3>
-                                    <p><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i></p>
-                                    <h5>$250</h5>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="s_product">
-                            <img src="../Tienda/img/t-shart3.jpg" alt="">
-                            <div class="s_overlay"></div>
-                            <h2>NEW!</h2>
-                            <h3>JACKET</h3>
-                            <h4><i class="fa fa-cart-arrow-down" aria-hidden="true"></i>ADD TO CART</h4>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="rate">
-                                    <h3>Pocket Tee</h3>
-                                    <p><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i></p>
-                                    <h5>$250</h5>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <?php endforeach; ?>
                 </div>
             </div>
         </div>
