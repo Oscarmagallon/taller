@@ -24,6 +24,12 @@
             $this->datos['articulos'] = $this->TiendaModelo->getArticulos($clase);
             $this->vista("admin/Tienda/verArticulo", $this->datos);
         }
+
+        public function getArticulos(){
+            $cod= $_POST['cod'];
+            $this->vistaApi($cod); 
+
+        }
             
 
 

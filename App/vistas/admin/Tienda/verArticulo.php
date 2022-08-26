@@ -76,16 +76,19 @@ json_encode($datos);
             <div class="product">
                 <div class="row">
                     <?php foreach ($datos['articulos'] as $a):?>
-
+                      
                     <div class="col-md-3">
+                    <form action="javascript:getArticulo()" method="POST" id="getArticulos">
                         <div class="s_product">
                             <img src="img/marca-ktm.jpg" alt="">
                             <div class="s_overlay"></div>
                             <h2><?php echo $a->Tipo?></h2>
                             <h><?php echo $a->Descripcion?></h>
                             <h2><?php echo $a->Precio."$" ?></h2>
-                            <h5><i class="fa fa-cart-arrow-down" aria-hidden="true"></i>Añadir al carrito</h5>
+                            <input type="hidden" name="cod" value="<?php echo $a->idArticulosProvedores?>">
+                            <button name = "boton" id="boton" form="getArticulos">Añadir al carrito</button> 
                         </div>
+                        </form>
                     </div>
                     <?php endforeach; ?>
                 </div>
@@ -97,7 +100,34 @@ json_encode($datos);
 <script>
      let datoss = '<?php echo json_encode($datos); ?>';
         let datos = JSON.parse(datoss);
-        console.log(datos);
+        button = document.getElementById('boton');
+        button.addEventListener("click", function(){
+            resultado = confirm('¿?');
+            if(resultado){
+              getArticulo();
+            }
+        });
+
+        function getArticulo(){
+      //cogemos lo datos del formulario
+      const data = new FormData(document.getElementById("getArticulos"));
+      fetch('<?php echo RUTA_URL?>/Tienda/getArticulos', {
+          method: "POST",
+          body: data,
+      })
+          .then((resp) => resp.json())
+          .then((data) => {
+              if (Boolean(data)){
+                console.log(data);                        
+                  
+              } else {
+                console.log('error al borrar el registro')
+              }
+          })
+          .catch(function(error) {
+            console.log(error)
+          })
+  }
      
 
 
