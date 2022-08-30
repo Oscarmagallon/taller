@@ -74,24 +74,8 @@ json_encode($datos);
                 </div>
             </div>
             <div class="product">
-                <div class="row">
-                    <?php foreach ($datos['articulos'] as $a):?>
-                    <div class="col-md-3">
-                    <form action="javascript:getArticulo()" method="POST" id="getArticulos">
-                        <div class="s_product">
-                            <img src="img/marca-ktm.jpg" alt="">
-                            <div class="s_overlay"></div>
-                            <h2><?php echo $a->Tipo?></h2>
-                            <h><?php echo $a->Descripcion?></h>
-                            <h2><?php echo $a->Precio."$" ?></h2>
-                            <input type="hidden" name="cod" value="<?php echo $a->idArticulosProvedores?>">
-                            <button name = "boton" id="boton" form="getArticulos">Añadir al carrito</button> 
-                        </div>
-                        
-
-                        </form>
-                    </div>
-                    <?php endforeach; ?>
+                <div id="divPrincipal" class="row">
+                    
                 </div>
             </div>
         </div>
@@ -99,15 +83,53 @@ json_encode($datos);
 </section>
 </body>
 <script>
-     let datoss = '<?php echo json_encode($datos); ?>';
+  
+    function pintarPag(){
+        let datoss = '<?php echo json_encode($datos); ?>';
         let datos = JSON.parse(datoss);
-        button = document.getElementById('boton');
-        button.addEventListener("click", function(){
-            resultado = confirm('¿?');
-            if(resultado){
-              getArticulo();
-            }
-        });
+        var div = document.getElementById("divPrincipal");
+        for (let i = 0; i < datos['articulos'].length; i++){
+        var div2 = document.createElement("div")
+        var imagen = document.createElement("img");
+        var h2 = document.createElement("h2");
+        var h = document.createElement("h");
+        var h3 = document.createElement("h2");
+        var input = document.createElement("input")
+        var button = document.createElement("button");
+        h2.appendChild(document.createTextNode(datos['articulos'][i]['Tipo']));
+        h.appendChild(document.createTextNode(datos['articulos'][i]['Descripcion']));
+        h3.appendChild(document.createTextNode(datos['articulos'][i]['Precio']));
+        input.appendChild(document.createTextNode(datos['articulos'][i]['idArticulosProvedores']));
+        button.appendChild(document.createTextNode("Comprar"))
+        imagen.setAttribute("src", 'img/marca-ktm.jpg')
+        input.setAttribute("hidden", true);
+        div2.setAttribute("class", 'col-4');
+
+        div2.appendChild(imagen);
+        div2.appendChild(h2);
+        div2.appendChild(h);
+        div2.appendChild(h3);
+        div2.appendChild(input);
+        div2.appendChild(button);
+        div.appendChild(div2);
+        
+        }
+        
+       
+
+
+    }
+    // let datoss = '<?php //echo json_encode($datos); ?>';
+      //  let datos = JSON.parse(datoss);
+
+        //console.log(datos['articulos'][1]['Tipo']);
+        //button = document.getElementById('boton');
+        //button.addEventListener("click", function(){
+          //  resultado = confirm('¿?');
+            //if(resultado){
+              //getArticulo();
+            //}
+        //});
     
 
         function getArticulo(){
@@ -132,8 +154,7 @@ json_encode($datos);
   }
      
 
-
-
+pintarPag();
 </script>
 
 
