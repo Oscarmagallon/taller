@@ -76,7 +76,6 @@ json_encode($datos);
             <div class="product">
                 <div class="row">
                     <?php foreach ($datos['articulos'] as $a):?>
-                      
                     <div class="col-md-3">
                     <form action="javascript:getArticulo()" method="POST" id="getArticulos">
                         <div class="s_product">
@@ -88,6 +87,8 @@ json_encode($datos);
                             <input type="hidden" name="cod" value="<?php echo $a->idArticulosProvedores?>">
                             <button name = "boton" id="boton" form="getArticulos">Añadir al carrito</button> 
                         </div>
+                        
+
                         </form>
                     </div>
                     <?php endforeach; ?>
@@ -107,6 +108,7 @@ json_encode($datos);
               getArticulo();
             }
         });
+    
 
         function getArticulo(){
       //cogemos lo datos del formulario
