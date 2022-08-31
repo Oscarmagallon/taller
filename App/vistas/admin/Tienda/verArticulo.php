@@ -141,8 +141,11 @@ json_encode($datos);
 
         function getArticulo(id){
       //cogemos lo datos del formulario
+      let datoss = '<?php echo json_encode($datos); ?>';
+        let datos = JSON.parse(datoss);
       const data = new FormData();
       data.append('id', id);
+      data.append('dat', datos);
 
       fetch('<?php echo RUTA_URL?>/Tienda/getArticulos', {
           method: "POST",
@@ -151,7 +154,9 @@ json_encode($datos);
           .then((resp) => resp.json())
           .then((data) => {
               if (Boolean(data)){
-                console.log(data);                        
+                //console.log(data['Carrito']);       
+                datos += data['Carrito'];
+                console.log(datos);                 
                   
               } else {
                 console.log('error al borrar el registro')
