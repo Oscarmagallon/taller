@@ -83,7 +83,9 @@ json_encode($datos);
 </section>
 </body>
 <script>
-  
+    let datoss = '<?php echo json_encode($datos['articulos']);?>';
+        let datos = JSON.parse(datoss);
+ 
     function pintarPag(){
         let datoss = '<?php echo json_encode($datos); ?>';
         let datos = JSON.parse(datoss);
@@ -102,9 +104,14 @@ json_encode($datos);
         input.appendChild(document.createTextNode(datos['articulos'][i]['idArticulosProvedores']));
         button.appendChild(document.createTextNode("Comprar"))
         imagen.setAttribute("src", 'img/marca-ktm.jpg')
+        input.setAttribute("id", "inputCod");
         input.setAttribute("hidden", true);
         div2.setAttribute("class", 'col-4');
+        button.addEventListener("click", function(){
+            getArticulo(datos['articulos'][i]['idArticulosProvedores']);
+            
 
+        });
         div2.appendChild(imagen);
         div2.appendChild(h2);
         div2.appendChild(h);
@@ -132,9 +139,11 @@ json_encode($datos);
         //});
     
 
-        function getArticulo(){
+        function getArticulo(id){
       //cogemos lo datos del formulario
-      const data = new FormData(document.getElementById("getArticulos"));
+      const data = new FormData();
+      data.append('id', id);
+
       fetch('<?php echo RUTA_URL?>/Tienda/getArticulos', {
           method: "POST",
           body: data,
@@ -155,6 +164,7 @@ json_encode($datos);
      
 
 pintarPag();
+
 </script>
 
 

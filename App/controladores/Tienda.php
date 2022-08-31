@@ -26,8 +26,9 @@
         }
 
         public function getArticulos(){
-            $cod= $_POST['cod'];
-            $this->vistaApi($cod); 
+            $cod= $_POST['id'];
+            $this->datos['Carrito'] = $this->TiendaModelo->getArticulo($cod);
+            $this->vistaApi($this->datos); 
 
         }
             
