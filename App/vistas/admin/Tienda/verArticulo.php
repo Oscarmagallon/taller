@@ -74,7 +74,7 @@ json_encode($datos);
                 </div>
             </div>
             <div class="product">
-                <div id="divPrincipal" class="row">
+                <div id="items" class="row">
                     
                 </div>
             </div>
@@ -89,7 +89,7 @@ json_encode($datos);
     function pintarPag(){
         let datoss = '<?php echo json_encode($datos); ?>';
         let datos = JSON.parse(datoss);
-        var div = document.getElementById("divPrincipal");
+        var div = document.getElementById("items");
         for (let i = 0; i < datos['articulos'].length; i++){
         var div2 = document.createElement("div")
         var imagen = document.createElement("img");
@@ -119,6 +119,8 @@ json_encode($datos);
         div2.appendChild(input);
         div2.appendChild(button);
         div.appendChild(div2);
+
+        
         
         }
         
@@ -146,6 +148,9 @@ json_encode($datos);
       const data = new FormData();
       data.append('id', id);
       data.append('dat', datos);
+      items.addEventListener('click', e=>{
+          addCarrito(e)
+        })
 
       fetch('<?php echo RUTA_URL?>/Tienda/getArticulos', {
           method: "POST",
@@ -159,7 +164,7 @@ json_encode($datos);
                 console.log(datos);                 
                   
               } else {
-                console.log('error al borrar el registro')
+                 console.log('error al borrar el registro')
               }
           })
           .catch(function(error) {
@@ -167,7 +172,9 @@ json_encode($datos);
           })
   }
      
-
+const addCarrito = e =>{
+  console.log(e.target)
+}
 pintarPag();
 
 </script>
