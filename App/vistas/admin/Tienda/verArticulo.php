@@ -84,7 +84,10 @@ json_encode($datos);
 </body>
 <script>
     let datoss = '<?php echo json_encode($datos['articulos']);?>';
-        let datos = JSON.parse(datoss);
+    let datos = JSON.parse(datoss);
+    let carrito = {};
+    const items = document.getElementById('items');
+    const fragmed = document.createDocumentFragment();
  
     function pintarPag(){
         let datoss = '<?php echo json_encode($datos); ?>';
@@ -101,22 +104,22 @@ json_encode($datos);
         h2.appendChild(document.createTextNode(datos['articulos'][i]['Tipo']));
         h.appendChild(document.createTextNode(datos['articulos'][i]['Descripcion']));
         h3.appendChild(document.createTextNode(datos['articulos'][i]['Precio']));
-        input.appendChild(document.createTextNode(datos['articulos'][i]['idArticulosProvedores']));
         button.appendChild(document.createTextNode("Comprar"))
         imagen.setAttribute("src", 'img/marca-ktm.jpg')
-        input.setAttribute("id", "inputCod");
-        input.setAttribute("hidden", true);
         div2.setAttribute("class", 'col-4');
-        button.addEventListener("click", function(){
-            getArticulo(datos['articulos'][i]['idArticulosProvedores']);
-            
+        button.setAttribute("class", 'btn-comprar');
+        h2.setAttribute("class", 'h2');
+        h.setAttribute("class", 'h');
+        h3.setAttribute("class", 'h3');
 
-        });
+        button.dataset.id = datos['articulos'][i]['idArticulosProvedores'];
+        h2.dataset.id = datos['articulos'][i]['Tipo'];
+        h.dataset.id = datos['articulos'][i]['Descripcion'];
+        h3.dataset.id = datos['articulos'][i]['Precio'];
         div2.appendChild(imagen);
         div2.appendChild(h2);
         div2.appendChild(h);
         div2.appendChild(h3);
-        div2.appendChild(input);
         div2.appendChild(button);
         div.appendChild(div2);
 
@@ -141,40 +144,31 @@ json_encode($datos);
         //});
     
 
-        function getArticulo(id){
-      //cogemos lo datos del formulario
-      let datoss = '<?php echo json_encode($datos); ?>';
-        let datos = JSON.parse(datoss);
-      const data = new FormData();
-      data.append('id', id);
-      data.append('dat', datos);
+   
       items.addEventListener('click', e=>{
           addCarrito(e)
-        })
-
-      fetch('<?php echo RUTA_URL?>/Tienda/getArticulos', {
-          method: "POST",
-          body: data,
+        
       })
-          .then((resp) => resp.json())
-          .then((data) => {
-              if (Boolean(data)){
-                //console.log(data['Carrito']);       
-                datos += data['Carrito'];
-                console.log(datos);                 
-                  
-              } else {
-                 console.log('error al borrar el registro')
-              }
-          })
-          .catch(function(error) {
-            console.log(error)
-          })
-  }
-     
 const addCarrito = e =>{
-  console.log(e.target)
+  if(e.target.classList.contains('btn-comprar')){
+    console.log();
+    setCarrito(e.target.parentElement)
+  } 
+  e.stopPropagation()
 }
+
+setCarrito = objeto =>{
+  console.log(objeto);
+  const  producto = {
+    id: objeto.querySelector('.btn-comprar').dataset.id,
+    tipo: objeto.querySelector('.h2').dataset.id,
+    descripcion: objeto.querySelector('.h').dataset.id,
+    precio: objeto.querySelector('.h3').dataset.id
+
+  }
+  console.log(producto);
+}
+
 pintarPag();
 
 </script>
