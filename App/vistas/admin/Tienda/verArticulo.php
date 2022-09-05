@@ -25,6 +25,30 @@ json_encode($datos);
     <section class="header">
         <div class="container">
             <div class="row">
+            <template id = "template-footer">
+    <th scope = "row" colspan="2"> Total Productos </th>
+    <td>10</td>
+    <td>
+      <button class = "btn btn-danger btn-sm" id="vaciar-carrito">
+        vaciar todo
+      </button>
+    </td>
+    <td class = "font-weight-bold">$ <span></td>        
+  </template>
+  <template id="template-carrito">
+    <tr>
+      <th scope="row">id</th>
+      <td>cafe</td>
+      <td>1</td>
+      <td></td>
+      <td>
+        <button class="btn btn-info btn-sm">+</button>
+        <button class="btn btn-danger btn-sm">-</button>
+
+      </td>
+      <td>$ <span>500</span></td>
+    </tr>
+  </template>
                 <div class="col-md-3">
                    <div class="logo">
                     <a href="#"><h2>LOGO</h2></a>
@@ -73,7 +97,27 @@ json_encode($datos);
                     </div>
                 </div>
             </div>
+
             <div class="product">
+            <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Item</th>
+            <th scope="col">Cantidad</th>
+            <th scope="col" class="descr">Descripcion</th>
+            <th scope="col">Acción</th>
+            <th scope="col">Total</th>
+          </tr>
+        </thead>
+        <tbody id="cards"></tbody>
+        <tfoot>
+          <tr id="footer">
+            <th scope="row" colspan="5">Carrito vacío - comience a comprar!</th>
+          </tr>
+        </tfoot>
+      </table>
+
                 <div id="items" class="row">
                     
                 </div>
@@ -82,13 +126,19 @@ json_encode($datos);
     </div>
 </section>
 </body>
+
+</html>
 <script>
     let datoss = '<?php echo json_encode($datos['articulos']);?>';
     let datos = JSON.parse(datoss);
     let carrito = {};
+  
+    const cards = document.getElementById('cards');
+    const footer = document.getElementById('footer');
     const items = document.getElementById('items');
-    const fragmed = document.createDocumentFragment();
- 
+    const fragment = document.createDocumentFragment();
+    const templateFooter = document.getElementById('template-footer').content;
+    const templateCarrito = document.getElementById('template-carrito').content;
     function pintarPag(){
         let datoss = '<?php echo json_encode($datos); ?>';
         let datos = JSON.parse(datoss);
@@ -163,13 +213,35 @@ setCarrito = objeto =>{
     id: objeto.querySelector('.btn-comprar').dataset.id,
     tipo: objeto.querySelector('.h2').dataset.id,
     descripcion: objeto.querySelector('.h').dataset.id,
-    precio: objeto.querySelector('.h3').dataset.id
-
+    precio: objeto.querySelector('.h3').dataset.id,
+    cantidad: 1
   }
-  console.log(producto);
+  if(carrito.hasOwnProperty(producto.id)){
+  producto.cantidad = carrito[producto.id].cantidad +1
+} 
+ carrito[producto.id] ={...producto};
+ pintarCarrito()
 }
-
 pintarPag();
+
+const pintarCarrito = () =>{
+  console.log(carrito);
+  cards.innerHTML= '';
+  Object.values(carrito).forEach(producto =>{
+    templateCarrito.querySelector('th').textContent = producto.id;
+    templateCarrito.querySelectorAll('td')[0].textContent = producto.tipo;
+    templateCarrito.querySelectorAll('td')[1].textContent = producto.cantidad;
+    templateCarrito.querySelectorAll('td')[2].textContent = producto.descripcion;
+    templateCarrito.querySelector('.btn-info').dataset.id = producto.id;
+    templateCarrito.querySelector('.btn-danger').dataset.id = producto.id;
+    templateCarrito.querySelector('span').textContent = producto.cantidad * producto.precio;
+
+    const clone = templateCarrito.cloneNode(true);
+    fragment.appendChild(clone);
+
+  })
+  cards.appendChild(fragment);
+}
 
 </script>
 
