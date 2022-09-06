@@ -194,19 +194,24 @@ json_encode($datos);
         //});
     
 
-   
+   //captamos los clicks de la pagina
       items.addEventListener('click', e=>{
           addCarrito(e)
         
       })
+      
+      cards.addEventListener('click',e => {
+          btnAccion(e);
+      })
+
+      //miramos que vengan de un boton
 const addCarrito = e =>{
   if(e.target.classList.contains('btn-comprar')){
-    console.log();
-    setCarrito(e.target.parentElement)
+    setCarrito(e.target.parentElement) //cogemos los elementos que engloba
   } 
   e.stopPropagation()
 }
-
+//llenamos el objeto
 setCarrito = objeto =>{
   console.log(objeto);
   const  producto = {
@@ -241,8 +246,60 @@ const pintarCarrito = () =>{
 
   })
   cards.appendChild(fragment);
+  pintarFooterCarrito();
+
 }
 
+const pintarFooterCarrito = () =>{
+  //inicializamos a vacio
+  footer.innerHTML ='';
+  if(Object.keys(carrito).length === 0){
+    footer.innerHTML =`<th scope="row" colspan="5">Carrito vacío - comience a comprar!</th>`
+    return;
+  }
+  //pasamos el carrito a la funcion donde acc suma cantidad de los productos.
+  var nCantidad = Object.values(carrito).reduce((acc,{cantidad})=> acc +cantidad,0);
+  //pasamos el carrito a la funcion donde acc suma precio de los productos.
+  var nPrecio = Object.values(carrito).reduce((acc, {cantidad, precio}) =>acc +cantidad *precio,0);
+ 
+  //les mandamos los datos para que los pinte
+  templateFooter.querySelectorAll('td')[0].textContent = nCantidad;
+  templateFooter.querySelector('span').textContent = nPrecio;
+  //clonamos el template
+  const clone = templateFooter.cloneNode(true);
+  fragment.appendChild(clone);
+  footer.appendChild(fragment);
+
+  var btnVaciar = document.getElementById('vaciar-carrito');
+  btnVaciar.addEventListener('click',()=>{
+    carrito={};
+    pintarCarrito();
+  })
+}
+
+const btnAccion = e =>{
+//vemos el objeto clicado, y buscamos que sea el boton de aumentar con clase btn-info 
+console.log(e.target);
+  if(e.target.classList.contains('btn-info')){
+    //accedemos al elemento del carrito clicado, ya que el botón tiene el id del objeto que queremos sumar.
+    const producto = carrito[e.target.dataset.id];
+    //aumentamos la cantidad del producto
+    producto.cantidad++
+    //clonamos el producto en el id que le corresponde dentro del array carrito
+    carrito[e.target.dataset.id]= {...producto};
+    pintarCarrito();
+  }
+  //restar
+  if(e.target.classList.contains('btn-danger')){
+    const producto = carrito[e.target.dataset.id];
+    producto.cantidad--;
+    if(producto.cantidad === 0){
+      delete carrito[e.target.dataset.id];
+    }
+    pintarCarrito();
+  }
+  
+}
 </script>
 
 
