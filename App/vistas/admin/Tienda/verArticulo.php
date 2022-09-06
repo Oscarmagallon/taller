@@ -99,7 +99,11 @@ json_encode($datos);
             </div>
 
             <div class="product">
-            <table class="table">
+            
+
+                <div id="items" class="row"> </div>
+                <br> <br>
+                <table class="table">
         <thead>
           <tr>
             <th scope="col">#</th>
@@ -116,12 +120,10 @@ json_encode($datos);
             <th scope="row" colspan="5">Carrito vacío - comience a comprar!</th>
           </tr>
         </tfoot>
+                
+          </div>
+         
       </table>
-
-                <div id="items" class="row">
-                    
-                </div>
-            </div>
         </div>
     </div>
 </section>
