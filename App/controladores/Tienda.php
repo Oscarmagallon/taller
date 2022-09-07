@@ -33,7 +33,12 @@
             $this->vistaApi($dato); 
 
         }
-            
+        
+        public function carrito(){
+            $datos = $_POST;
+
+            $this->vistaApi($datos);
+        }
 
 
 

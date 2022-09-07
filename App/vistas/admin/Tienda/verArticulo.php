@@ -33,6 +33,11 @@ json_encode($datos);
         vaciar todo
       </button>
     </td>
+    <td>
+      <button class = "btn btn-success btn-sm" id="aceptar-carrito">
+        Aceptar
+      </button>
+    </td>
     <td class = "font-weight-bold">$ <span></td>        
   </template>
   <template id="template-carrito">
@@ -215,7 +220,6 @@ const addCarrito = e =>{
 }
 //llenamos el objeto
 setCarrito = objeto =>{
-  console.log(objeto);
   const  producto = {
     id: objeto.querySelector('.btn-comprar').dataset.id,
     tipo: objeto.querySelector('.h2').dataset.id,
@@ -232,7 +236,6 @@ setCarrito = objeto =>{
 pintarPag();
 
 const pintarCarrito = () =>{
-  console.log(carrito);
   cards.innerHTML= '';
   Object.values(carrito).forEach(producto =>{
     templateCarrito.querySelector('th').textContent = producto.id;
@@ -277,11 +280,22 @@ const pintarFooterCarrito = () =>{
     carrito={};
     pintarCarrito();
   })
+
+  var btnGuardar = document.getElementById('aceptar-carrito');
+  btnGuardar.addEventListener('click',()=>{
+    guardar();
+  })
 }
+
+function guardar(){
+  //console.log(carrito);
+  guardarCarrito(carrito)
+}
+
 
 const btnAccion = e =>{
 //vemos el objeto clicado, y buscamos que sea el boton de aumentar con clase btn-info 
-console.log(e.target);
+  console.log(e.target.parentElement);
   if(e.target.classList.contains('btn-info')){
     //accedemos al elemento del carrito clicado, ya que el botón tiene el id del objeto que queremos sumar.
     const producto = carrito[e.target.dataset.id];
@@ -300,8 +314,25 @@ console.log(e.target);
     }
     pintarCarrito();
   }
-  
+
 }
+
+function guardarCarrito(carrito){
+
+      const data2 = carrito
+      console.log(data2)
+     fetch(`<?php echo RUTA_URL?>/Tienda/carrito`, {
+        method: 'POST',
+        body: data2
+       
+    })
+      .then((resp) => resp.json())
+      .then((data) => {
+        console.log(data);
+       
+      })
+   }
+
 </script>
 
 
