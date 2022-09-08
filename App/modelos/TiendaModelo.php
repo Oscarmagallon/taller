@@ -17,6 +17,11 @@
             return $this->db->registros();
         }
 
+        public function addArticulos($carrito){
+            print_r($carrito[9]['tipo']);
+            exit();
+        }
+
         
        
     }

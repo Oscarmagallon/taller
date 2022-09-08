@@ -318,21 +318,25 @@ const btnAccion = e =>{
 }
 
 function guardarCarrito(carrito){
-
-      const data2 = carrito
-      console.log(data2)
+      
      fetch(`<?php echo RUTA_URL?>/Tienda/carrito`, {
         method: 'POST',
-        body: data2
+        body: JSON.stringify(carrito),
+        headers: {
+        'Content-Type': 'application/json'// AQUI indicamos el formato
+      }
        
     })
-      .then((resp) => resp.json())
-      .then((data) => {
-        console.log(data);
-       
-      })
-   }
-
+    .then(function(response) {
+      return response.text();
+    })
+    .then(function(data) {
+      console.log(data);
+    })
+    .catch(function(error) {
+      console.error(error);
+    })
+}
 </script>
 
 

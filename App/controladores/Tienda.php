@@ -35,9 +35,10 @@
         }
         
         public function carrito(){
-            $datos = $_POST;
-
-            $this->vistaApi($datos);
+            $json = file_get_contents('php://input');
+            $datos = json_decode($json,true);//true devuelve array
+            $this->TiendaModelo->addArticulos($datos);
+           // $this->vistaApi($datos);
         }
 
 
