@@ -18,11 +18,19 @@
         }
 
         public function obtenerProveedorCarrito($carrito){
+            $i = 0;
+            foreach($carrito as $c){
+                
             $this->db->query('SELECT articulosproveedor.Tipo, articulosproveedor.Precio, articulosproveedor.Descripcion, 
             articulostieneproveedor.Provedores_idProvedores from articulosproveedor INNER JOIN 
             articulostieneproveedor on articulosproveedor.idArticulosProvedores 
             = articulostieneproveedor.ArticulosProveedor_idArticulosProvedores WHERE 
             articulosproveedor.idArticulosProvedores = :cod;');
+            $this->db->bind(':cod',$c['id']);
+            $datos[$i] = $this->db->registros();
+            $i++;
+        }
+        return $datos;
         }
 
         public function addArticulos($carrito){
