@@ -37,6 +37,7 @@
         public function carrito(){
             $json = file_get_contents('php://input');
             $datos = json_decode($json,true);//true devuelve array
+            $this->TiendaModelo->obtenerProveedorCarrito($datos);
             $this->TiendaModelo->addArticulos($datos);
            // $this->vistaApi($datos);
         }

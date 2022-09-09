@@ -17,9 +17,28 @@
             return $this->db->registros();
         }
 
+        public function obtenerProveedorCarrito($carrito){
+            $this->db->query('SELECT articulosproveedor.Tipo, articulosproveedor.Precio, articulosproveedor.Descripcion, 
+            articulostieneproveedor.Provedores_idProvedores from articulosproveedor INNER JOIN 
+            articulostieneproveedor on articulosproveedor.idArticulosProvedores 
+            = articulostieneproveedor.ArticulosProveedor_idArticulosProvedores WHERE 
+            articulosproveedor.idArticulosProvedores = :cod;');
+        }
+
         public function addArticulos($carrito){
-            print_r($carrito[9]['tipo']);
-            exit();
+            //print_r($carrito[9]['tipo']);
+                    //print_r(sizeof($carrito));
+          
+            foreach ($carrito as $c ) {
+                $this->db->query("INSERT into articulos values (null, :tipo, :precio, :descr,null,null,0)");
+                $this->db->bind(":tipo", $c['tipo']);
+                $this->db->bind(":precio", $c['precio']);
+                $this->db->bind(":descr", $c['descripcion']);
+                $this->db->execute();
+            
+            
+            }
+    
         }
 
         
