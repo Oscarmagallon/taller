@@ -27,7 +27,7 @@
             = articulostieneproveedor.ArticulosProveedor_idArticulosProvedores WHERE 
             articulosproveedor.idArticulosProvedores = :cod;');
             $this->db->bind(':cod',$c['id']);
-            $datos[$i] = $this->db->registros();
+            $datos[$i] = $this->db->registro();
             $i++;
         }
         return $datos;
@@ -36,12 +36,14 @@
         public function addArticulos($carrito){
             //print_r($carrito[9]['tipo']);
                     //print_r(sizeof($carrito));
+                   print_r($carrito);
           
             foreach ($carrito as $c ) {
-                $this->db->query("INSERT into articulos values (null, :tipo, :precio, :descr,null,null,0)");
-                $this->db->bind(":tipo", $c['tipo']);
-                $this->db->bind(":precio", $c['precio']);
-                $this->db->bind(":descr", $c['descripcion']);
+                $this->db->query("INSERT into articulos values (null, :tipo, :precio, :descr,null,:proveedor,0)");
+                $this->db->bind(":tipo", $c->Tipo);
+                $this->db->bind(":precio", $c->Precio);
+                $this->db->bind(":descr", $c->Descripcion);
+                $this->db->bind(":proveedor", $c->Provedores_idProvedores);
                 $this->db->execute();
             
             

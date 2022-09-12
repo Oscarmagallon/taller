@@ -39,8 +39,8 @@
             $datos = json_decode($json,true);//true devuelve array
            
             $carrito =  $this->TiendaModelo->obtenerProveedorCarrito($datos);
-            print_r($carrito);
-            //$this->TiendaModelo->addArticulos($datos);
+           
+            $this->TiendaModelo->addArticulos($carrito);
            // $this->vistaApi($datos);
         }
 
