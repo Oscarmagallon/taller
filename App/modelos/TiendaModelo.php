@@ -33,6 +33,19 @@
         return $datos;
         }
 
+        public function rellenarGasto($carrito, $cod){
+            foreach ($carrito as $c ){
+                $this->db->query("INSERT into gasto values (null, :descr, :precio, :tipo, :id)");
+                $this->db->bind(":tipo", $c->Tipo);
+                $this->db->bind(":precio", $c->Precio);
+                $this->db->bind(":descr", $c->Descripcion);
+                $this->db->bind(":id", $cod);
+                $this->db->execute();
+            
+            
+            }
+        }
+
         public function addArticulos($carrito){
             //print_r($carrito[9]['tipo']);
                     //print_r(sizeof($carrito));

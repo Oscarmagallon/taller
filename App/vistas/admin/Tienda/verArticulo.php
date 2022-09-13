@@ -188,17 +188,7 @@ json_encode($datos);
 
 
     }
-    // let datoss = '<?php //echo json_encode($datos); ?>';
-      //  let datos = JSON.parse(datoss);
-
-        //console.log(datos['articulos'][1]['Tipo']);
-        //button = document.getElementById('boton');
-        //button.addEventListener("click", function(){
-          //  resultado = confirm('¿?');
-            //if(resultado){
-              //getArticulo();
-            //}
-        //});
+   
     
 
    //captamos los clicks de la pagina
@@ -289,7 +279,19 @@ const pintarFooterCarrito = () =>{
 
 function guardar(){
   //console.log(carrito);
-  guardarCarrito(carrito)
+  guardarCarrito(carrito);
+  //gracias a libreria de sweetAlert en el header
+  swal({
+      title: "Compra realizada",
+      text: "La compra ha sido relizada con éxito",
+      icon: "success" 
+  });
+
+  //vaciamos el carrito una vez comprado
+  footer.innerHTML ='';
+  carrito={};
+  pintarCarrito();
+
 }
 
 

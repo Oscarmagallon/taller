@@ -39,9 +39,10 @@
             $datos = json_decode($json,true);//true devuelve array
            
             $carrito =  $this->TiendaModelo->obtenerProveedorCarrito($datos);
-           
+            $cod =  $this->datos['usuarioSesion']->idPersonal;            
             $this->TiendaModelo->addArticulos($carrito);
-           // $this->vistaApi($datos);
+            $this->TiendaModelo->rellenarGasto($carrito,$cod);
+            $this->vistaApi($datos);
         }
 
 
