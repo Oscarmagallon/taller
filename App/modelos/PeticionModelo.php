@@ -17,6 +17,16 @@
             $this->db->query("SELECT * from moto ");
             return $this->db->registros();
         }
+        
+        public function getProp($idPersonal){
+            $this->db->query("SELECT idPropietario from cliente WHERE idPersonal = '$idPersonal'");
+            return $this->db->registro();
+        }
+
+        public function getMotosCliente($prop){
+            $this->db->query("SELECT Marca,Modelo,CC FROM moto INNER JOIN propietario on moto.idPropietario = propietario.idPropietario INNER JOIN cliente on cliente.idPropietario =propietario.idPropietario where propietario.idPropietario = $prop;");
+            return $this->db->registros();
+        }
 
         public function getPeticiones($id){
             $this->db->query("SELECT incidencias.*, Moto.idMoto FROM incidencias INNER JOIN moto_has_incidencias ON incidencias.idIncidencias = moto_has_incidencias.idIncidencias INNER JOIN moto on moto_has_incidencias.idMoto = moto.idMoto WHERE moto.idMoto = $id");

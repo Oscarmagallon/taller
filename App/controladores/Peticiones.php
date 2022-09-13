@@ -16,9 +16,11 @@
 
 
         public function index(){
+            //print_r($this->datos['usuarioSesion']);
             if($this->datos['usuarioSesion']->Rol_idRol == 20){
-            $idPropietario = $this->PeticionModelo->getId($this->datos["usuarioSesion"]->idPersonal);
-            $motos = $this->PeticionModelo->getMotos($idPropietario->idPropietario);
+            $idPersonal = $this->datos['usuarioSesion']->idPersonal;
+            $codProp = $this->PeticionModelo->getProp($idPersonal);
+            $motos = $this->PeticionModelo->getMotosCliente($codProp->idPropietario);
             $this->datos["Motos"] = $motos;
             $this->vista('cliente/peticion',$this->datos);
             }else{
