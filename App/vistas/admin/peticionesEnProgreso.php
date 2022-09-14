@@ -22,6 +22,7 @@
                 <th>Descripcion</th>
                 <th>Fecha</th>
                 <th>Añadir pieza</th>
+                <th>Ver Piezas</th>
                 <th>Terminado</th>
             </tr>
         </thead>
@@ -34,6 +35,7 @@
                 <td><?php echo $e->Descripcion?></td>
                 <td><?php echo $e->Fecha ?></td>    
                 <td><a href="<?php echo RUTA_URL?>/Piezas/<?php echo $e->idIncidencias?>/<?php echo $e->idMoto?>"><i class="bi bi-puzzle-fill"></i></a></td>
+                <td><a href="<?php echo RUTA_URL?>/Piezas/verPiezas/<?php echo $e->idMoto?>"><i class="bi bi-eye"></i></a></td>
                 <td><a href="<?php echo RUTA_URL?>/Peticiones/peticionTerminada/<?php echo $e->idPersonal ?>/<?php echo $e->idIncidencias?>/<?php echo $e->idMoto?>"><i class="bi bi-check-square-fill"></i></a></td>
                 
 

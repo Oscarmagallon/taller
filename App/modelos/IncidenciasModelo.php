@@ -21,7 +21,6 @@
     public function cogerUltimaId(){
         $this->db->query("SELECT max(idIncidencias) as idIncidencias FROM incidencias;");
         return $this->db->registro();
-
     }
     public function MotoIncidencia($incidencia,$moto){
         $this->db->query("INSERT into moto_has_incidencias values($moto,$incidencia);" );

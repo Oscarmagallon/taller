@@ -24,7 +24,8 @@
         }
 
         public function getMotosCliente($prop){
-            $this->db->query("SELECT Marca,Modelo,CC FROM moto INNER JOIN propietario on moto.idPropietario = propietario.idPropietario INNER JOIN cliente on cliente.idPropietario =propietario.idPropietario where propietario.idPropietario = $prop;");
+            $this->db->query("SELECT Marca,Modelo,CC,idMoto FROM moto INNER JOIN propietario on moto.idPropietario = propietario.idPropietario INNER JOIN cliente on cliente.idPropietario =propietario.idPropietario where propietario.idPropietario = $prop;");
+       
             return $this->db->registros();
         }
 

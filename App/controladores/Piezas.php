@@ -34,6 +34,12 @@
             redireccionar("/Peticiones/verPeticionesProgreso/$idMoto");
             
         }
+
+        public function verPiezas($id){
+           $idsPiezas = $this->PiezasModelo->piezasMoto($id);
+           $piezas = $this->PiezasModelo->getPiezasMoto($idsPiezas);
+           print_r($piezas);
+        }
             
 
 

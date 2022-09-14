@@ -38,6 +38,21 @@
             $this->db->execute();
         }
 
+        public function piezasMoto($id){
+            $this->db->query("SELECT idArticulos from pieza INNER JOIN reparaciones on pieza.idreparaciones = reparaciones.idreparaciones INNER JOIN incidencias ON reparaciones.idreparaciones = incidencias.idreparaciones INNER JOIN moto_has_incidencias on moto_has_incidencias.idIncidencias = incidencias.idIncidencias INNER JOIN moto on moto_has_incidencias.idMoto = moto.idMoto WHERE moto.idMoto =$id;");
+            return $this->db->registros();
+        }
+
+        public function getPiezasMoto($ids){
+            $i=0;
+            foreach($ids as $id){
+                $this->db->query("SELECT articulos.Tipo , articulos.descr from articulos INNER JOIN pieza on pieza.idArticulos = articulos.idArticulos where pieza.idArticulos = $id->idArticulos");
+                $piezas[$i] = $this->db->registro();
+                $i++;
+            } 
+            return $piezas;
+        }
+
         
        
     }
