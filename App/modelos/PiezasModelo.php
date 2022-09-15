@@ -46,11 +46,32 @@
         public function getPiezasMoto($ids){
             $i=0;
             foreach($ids as $id){
-                $this->db->query("SELECT articulos.Tipo , articulos.descr from articulos INNER JOIN pieza on pieza.idArticulos = articulos.idArticulos where pieza.idArticulos = $id->idArticulos");
+                $this->db->query("SELECT articulos.Tipo , articulos.descr, articulos.idArticulos, articulos.precio from articulos INNER JOIN pieza on pieza.idArticulos = articulos.idArticulos where pieza.idArticulos = $id->idArticulos");
                 $piezas[$i] = $this->db->registro();
                 $i++;
             } 
             return $piezas;
+        }
+
+        public function getReparacion($id){
+            $this->db->query("SELECT idreparaciones from pieza where idArticulos = $id");
+            return $this->db->registro();
+        }
+
+        public function borrarPieza($id){
+            $this->db->query("DELETE from pieza where idArticulos = $id");
+            $this->db->execute();
+        }
+
+        public function borrarPiezaIngreso($tipo,$precio,$idReparacion){
+            $this->db->query("DELETE from ingreso where reparaciones_idreparaciones = $idReparacion and Ingreso = $precio and Descr = '$tipo'");
+            $this->db->execute();
+        }
+
+        public function piezaDisponible($id){
+            $this->db->query("UPDATE articulos SET Vendido = 0 WHERE idArticulos = $id");
+            $this->db->execute();
+
         }
 
         

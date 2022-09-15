@@ -37,11 +37,25 @@
 
         public function verPiezas($id){
            $idsPiezas = $this->PiezasModelo->piezasMoto($id);
-           $piezas = $this->PiezasModelo->getPiezasMoto($idsPiezas);
-           print_r($piezas);
+           $this->datos['piezasMoto'] = $this->PiezasModelo->getPiezasMoto($idsPiezas);
+           $this->datos['id'] = $id;
+           $this->vista("admin/verPiezas",$this->datos);
         }
             
+        public function borrar($id,$tipo, $precio,$idMoto){
+            //conseguir id Reparacion 
+            $idReparacion = $this->PiezasModelo->getReparacion($id);
+            //borramos de la tabla piezas
+            $this->PiezasModelo->borrarPieza($id);
+            //borramos de tabla ingresos
+            $this->PiezasModelo->borrarPiezaIngreso($tipo,$precio,$idReparacion->idreparaciones);
+            //Ponemos la pieza disponible otra vez
+            $this->PiezasModelo->piezaDisponible($id);
+            $idsPiezas = $this->PiezasModelo->piezasMoto($idMoto);
+            $this->datos['piezasMoto'] = $this->PiezasModelo->getPiezasMoto($idsPiezas);
+            $this->vista("admin/verPiezas",$this->datos);
 
+        }
 
 
     }
