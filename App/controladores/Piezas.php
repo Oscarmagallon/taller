@@ -56,6 +56,7 @@
             $this->PiezasModelo->piezaDisponible($id);
             $idsPiezas = $this->PiezasModelo->piezasMoto($idMoto);
             $this->datos['piezasMoto'] = $this->PiezasModelo->getPiezasMoto($idsPiezas);
+            $this->datos['id'] = $idMoto;
             $this->vista("admin/verPiezas",$this->datos);
 
         }
