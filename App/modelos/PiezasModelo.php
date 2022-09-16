@@ -44,12 +44,14 @@
         }
 
         public function getPiezasMoto($ids){
+            $piezas =[];
             $i=0;
             foreach($ids as $id){
                 $this->db->query("SELECT articulos.Tipo , articulos.descr, articulos.idArticulos, articulos.precio from articulos INNER JOIN pieza on pieza.idArticulos = articulos.idArticulos where pieza.idArticulos = $id->idArticulos");
                 $piezas[$i] = $this->db->registro();
                 $i++;
             } 
+    
             return $piezas;
         }
 

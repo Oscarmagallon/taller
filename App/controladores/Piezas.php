@@ -48,7 +48,10 @@
             //borramos de la tabla piezas
             $this->PiezasModelo->borrarPieza($id);
             //borramos de tabla ingresos
-            $this->PiezasModelo->borrarPiezaIngreso($tipo,$precio,$idReparacion->idreparaciones);
+            if(!empty($idReparacion->idreparaciones)){
+                $this->PiezasModelo->borrarPiezaIngreso($tipo,$precio,$idReparacion->idreparaciones);
+            }
+            
             //Ponemos la pieza disponible otra vez
             $this->PiezasModelo->piezaDisponible($id);
             $idsPiezas = $this->PiezasModelo->piezasMoto($idMoto);
