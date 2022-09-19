@@ -34,7 +34,7 @@
                 <td><?php echo $m->Descripcion?></td>
                 <td><?php echo $m->Marca ?></td>
                 <td><?php echo $m->Modelo ?></td>
-                <td> <a href="<?php echo RUTA_URL?>/Pagos/<?php  ?>"> Añadir Coste</a></td>    
+                <td> <a href="<?php echo RUTA_URL?>/Pagos/<?php echo $m->idIncidencias ?>"> Añadir Coste</a></td>    
     
                  
             </tr>
