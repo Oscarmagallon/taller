@@ -2,6 +2,7 @@
 <body class="container">
 <h1>Estado</h1>
 <nav class="navbar navbar-light navbar-expand-lg" style="background-color: #e3f2fd;">
+<?php print_r($datos['Estado'][1][0]->idreparaciones); ?>
 
     <div class="container-fluid px-2">
               <form autocomplete="off" class="d-flex">
@@ -20,6 +21,7 @@
                 <th>Tipo</th>
                 <th>Descripcion</th>
                 <th>Estado</th>
+                <th>Pagar</th>
             </tr>
         </thead>
         <tbody>
@@ -33,6 +35,7 @@
                 }elseif(!empty($e[$i]->idPersonal) && $e[$i]->Terminado == 0 ){
                     echo "<td> En Progreso </td>";
                 }else{echo  "<td> Terminado </td>";  } ?>
+                <td><a href="<?php echo RUTA_URL?>/Pagos/pagar/<?php echo $e[$i]->idreparaciones?>">Pagar</a></td>
             </tr>
             <?php endforeach; 
 ?>

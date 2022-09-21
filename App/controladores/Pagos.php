@@ -30,6 +30,13 @@
             redireccionar("/Pagos/index/$id");
         }
 
+        public function pagar($id){
+           $this->datos["reparaciones"]=$this->PagosModelo->getReparaciones($id);
+           $this->vista('cliente/PagarReparacion',$this->datos);
+            
+            
+        
+        }
 
 
     }

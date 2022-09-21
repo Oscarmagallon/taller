@@ -41,8 +41,8 @@
             $ids = $this->IncidenciasModelo->verEstado($id);
             for ($i=0; $i <sizeof($ids) ; $i++) { 
                 $this->datos['Estado'][$i] = $this->IncidenciasModelo->estado($ids[$i]->idIncidencias);
-
             }
+            $this->datos['id'] = $id;
             $this->vista("cliente/estado",$this->datos);
         
 
