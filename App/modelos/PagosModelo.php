@@ -19,8 +19,14 @@
         }
 
         public function getReparaciones($id){
-            $this->db->query("SELECT * From ingreso where reparaciones_idreparaciones = $id");
+            $this->db->query("SELECT * From ingreso where reparaciones_idreparaciones = $id and Pagado = 0 ");
             return $this->db->registros();
+        }
+
+        public function pagarCliente($id){
+            $this->db->query("UPDATE ingreso SET Pagado = 1  WHERE reparaciones_idreparaciones = $id");
+            $this->db->execute();
+
         }
 
     }
