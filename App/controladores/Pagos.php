@@ -19,15 +19,21 @@
             //conseguir el precio y los articulos de cada moto
             $this->datos['Pagos'] = $this->PagosModelo->getPagos($id);
             $this->datos['id'] =$id;
-            $this->vista('admin/pagos',$this->datos);
+            if(!empty($datos['Pagos'])){
+            $this->datos['ingresos'] = $this->PagosModelo->getReparaciones($this->datos['Pagos'][0]->idreparaciones);
+            }
+            $this->datos['ingresos']=[];
+           $this->vista('admin/pagos',$this->datos);
             }
             
 
         public function manObra(){
             $manoObra = $_POST['text'];
             $id = $_POST['idReparacion'];
+            $idMoto = $_POST['idMoto'];
+            echo $idMoto;
             $this->PagosModelo->addManObra($id,$manoObra);
-            redireccionar("/Pagos/index/$id");
+            redireccionar("/Pagos/index/$idMoto");
         }
 
         public function pagar($id){

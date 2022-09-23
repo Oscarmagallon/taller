@@ -2,7 +2,7 @@
 <body class="container">
 <h1>Estado</h1>
 <nav class="navbar navbar-light navbar-expand-lg" style="background-color: #e3f2fd;">
-<?php print_r($datos) ?>
+<?php print_r($datos['Pagos']) ?>
 
     <div class="container-fluid px-2">
               <form autocomplete="off" class="d-flex">
@@ -25,15 +25,15 @@
         </thead>
         <tbody>
             <?php $total = 0?>
-            <?php foreach($datos['Pagos'] as $p): ?>
+            <?php foreach($datos['ingresos'] as $p): ?>
                 
             <tr>
-                <td><?php echo $p->Tipo ?></td>
-                <td><?php echo $p->descr?></td>
-                <td><?php echo $p->Costo?></td>
+                <td><?php echo $p->Descr ?></td>
+                <td><?php echo $p->Descr?></td>
+                <td><?php echo $p->Ingreso?></td>
             </tr>
           <?php
-          $total = $total+ $p->Costo; ?>
+          $total = $total+ $p->Ingreso; ?>
            
             <?php endforeach;?>
             
@@ -41,12 +41,16 @@
     </table>
 </body>
 <h3>Total <?php echo $total ?></h3>
-
+<?php if(!empty($datos['ingresos'])): ?>
 <form method="POST" action="<?php echo RUTA_URL ?>/Pagos/manObra">
     <label for="text">Mano de obra</label>
     <input type="number" name="text" id="text">
-    <input type ="hidden" value="<?php echo $datos['id']?>" name ="idReparacion">
+   
+    <input type ="hidden" value="<?php echo $datos['Pagos'][0]->idreparaciones?>" name ="idReparacion">
+    <input type ="hidden" value="<?php echo $datos['id']?>" name ="idMoto">
     <input type="submit">
+    <?php endif; ?>
+   
 </form>
 
 
