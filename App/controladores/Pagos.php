@@ -19,10 +19,12 @@
             //conseguir el precio y los articulos de cada moto
             $this->datos['Pagos'] = $this->PagosModelo->getPagos($id);
             $this->datos['id'] =$id;
-            if(!empty($datos['Pagos'])){
-            $this->datos['ingresos'] = $this->PagosModelo->getReparaciones($this->datos['Pagos'][0]->idreparaciones);
-            }
+            if(!empty($this->datos['Pagos'])){
+            $this->datos['ingresos'] = $this->PagosModelo->getReparaciones($this->datos['Pagos'][0]->reparaciones_idreparaciones);
+           }else{
             $this->datos['ingresos']=[];
+           }
+     
            $this->vista('admin/pagos',$this->datos);
             }
             

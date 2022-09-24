@@ -2,7 +2,7 @@
 <body class="container">
 <h1>Estado</h1>
 <nav class="navbar navbar-light navbar-expand-lg" style="background-color: #e3f2fd;">
-<?php print_r($datos['Pagos']) ?>
+<?php print_r($datos['ingresos']) ?>
 
     <div class="container-fluid px-2">
               <form autocomplete="off" class="d-flex">
@@ -46,7 +46,7 @@
     <label for="text">Mano de obra</label>
     <input type="number" name="text" id="text">
    
-    <input type ="hidden" value="<?php echo $datos['Pagos'][0]->idreparaciones?>" name ="idReparacion">
+    <input type ="hidden" value="<?php echo $datos['Pagos'][0]->reparaciones_idreparaciones?>" name ="idReparacion">
     <input type ="hidden" value="<?php echo $datos['id']?>" name ="idMoto">
     <input type="submit">
     <?php endif; ?>
