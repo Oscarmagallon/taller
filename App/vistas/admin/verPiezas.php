@@ -9,9 +9,10 @@
     <?php  foreach ($datos["piezasMoto"] as $p ): ?>
         <div class="card" style="width: 19rem;"> 
             <div class="card-body">
-                <h5 class="card-title"><?php echo $p->Tipo?></h5>
-                <p class="card-text" ><?php  echo $p->descr?></p>
-                <a href="<?php echo RUTA_URL?>/Piezas/borrar/<?php echo $p->idArticulos?>/<?php echo $p->Tipo ?>/<?php echo $p->precio?>/<?php echo $datos['id']?>" class="btn btn-danger">Borrar</a>
+            <h3 class="card-title"><?php echo $p->Tipo?></h3>
+            <h5 class="card-body"><?php echo $p->descr?></h5>
+                
+                <a href="<?php echo RUTA_URL?>/Piezas/borrar/<?php echo $p->idArticulos?>/<?php echo $p->Tipo ?>/<?php echo $p->Precio?>/<?php echo $datos['id']?>" class="btn btn-danger">Borrar</a>
             </div class="">
                 <img class="card-img-bottom" src="http://2.bp.blogspot.com/_EZ16vWYvHHg/S9Rmg1NUc9I/AAAAAAAALP4/VcIsVqptCtw/s1600/www.BancodeImagenesGratuitas.com+-Motocicletas-2.jpg" style="height:100%">
       </div>

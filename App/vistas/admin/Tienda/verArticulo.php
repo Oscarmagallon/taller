@@ -54,21 +54,6 @@ json_encode($datos);
       <td>$ <span>500</span></td>
     </tr>
   </template>
-                <div class="col-md-3">
-                   <div class="logo">
-                    <a href="#"><h2>LOGO</h2></a>
-                   </div>
-                </div>
-                <div class="col-md-7">
-                    <ul class="nav navbar-nav">
-                      <li class="active"><a href="#">HOME</a></li>
-                      <li><a href="#">SHOP</a></li>
-                      <li><a href="#">BLOG</a></li>
-                      <li><a href="#">SHORTCODE</a></li>
-                      <li><a href="#">FEATURE</a></li>
-                      <li><a href="#">PAGES</a></li>
-                    </ul>
-                </div>
                 <style type="text/css">
 .nav.navbar-nav {
   margin-top: 28px;
@@ -83,7 +68,6 @@ json_encode($datos);
     color: #f39c12
 }
 </style>
-<p>hola</p>
                 <div class="col-md-2">
                     <div class="cart">
                         <p><i class="bi bi-cart2"></i><sup>0</sup> &#36;&nbsp;&nbsp;0.00</p>
@@ -97,7 +81,7 @@ json_encode($datos);
             <div class="row">
                 <div class="col-md-12">
                     <div class="bar">
-                        <h2>Related Products</h2>
+                        <h2>Productos en stock:</h2>
                         <img src="img/bar.jpg" alt="">
                     </div>
                 </div>

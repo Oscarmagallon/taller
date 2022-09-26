@@ -43,16 +43,20 @@
             return $this->db->registros();
         }
 
-        public function getPiezasMoto($ids){
-            $piezas =[];
-            $i=0;
-            foreach($ids as $id){
-                $this->db->query("SELECT articulos.Tipo , articulos.descr, articulos.idArticulos, articulos.precio from articulos INNER JOIN pieza on pieza.idArticulos = articulos.idArticulos where pieza.idArticulos = $id->idArticulos");
-                $piezas[$i] = $this->db->registro();
-                $i++;
-            } 
-    
-            return $piezas;
+        public function getPiezasMoto($id){
+            $this->db->query("select Ingreso.reparaciones_idreparaciones from incidencias inner join reparaciones on incidencias.idreparaciones = reparaciones.idreparaciones inner join Ingreso on reparaciones.idreparaciones = Ingreso.reparaciones_idreparaciones where incidencias.idIncidencias = '$id'");
+            return $this->db->registros();
+        }
+
+        public function getPiezasConId($ids){
+            if(!empty($ids)){
+                foreach($ids as $i){
+                    $this->db->query("SELECT articulos.idArticulos,articulos.Precio, articulos.Tipo, articulos.descr from reparaciones inner JOIN pieza ON reparaciones.idreparaciones = pieza.idreparaciones inner join articulos on pieza.idArticulos = articulos.idArticulos where reparaciones.idreparaciones = $i->reparaciones_idreparaciones ");
+                    return  $this->db->registros();
+                };
+                
+            }
+            //$this->db->query("select articulos.idArticulos, articulos.Tipo, articulos.descr from reparaciones inner JOIN pieza ON reparaciones.idreparaciones = pieza.idreparaciones inner join articulos on pieza.idArticulos = articulos.idArticulos where reparaciones.idreparaciones = $ids");
         }
 
         public function getReparacion($id){
