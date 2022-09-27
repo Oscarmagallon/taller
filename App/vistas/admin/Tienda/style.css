@@ -27,7 +27,7 @@ a{
   -webkit-transform-origin: 65% 40% 0;
 }
 .header-top {
-  background: #424242 none repeat scroll 0 0;
+
   height: 35px;
   line-height: 35px;
 }
@@ -81,23 +81,11 @@ a{
   color: #4f4f4f;
   font-family: "Roboto",sans-serif;
   font-size: 61px;
-  font-weight: bold;
 }
 .logo > a {
   text-decoration: none;
 }
-.nav.navbar-nav {
-  margin-top: 28px;
-}
-.navbar-nav > li > a {
-  color: #665f5f;
-  font-size: 21px;
-    font-family: 'Roboto', sans-serif;
-}
-.nav.navbar-nav a:hover {
-    background: #fff;
-    color: #f39c12
-}
+
 .cart {
   text-align: right;
 }
@@ -135,7 +123,6 @@ a{
   color: #fff;
   font-family: "Roboto",sans-serif;
   font-size: 61px;
-  font-weight: bold;
   left: 30%;
   position: absolute;
   top: 45%;
@@ -257,12 +244,6 @@ a{
   font-weight: 400;
   text-align: center;
   margin-bottom: 50px;
-}
-.teams:hover>.overlay{
-    opacity: 1
-}
-.teams:hover>.icon{
-    opacity: 1
 }
 .footer_top {
   background: #252525 none repeat scroll 0 0;
@@ -593,10 +574,6 @@ a{
   margin: 5px 0;
   padding: 5px 0 5px 35px;
 }
-.categorie p:hover {
-  color: #fff;
-    background: #f39c12
-}
 .tags{
   border: 1.5px solid #bfb7b7;
     padding: 35px 12px
@@ -617,10 +594,7 @@ a{
     font-family: "Roboto",sans-serif;
     margin: 0px 6px
 }
-.pagination li a:hover{
-    background: #f39c12;
-    color: #fff
-}
+
 .pagination {
   margin: 20px 0 95px;
   padding-left: 22%;
@@ -745,9 +719,6 @@ a{
   padding-right: 15px;
 }
 
-.single-product-text p.icon i:hover {
-  color: #000;
-}
 .single-product-text .cart p {
   background: #f39c12 none repeat scroll 0 0;
   color: #fff;
@@ -926,15 +897,6 @@ a{
   font-size: 18px;
   margin-right: 10px;
 }
-.s_product:hover > .s_overlay{
-    opacity: 1
-}
-.s_product:hover > h4{
-    opacity: 1
-}
-.s_product:hover > h3{
-    opacity: 0
-}
 .rate > h3 {
   margin: 0;
   padding-top: 40px;
@@ -971,37 +933,9 @@ a{
     font-weight: 400;
     font-family: "Roboto",sans-serif;
 }
-.owl-nav .owl-prev{
-    float: left;
-    text-transform: uppercase;
-    border: 1px solid #bfb6b6;
-    padding: 5px 10px;
-    
-}
-.owl-nav .owl-prev:hover{
-    background: #f39c12;
-    border: 1px solid #f39c12;
-    color: #fff;
-    font-weight: 400;
-    font-family: "Roboto",sans-serif;
-    
-}
-.owl-nav .owl-next{
-    float: right;
-    text-transform: uppercase;
-    border: 1px solid #bfb6b6;
-    padding: 5px 10px;
-    font-weight: 400;
-    font-family: "Roboto",sans-serif;
-    font-size: 16px
-}
 
-.owl-nav .owl-next:hover{
-    background: #f39c12;
-    border: 1px solid #f39c12;
-    color: #fff
-    
-}
+
+
 .owl-carousel.owl-loaded.owl-drag {
   margin-top: 55px;
   width: 790px;
@@ -1047,9 +981,6 @@ a{
   font-size: 20px;
   padding: 10px 0;
   width: 50px;
-}
-.shere p i:hover {
-  color: #f39c12;
 }
 .shere .fa.fa-google-plus {
   border-right: 1px solid #bfb6b6;
@@ -1119,7 +1050,6 @@ ul.commentlist li .comment-author img {
   max-width: 88px;
 }
 ul.commentlist li .author-name { 
-    font-weight:bold; 
     font-size:16px; 
     padding-bottom:5px; 
 }
@@ -1130,9 +1060,6 @@ ul.commentlist li .author-name a {
 .comment .reply p{
     margin-left: 103px;
     color: #534f4f;
-}
-.comment .reply p:hover{
-    color: #f39c12;
 }
 
 .comment input {
@@ -1264,7 +1191,6 @@ ul.commentlist li .author-name a {
 .header-feahion .header-text h3{
   color: #fff;
     font-size: 50px;
-    font-weight: bold;
     font-family: "Roboto",sans-serif;
 }
 .header-feahion > img {
@@ -1285,7 +1211,6 @@ ul.commentlist li .author-name a {
   bottom: 0;
   color: #fff;
   font-size: 19px;
-  font-weight: bold;
   position: absolute;
   text-align: center;
   width: 100%;
@@ -1293,9 +1218,6 @@ ul.commentlist li .author-name a {
   padding: 15px;
   margin: 0;
     opacity: 0
-}
-.product-s-display .s_display:hover > h2{
-    opacity: 1
 }
 .kawa{
   height: 20px;
@@ -1319,7 +1241,6 @@ ul.commentlist li .author-name a {
   font-size: 57px;
     font-weight: 400;
     font-family: "Roboto",sans-serif;
-    font-weight: bold;
     color: #fff
 }
 .season .text > h3 {
@@ -1359,12 +1280,6 @@ ul.commentlist li .author-name a {
     opacity: 0;
 }
 
-.product-single:hover i{
-   opacity: 1 
-}
-.product-single:hover .single-overlay{
-   opacity: 1 
-}
 .prodact-s-text > h3 {
   margin: 0;
   padding-top: 40px;
@@ -1436,16 +1351,7 @@ section.featured {
   left: 15px;
     opacity: 0
 }
-.best-sell-part:hover> p{
-    opacity: 1
-}
-.best-sell-part:hover> h4{
-    opacity: 1;
-    background: #f39c12;
-    color: #fff;
-    font-weight: 400;
-    font-family: "Roboto",sans-serif
-}
+
 .best-sell-part > img {
   width: 100%;
 }
@@ -1518,13 +1424,11 @@ section.featured {
   padding: 10px 13px;
   font-family: "Roboto",sans-serif;
   font-size: 16px;
-    font-weight: bold
 }
 .f-images-text > h2 {
   color: #676767;
   font-family: "Roboto",sans-serif;
   font-size: 28px;
-  font-weight: bold;
   padding: 2px 0;
   margin-bottom: 32px;
 }
@@ -1532,7 +1436,6 @@ section.featured {
   color: #676767;
   font-family: "Roboto",sans-serif;
   font-size: 28px;
-  font-weight: bold;
   padding: 2px 0;
   margin-bottom: 32px;
 }
@@ -1597,7 +1500,6 @@ section.featured {
   top: 105px;
     font-size: 82px;
   font-family: "Roboto",sans-serif;
-  font-weight: bold;
     color: #fff;
 }
 .fashion > h2 {
@@ -1629,9 +1531,6 @@ section.featured {
   font-weight: 400;
   line-height: 41px;
 }
-.faq-page .desion > p:hover {
-  color: #f39c12;
-}
 
 .ui-state-active .ui-icon, .ui-button:active .ui-icon {
   background-color: #f39c12;
@@ -1643,24 +1542,11 @@ section.featured {
   margin-right: 10px;
 }
 
-.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default, .ui-button, html .ui-button.ui-state-disabled:hover, html .ui-button.ui-state-disabled:active {
-  background: #fff none repeat scroll 0 0;
-  border: 1px solid #fff;
-  color: #454545;
-  font-family: "Roboto",sans-serif;
-  font-size: 18px;
-  font-weight: 400;
-    
-}
 
 
 
-.ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active, a.ui-button:active, .ui-button:active, .ui-button.ui-state-active:hover {
-  background: #fff none repeat scroll 0 0;
-  border: 1px solid #fff;
-  color: #f39c12;
-  font-weight: normal;
-}
+
+
 
 .ui-state-active .ui-icon, .ui-button:active .ui-icon {
   background-image: url("images/ui-icons_ffffff_256x240.png");
@@ -1669,7 +1555,6 @@ section.featured {
 
 .ui-state-hover .ui-icon,
 .ui-state-focus .ui-icon,
-.ui-button:hover .ui-icon,
 .ui-button:active .ui-icon,
 .ui-button:focus .ui-icon {
 	background-image: url("img/ui-icons_ffffff_256x240.png");
