@@ -43,7 +43,7 @@
     <p>cambiar de img   </p>
     <script language="javascript"> 
 imagen1=new Image 
-imagen1.src="../admin/Tienda/img/casco.jpg" 
+imagen1.src="/admin/Tienda/img/casco.jpg" 
 imagen2=new Image 
 imagen2.src="url dela imagen 2" 
 var i=1; 

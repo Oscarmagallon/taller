@@ -4,7 +4,7 @@
 
 <html lang="en">
 <head>
-   
+   <?php print_r($datos['usuarioSesion'] ) ?>
     <meta charset="UTF-8">
     <title>Prodact Display</title>
     <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
@@ -24,7 +24,14 @@
     <img src="../Tienda/img/motsmt.jpg" alt="">
      <div class="ovearlay"></div>
      <div class="text">
+        <?php if($datos['usuarioSesion']->Rol_idRol==20) :?>
+         <h2>Tienda</h2>
+         <?php endif; ?>
+
+         <?php if($datos['usuarioSesion']->Rol_idRol==10) :?>
          <h2>Proveedores</h2>
+         <?php endif; ?>
+         
          <h3>Las mejores ofertas</h3>
      </div>
  </section>
@@ -48,7 +55,14 @@
                             <h2>Equipaciones de moto</h2>
                             
                         </div>
+                        <?php if ($datos['usuarioSesion']->Rol_idRol  == 10):?>
                         <h3><a href="<?php echo RUTA_URL ?>/Tienda/verArticulos/Equipacion">Ver</a></h3>
+                        <?php endif; ?>
+
+                        <?php if ($datos['usuarioSesion']->Rol_idRol == 20):?>
+                        <h3><a href="<?php echo RUTA_URL ?>/Tienda/verArticulos/Equipacion">Ver</a></h3>
+                        <?php endif; ?>
+                        
                     </div>
 
                     <div class="col-md-3 col-sm-6 col-xs-12">
@@ -57,7 +71,13 @@
                             <div class="s_overlay"></div>
                             <h2>Cascos</h2>
                         </div>
+                        <?php if ($datos['usuarioSesion']->Rol_idRol  == 10):?>
                         <h3><a href="<?php echo RUTA_URL ?>/Tienda/verArticulos/Casco">Ver</a></h3>
+                        <?php endif; ?>
+
+                        <?php if ($datos['usuarioSesion']->Rol_idRol == 20):?>
+                        <h3><a href="<?php echo RUTA_URL ?>/Tienda/verArticulos/Casco">Ver</a></h3>
+                        <?php endif; ?>
                     </div>
 
                     <div class="col-md-3 col-sm-6 col-xs-12">
@@ -66,7 +86,13 @@
                             <div class="s_overlay"></div>
                             <h2>Motos</h2>
                         </div>
+                            <?php if ($datos['usuarioSesion']->Rol_idRol  == 10):?>
                         <h3><a href="<?php echo RUTA_URL ?>/Tienda/verArticulos/Moto">Ver</a></h3>
+                        <?php endif; ?>
+
+                        <?php if ($datos['usuarioSesion']->Rol_idRol == 20):?>
+                        <h3><a href="<?php echo RUTA_URL ?>/Tienda/verArticulos/Moto">Ver</a></h3>
+                        <?php endif; ?>
                     </div>
 
                     <div class="col-md-3 col-sm-6 col-xs-12">
@@ -76,8 +102,14 @@
                             <h2>Piezas</h2>
                             
                         </div> 
-                        <h3><a href="<?php echo RUTA_URL ?>/Tienda/verArticulos/Pieza">Ver</a></h3>                    </div>
-                </div>
+                        <?php if ($datos['usuarioSesion']->Rol_idRol  == 10):?>
+                        <h3><a href="<?php echo RUTA_URL ?>/Tienda/verArticulos/Pieza">Ver</a></h3>
+                        <?php endif; ?>
+
+                        <?php if ($datos['usuarioSesion']->Rol_idRol == 20):?>
+                        <h3><a href="<?php echo RUTA_URL ?>/Tienda/verArticulos/Pieza">Ver</a></h3>
+                        <?php endif; ?>
+                    </div>
             </div>
         </div>
 </div>

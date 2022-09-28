@@ -3,6 +3,11 @@
 <h1>Estado</h1>
 <nav class="navbar navbar-light navbar-expand-lg" style="background-color: #e3f2fd;">
 <?php print_r($datos) ?>
+    <style>
+        table { border-collapse: collapse; margin: 25px 0; font-size: 1em; font-family: sans-serif; min-width: 450px; box-shadow: 0 0 20px rgba(0, 0, 0, 0.15); }
+        thead { background-color: blue; color: #ffffff; text-align: middle; }
+        tbody { padding: 12px 15px; }
+    </style>
 
     <div class="container-fluid px-2">
               <form autocomplete="off" class="d-flex">

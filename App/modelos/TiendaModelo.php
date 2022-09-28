@@ -12,6 +12,11 @@
             return $this->db->registros();
         }
 
+        public function getArticulosTienda($clase){
+            $this->db->query("SELECT idArticulos as idArticulosProvedores,Tipo, Precio, descr as Descripcion from articulos where Tipo = '$clase'");
+            return $this->db->registros();
+        }
+
         public function getArticulo($id){
             $this->db->query("SELECT * from articulosproveedor where idArticulosProvedores = $id");
             return $this->db->registros();

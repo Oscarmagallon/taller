@@ -29,6 +29,10 @@
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="<?php echo RUTA_URL?>/Peticiones">Peticiones</a>
         </li>
+
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="<?php echo RUTA_URL?>/Tienda">Tienda</a>
+        </li>
       </ul>
     <?php endif?>
     <?php if($datos['usuarioSesion']->Rol_idRol == 10): ?>
