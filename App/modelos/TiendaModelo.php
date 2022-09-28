@@ -38,6 +38,11 @@
         return $datos;
         }
 
+        public function verIdUltimoPedido(){
+            $this->db->query("SELECT idPedido_vinculado from pedido_vinculado order by idPedido_vinculado DESC LIMIT 1");
+            return $this->db->registro();
+        }
+
         public function rellenarGasto($carrito, $cod){
             foreach ($carrito as $c ){
                 $this->db->query("INSERT into gasto values (null, :descr, :precio, :tipo, :id)");

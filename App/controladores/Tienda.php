@@ -43,12 +43,22 @@
         public function carrito(){
             $json = file_get_contents('php://input');
             $datos = json_decode($json,true);//true devuelve array
-           
+           if ($this->datos['usuarioSesion']->Rol_idRol == 10){
             $carrito =  $this->TiendaModelo->obtenerProveedorCarrito($datos);
             $cod =  $this->datos['usuarioSesion']->idPersonal;            
             $this->TiendaModelo->addArticulos($carrito);
             $this->TiendaModelo->rellenarGasto($carrito,$cod);
             $this->vistaApi($datos);
+           }else{
+            $idPedido = $this->TiendaModelo->verIdUltimoPedido();
+            $idPedido->idPedido_vinculado = $idPedido->idPedido_vinculado+1;
+            if(empty($idPedido)){
+                $idPedido = 1;
+            }
+            //aqui podemos usar $idVinculado para crearlo
+            $this->TiendaModelo->crearPedidoVinculado($idPedido->idPedido_vinculado);
+           // $this->TiendaModelo->pedidoVinculado();
+           }
         }
 
 
