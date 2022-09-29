@@ -38,6 +38,12 @@
         return $datos;
         }
 
+        public function crearPedidoVinculado($id){
+            print_r("hola");
+            $this->db->query("INSERT into pedido_vinculado values ($id,CURDATE())");
+            $this->db->execute();
+        }
+
         public function verIdUltimoPedido(){
             $this->db->query("SELECT idPedido_vinculado from pedido_vinculado order by idPedido_vinculado DESC LIMIT 1");
             return $this->db->registro();

@@ -53,9 +53,11 @@
             $idPedido = $this->TiendaModelo->verIdUltimoPedido();
             $idPedido->idPedido_vinculado = $idPedido->idPedido_vinculado+1;
             if(empty($idPedido)){
-                $idPedido = 1;
+                $idPedido->idPedido_vinculado = 1;
             }
+           
             //aqui podemos usar $idVinculado para crearlo
+            print_r($idPedido->idPedido_vinculado);
             $this->TiendaModelo->crearPedidoVinculado($idPedido->idPedido_vinculado);
            // $this->TiendaModelo->pedidoVinculado();
            }
