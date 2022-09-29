@@ -39,7 +39,6 @@
         }
 
         public function crearPedidoVinculado($id){
-            print_r("hola");
             $this->db->query("INSERT into pedido_vinculado values ($id,CURDATE())");
             $this->db->execute();
         }
