@@ -50,18 +50,18 @@
             $this->TiendaModelo->rellenarGasto($carrito,$cod);
             $this->vistaApi($datos);
            }else{
-            $idPedido = new stdClass ();
-            $idPedido->Pedido_vinculado = 0;
             $idPedido = $this->TiendaModelo->verIdUltimoPedido();
-            if($idPedido->Pedido_vinculado==0){
-              print_r($idPedido);
+            if(empty($idPedido)){
+                $idPedido = new stdClass ();
+                $idPedido->idPedido_vinculado = 1;
+
             }else{
                 $idPedido->idPedido_vinculado = $idPedido->idPedido_vinculado+1;
 
             }
            
             //aqui podemos usar $idVinculado para crearlo
-            //$this->TiendaModelo->crearPedidoVinculado($idPedido->idPedido_vinculado);
+            $this->TiendaModelo->crearPedidoVinculado($idPedido->idPedido_vinculado);
            // $this->TiendaModelo->pedidoVinculado();
            }
         }
