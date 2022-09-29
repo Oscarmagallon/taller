@@ -62,6 +62,9 @@
            
             //aqui podemos usar $idVinculado para crearlo
             $this->TiendaModelo->crearPedidoVinculado($idPedido->idPedido_vinculado);
+            foreach($datos as $c){
+                $this->TiendaModelo->addPedidoArticulo($c['id'], $idPedido->idPedido_vinculado);
+            }
            // $this->TiendaModelo->pedidoVinculado();
            }
         }

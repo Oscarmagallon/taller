@@ -80,5 +80,9 @@
         }
 
         
-       
+       public function addPedidoArticulo($id, $pedido){
+        $this->db->query("UPDATE articulos SET pedido_vinculado = $pedido, Vendido = 1
+                          where idArticulos = $id");
+        $this->db->execute();
+       }
     }
