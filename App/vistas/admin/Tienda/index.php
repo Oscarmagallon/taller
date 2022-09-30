@@ -56,11 +56,11 @@
                             
                         </div>
                         <?php if ($datos['usuarioSesion']->Rol_idRol  == 10):?>
-                        <h3><a href="<?php echo RUTA_URL ?>/Tienda/verArticulos/Equipacion">Ver</a></h3>
+                        <h3><a href="<?php echo RUTA_URL ?>/Tienda/verArticulos/2">Ver</a></h3>
                         <?php endif; ?>
 
                         <?php if ($datos['usuarioSesion']->Rol_idRol == 20):?>
-                        <h3><a href="<?php echo RUTA_URL ?>/Tienda/verArticulos/Equipacion">Ver</a></h3>
+                        <h3><a href="<?php echo RUTA_URL ?>/Tienda/verArticulos/2">Ver</a></h3>
                         <?php endif; ?>
                         
                     </div>
@@ -72,11 +72,11 @@
                             <h2>Cascos</h2>
                         </div>
                         <?php if ($datos['usuarioSesion']->Rol_idRol  == 10):?>
-                        <h3><a href="<?php echo RUTA_URL ?>/Tienda/verArticulos/Casco">Ver</a></h3>
+                        <h3><a href="<?php echo RUTA_URL ?>/Tienda/verArticulos/3">Ver</a></h3>
                         <?php endif; ?>
 
                         <?php if ($datos['usuarioSesion']->Rol_idRol == 20):?>
-                        <h3><a href="<?php echo RUTA_URL ?>/Tienda/verArticulos/Casco">Ver</a></h3>
+                        <h3><a href="<?php echo RUTA_URL ?>/Tienda/verArticulos/3">Ver</a></h3>
                         <?php endif; ?>
                     </div>
 
@@ -87,11 +87,11 @@
                             <h2>Motos</h2>
                         </div>
                             <?php if ($datos['usuarioSesion']->Rol_idRol  == 10):?>
-                        <h3><a href="<?php echo RUTA_URL ?>/Tienda/verArticulos/Moto">Ver</a></h3>
+                        <h3><a href="<?php echo RUTA_URL ?>/Tienda/verArticulos/4">Ver</a></h3>
                         <?php endif; ?>
 
                         <?php if ($datos['usuarioSesion']->Rol_idRol == 20):?>
-                        <h3><a href="<?php echo RUTA_URL ?>/Tienda/verArticulos/Moto">Ver</a></h3>
+                        <h3><a href="<?php echo RUTA_URL ?>/Tienda/verArticulos/4">Ver</a></h3>
                         <?php endif; ?>
                     </div>
 
@@ -103,11 +103,11 @@
                             
                         </div> 
                         <?php if ($datos['usuarioSesion']->Rol_idRol  == 10):?>
-                        <h3><a href="<?php echo RUTA_URL ?>/Tienda/verArticulos/Pieza">Ver</a></h3>
+                        <h3><a href="<?php echo RUTA_URL ?>/Tienda/verArticulos/1">Ver</a></h3>
                         <?php endif; ?>
 
                         <?php if ($datos['usuarioSesion']->Rol_idRol == 20):?>
-                        <h3><a href="<?php echo RUTA_URL ?>/Tienda/verArticulos/Pieza">Ver</a></h3>
+                        <h3><a href="<?php echo RUTA_URL ?>/Tienda/verArticulos/1">Ver</a></h3>
                         <?php endif; ?>
                     </div>
             </div>

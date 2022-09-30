@@ -24,7 +24,7 @@
             <!-- Fila 2-->
                     <div class="row">
                         <div class="col-sm-6 col-md-6 col-lg-6 about-img order-lg-2 wow fadeInRight"  data-wow-delay="0s"  data-wow-duration="1.9s">                         
-                            <img src="../admin/Tienda/img/casco.jpg" alt="">           
+                            <img src="logo.png" alt="">           
                       </div>
                       <div class="col-sm-6 col-md-6 col-lg-6 content order-lg-1 wow fadeInLeft"  data-wow-delay="0s"  data-wow-duration="1.9s">                     
                             <h2>Lorem ipsum dolor sit amet, consectetur adipiscing</h2>

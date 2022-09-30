@@ -20,9 +20,13 @@
             if($this->datos['usuarioSesion']->Rol_idRol == 20){
             $idPersonal = $this->datos['usuarioSesion']->idPersonal;
             $codProp = $this->PeticionModelo->getProp($idPersonal);
-            $motos = $this->PeticionModelo->getMotosCliente($codProp->idPropietario);
+            if(!empty($codProp->idPropietario)){
+                $motos = $this->PeticionModelo->getMotosCliente($codProp->idPropietario);
             $this->datos["Motos"] = $motos;
             $this->vista('cliente/peticion',$this->datos);
+            }
+            echo "No posees motos";
+            
             }else{
                 redireccionar("/Peticiones/elegirMoto");
             }
