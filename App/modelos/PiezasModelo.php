@@ -28,8 +28,25 @@
         }
 
         public function ingreso($Tipo,$precio,$reparaciones){
+            switch ($Tipo) {
+                case '1':
+                    $tipo = 'Pieza';
+                    break;
+                
+                case '2':
+                    $tipo = 'Equipacion';
+                    break;
+                    
+                case '3':
+                    $tipo = 'Casco';
+                    break;
+
+                 case '4':
+                    $tipo = 'Moto';
+                    break;
+            }
             $this->db->query("INSERT into ingreso (idIngreso, Descr, Ingreso, reparaciones_idreparaciones)
-                                    values(null, '$Tipo', $precio, $reparaciones)");
+                                    values(null, '$tipo', $precio, $reparaciones)");
             $this->db->execute();
         }
 

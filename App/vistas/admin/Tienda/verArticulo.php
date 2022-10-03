@@ -215,7 +215,6 @@ const pintarCarrito = () =>{
   Object.values(carrito).forEach(producto =>{
     templateCarrito.querySelector('th').textContent = producto.id;
     templateCarrito.querySelectorAll('td')[0].textContent = producto.tipo;
-    case:
     templateCarrito.querySelectorAll('td')[1].textContent = producto.cantidad;
     templateCarrito.querySelectorAll('td')[2].textContent = producto.descripcion;
     templateCarrito.querySelector('.btn-info').dataset.id = producto.id;

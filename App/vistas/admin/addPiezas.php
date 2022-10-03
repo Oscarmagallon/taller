@@ -30,7 +30,7 @@
             <select name="pieza" id="">
             <?php foreach($datos['Piezas'] as $m): ?>
                 <?php if($m->Vendido == 0 ): ?>
-                    <option value="<?php echo $m->idArticulos?>"> <?php echo $m->Tipo." ".$m->Precio."$"?> </option>
+                    <option value="<?php echo $m->idArticulos?>"> <?php echo $m->descr." ".$m->Precio."$"?> </option>
                 <?php endif;?>
            <?php endforeach;?>
             </select>
