@@ -38,8 +38,8 @@
         return $datos;
         }
 
-        public function crearPedidoVinculado($id){
-            $this->db->query("INSERT into pedido_vinculado values ($id,CURDATE())");
+        public function crearPedidoVinculado($id,$cliente){
+            $this->db->query("INSERT into pedido_vinculado values ($id,CURDATE(),$cliente)");
             $this->db->execute();
         }
 

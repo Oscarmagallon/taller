@@ -28,6 +28,7 @@
                 $this->datos['articulos'] = $this->TiendaModelo->getArticulosTienda($clase);
 
             }
+            print_r($this->datos['articulos']);
             $this->vista("admin/Tienda/verArticulo", $this->datos);
         }
 
@@ -61,9 +62,10 @@
             }
            
             //aqui podemos usar $idVinculado para crearlo
-            $this->TiendaModelo->crearPedidoVinculado($idPedido->idPedido_vinculado);
+            $cliente = $this->datos['usuarioSesion']->idPersonal;
+            $this->TiendaModelo->crearPedidoVinculado($idPedido->idPedido_vinculado,$cliente);
             foreach($datos as $c){
-                $this->TiendaModelo->addPedidoArticulo($c['id'], $idPedido->idPedido_vinculado);
+               $this->TiendaModelo->addPedidoArticulo($c['id'], $idPedido->idPedido_vinculado);
             }
            // $this->TiendaModelo->pedidoVinculado();
            }
