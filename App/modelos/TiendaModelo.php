@@ -13,7 +13,7 @@
         }
 
         public function getArticulosTienda($clase){
-            $this->db->query("SELECT idArticulos as idArticulosProvedores,Tipo, Precio, descr as Descripcion from articulos where Tipo = '$clase'");
+            $this->db->query("SELECT idArticulos as idArticulosProvedores,Tipo, Precio, descr as Descripcion from articulos where Tipo = '$clase' and Vendido = 0");
             return $this->db->registros();
         }
 
@@ -77,6 +77,30 @@
             
             }
     
+        }
+
+        public function addIngresoCarrito($id, $tipo, $precio){
+            switch ($tipo) {
+                case '1':
+                    $tipo = 'Pieza';
+                    break;
+                
+                case '2':
+                    $tipo = 'Equipacion';
+                    break;
+                    
+                case '3':
+                    $tipo = 'Casco';
+                    break;
+
+                 case '4':
+                    $tipo = 'Moto';
+                    break;
+            }
+            $this->db->query("INSERT into ingreso (idIngreso, Descr, Ingreso,Pedido_vinculado_idPedido_vinculado, Pagado)
+                                    values(null, '$tipo', $precio ,$id,1) ");
+            $this->db->execute();   
+
         }
 
         
