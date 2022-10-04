@@ -73,8 +73,7 @@ span.psw {
 
   <form action="" method="post">
   <div class="imgcontainer">
-    <a href="<?php echo RUTA_URL ?>">hola</a>
-    <img src="logo.png">
+    <img src="localhost/taller/App/vistas/logo.png" width="200px">
   </div>
 
   <div class="container">
@@ -88,7 +87,7 @@ span.psw {
   </div>
 
   <div class="container" style="background-color:#f1f1f1">
-    <span class="psw">Forgot <a href="#">password?</a></span>
+    <span class="registro">Nuevo? <a href="<?php RUTA_URL?>/Taller/Login/registro">registrate gratis</a></span>
   </div>
 </form>
 

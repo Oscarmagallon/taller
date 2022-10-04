@@ -38,4 +38,11 @@
             redireccionar('/');
         }
 
+        public function registro(){
+                print_r('hola');
+               $this->vista("cliente/registro",$this->datos);
+                
+        }
+        
+
     }
