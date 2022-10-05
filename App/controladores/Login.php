@@ -39,9 +39,23 @@
         }
 
         public function registro(){
-                print_r('hola');
-               $this->vista("cliente/registro",$this->datos);
-                
+               $this->vista("cliente/registroCliente",$this->datos);       
+        }
+
+        public function registrar(){
+            $usuarioNuevo = [
+                'nombre' => trim($_POST['Nombre']),
+                'email' => trim($_POST['Email']),
+                'apellido' => trim($_POST['Apellido']),
+                'contra' => trim($_POST['contra']),
+            ];
+
+            $this->loginModelo->addCliente($usuarioNuevo);
+            $id = $this->loginModelo->getId();
+            $this->loginModelo->addClienteApp($id->idPersonal);
+            redireccionar('/Login');
+    
+
         }
         
 

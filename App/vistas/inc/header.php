@@ -15,12 +15,17 @@
 <header>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
-    <a class="navbar-brand" href="">Bienvenido <?php print_r($datos['usuarioSesion']->Nombre) ?></a>
+    <?php if(empty($datos['usuarioSesion'])): ?>
+      <a class="navbar-brand" href="">Bienvenido a el registro de la aplicacion</a> 
+    <?php endif; ?>
+    <?php if(!empty($datos['usuarioSesion'])) :?>
+    <a class="navbar-brand" href="">Bienvenido  <?php print_r($datos['usuarioSesion']->Nombre) ?></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
+    <?php endif; ?>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <?php if($datos['usuarioSesion']->Rol_idRol == 20): ?>
+    <?php if(!empty($datos['usuarioSesion']) && $datos['usuarioSesion']->Rol_idRol == 20): ?>
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="<?php echo RUTA_URL?>/Cliente">Home</a>
@@ -33,9 +38,13 @@
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="<?php echo RUTA_URL?>/Tienda">Tienda</a>
         </li>
+        
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="<?php echo RUTA_URL?>/Motos">Añadir Moto</a>
+        </li>
       </ul>
     <?php endif?>
-    <?php if($datos['usuarioSesion']->Rol_idRol == 10): ?>
+    <?php if(!empty($datos['usuarioSesion']) && $datos['usuarioSesion']->Rol_idRol == 10): ?>
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="<?php echo RUTA_URL?>/Admin">Home</a>
@@ -51,6 +60,7 @@
         </li>
       </ul>
     <?php endif?>
+    <?php if(!empty($datos['usuarioSesion'])): ?>
       <ul class="d-flex navbar-nav ms-auto mb-2 mb-md-0 col-md-2">
                     <li class="navbar-text">
                         <?php echo $datos['usuarioSesion']->Nombre ?>
@@ -60,6 +70,7 @@
                     </li>
 
                 </ul>
+                <?php endif; ?>
     </div>
   </div>
 </nav>

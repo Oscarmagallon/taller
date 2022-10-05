@@ -15,6 +15,28 @@
             return $this->db->registro();
         }
 
+        public function addCliente($cliente){
+            $this->db->query("INSERT into Personal (idPersonal, Nombre, Apellido, Contraseña, Rol_idRol, Correo)
+                                     values(null,:nombre,:apellido, :contra, 20 , :correo)");
+            $this->db->bind(':nombre',$cliente['nombre']);
+            $this->db->bind(':apellido',$cliente['apellido']);
+            $this->db->bind(':correo',$cliente['email']);
+            $this->db->bind(':contra',$cliente['contra']);
+
+            $this->db->execute();
+        }
+
+        public function getId(){
+            $this->db->query("SELECT idPersonal FROM Personal ORDER BY idPersonal DESC LIMIT 1");
+            return $this->db->registro();
+        }
+
+        public function addClienteApp($id){
+            $this->db->query("INSERT into cliente (idPersonal,idPropietario)
+                                     values ($id, null)");
+            $this->db->execute();
+        }
+
         /*
         public function registroSesion($id_usuario){
             $this->db->query("INSERT INTO sesiones (id_sesion, id_usuario, fecha_inicio) 
