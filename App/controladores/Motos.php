@@ -39,6 +39,7 @@ class Motos extends Controlador{
             'idProp' => trim($_POST['idProp']),
         ];
         $this->motosModelo->addMoto($motoNueva);
+        redireccionar('/Peticiones');
 
     }
 
