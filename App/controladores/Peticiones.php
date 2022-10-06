@@ -36,6 +36,7 @@
         public function elegirMoto(){
             $motos = $this->PeticionModelo->getMotos();
             $this->datos["Motos"] = $motos;
+            $this->datos['Peticiones'] = $this->PeticionModelo->getPeticionesMoto();
             $this->vista('admin/elegirMoto',$this->datos);
         }
 
