@@ -1,7 +1,9 @@
 <?php require_once RUTA_APP.'/vistas/inc/header.php' ?>
 <body class="container">
 <h1>Estado</h1>
-<?php print_r($datos)?>
+<?php print_r($datos);
+json_encode($datos); ?>
+
 <nav class="navbar navbar-light navbar-expand-lg" style="background-color: #e3f2fd;">
 
     <div class="container-fluid px-2">
@@ -33,12 +35,7 @@
                 </select>
             <input type="hidden" name = "idMoto" value=" <?php echo $datos["MotoPeticion"]?>">
             <input type="hidden" name="reparaciones" value="<?php echo $datos["Peticiones"][0]->idreparaciones?>">
-            <select name="pieza" id="">
-            <?php foreach($datos['Piezas'] as $m): ?>
-                <?php if($m->Vendido == 0 ): ?>
-                    <option value="<?php echo $m->idArticulos?>"> <?php echo $m->descr." ".$m->Precio."$"?> </option>
-                <?php endif;?>
-           <?php endforeach;?>
+            <select name="pieza" id="pieza">
             </select>
             </td>
 
@@ -50,11 +47,27 @@
         </tbody>
         </form>
         <script>
+             let datoss = '<?php echo json_encode($datos);?>';
+             let datos = JSON.parse(datoss);
             function ShowSelected(){
+            var select2 = document.getElementById("pieza");
+            select2.innerHTML='';
             var select = document.getElementById("elegir"); /*Obtener el SELECT */
             var valor = select.options[select .selectedIndex].value
-            console.log(valor);
-            }
+            for (let i = 0; i < datos['Piezas'].length; i++) {
+                    option = document.createElement('option');
+                    if (datos['Piezas'][i]['Tipo'] == valor){
+                    option.appendChild(document.createTextNode(datos['Piezas'][i]['descr']+ '  '+datos['Piezas'][i]['Precio']));
+                    option.setAttribute("value", 2);
+
+                    select2.appendChild(option);
+                    }
+                   
+                    
+                    
+             }
+            
+        }
             </script>
             
 </body>
