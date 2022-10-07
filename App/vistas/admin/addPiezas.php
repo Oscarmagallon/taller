@@ -58,7 +58,8 @@ json_encode($datos); ?>
                     option = document.createElement('option');
                     if (datos['Piezas'][i]['Tipo'] == valor){
                     option.appendChild(document.createTextNode(datos['Piezas'][i]['descr']+ '  '+datos['Piezas'][i]['Precio']));
-                    option.setAttribute("value", 2);
+                    option.setAttribute("value", datos['Piezas'][i]['idArticulos']);
+                    console.log(datos['Piezas'][i]['idArticulos']);
 
                     select2.appendChild(option);
                     }
