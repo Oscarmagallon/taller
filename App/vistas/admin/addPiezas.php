@@ -25,6 +25,12 @@
         <form action="<?php echo RUTA_URL ?>/Piezas/add" method="POST">
         <tbody>
             <td>
+                <select name="Filtrar" id="elegir" onchange="javascript:ShowSelected()" >
+                    <option value="1">Pieza</option>
+                    <option value="2">Equipacion</option>
+                    <option value="3">Casco </option>
+                    <option value="4">Moto</option>
+                </select>
             <input type="hidden" name = "idMoto" value=" <?php echo $datos["MotoPeticion"]?>">
             <input type="hidden" name="reparaciones" value="<?php echo $datos["Peticiones"][0]->idreparaciones?>">
             <select name="pieza" id="">
@@ -35,6 +41,7 @@
            <?php endforeach;?>
             </select>
             </td>
+
             
             
             <td>
@@ -42,7 +49,13 @@
             </td>
         </tbody>
         </form>
-        
+        <script>
+            function ShowSelected(){
+            var select = document.getElementById("elegir"); /*Obtener el SELECT */
+            var valor = select.options[select .selectedIndex].value
+            console.log(valor);
+            }
+            </script>
             
 </body>
 
