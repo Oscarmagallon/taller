@@ -45,8 +45,8 @@
                     $tipo = 'Moto';
                     break;
             }
-            $this->db->query("INSERT into ingreso (idIngreso, Descr, Ingreso, reparaciones_idreparaciones)
-                                    values(null, '$tipo', $precio, $reparaciones)");
+            $this->db->query("INSERT into ingreso (idIngreso, Descr, Ingreso, reparaciones_idreparaciones, Pagado)
+                                    values(null, '$tipo', $precio, $reparaciones,0)");
             $this->db->execute();
         }
 

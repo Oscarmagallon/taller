@@ -10,7 +10,7 @@
   </div>
   <div class="form-group  mx-sm-3 mb-2">
     <label for="staticEmail2" class="sr-only">Centimetros cubicos</label>
-    <input type="text"  class="form-control-plaintext" id="staticEmail2" name="cc" value="125">
+    <input type="text"  class="form-control-plaintext" id="staticEmail2" name="cc" placeholder="1290">
   </div>
     <input type="hidden" value="<?php echo $datos['idPropietario'] ?>" name="idProp">
   <button type="submit" class="btn btn-primary  mx-sm-3 mb-2">Confirmar</button>
