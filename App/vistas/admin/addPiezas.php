@@ -56,7 +56,7 @@ json_encode($datos); ?>
             var valor = select.options[select .selectedIndex].value
             for (let i = 0; i < datos['Piezas'].length; i++) {
                     option = document.createElement('option');
-                    if (datos['Piezas'][i]['Tipo'] == valor){
+                    if (datos['Piezas'][i]['Tipo'] == valor && datos['Piezas'][i]['Vendido'] == 0 ){
                     option.appendChild(document.createTextNode(datos['Piezas'][i]['descr']+ '  '+datos['Piezas'][i]['Precio']));
                     option.setAttribute("value", datos['Piezas'][i]['idArticulos']);
                     console.log(datos['Piezas'][i]['idArticulos']);
