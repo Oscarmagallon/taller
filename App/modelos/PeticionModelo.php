@@ -39,7 +39,7 @@
         }
 
         public function getPeticionesMoto(){
-            $this->db->query("SELECT moto.idMoto,count(incidencias.idIncidencias) as numeroIncidencias FROM reparaciones INNER JOIN incidencias ON incidencias.idreparaciones = reparaciones.idreparaciones INNER JOIN moto_has_incidencias ON moto_has_incidencias.idIncidencias = incidencias.idIncidencias INNER JOIN moto ON moto.idMoto = moto_has_incidencias.idMoto where incidencias.Terminado = 0 GROUP by moto.idMoto;");
+            $this->db->query("SELECT moto.idMoto,count(incidencias.idIncidencias) as numeroIncidencias FROM incidencias INNER JOIN moto_has_incidencias ON moto_has_incidencias.idIncidencias = incidencias.idIncidencias INNER JOIN moto ON moto.idMoto = moto_has_incidencias.idMoto where incidencias.Terminado = 0 GROUP by moto.idMoto;");
             return $this->db->registros();
         }
 

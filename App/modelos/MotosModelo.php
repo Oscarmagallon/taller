@@ -30,10 +30,11 @@
         }
 
         public function addMoto($moto){
-            $this->db->query("INSERT into moto (idMoto, Marca, Modelo, idPropietario)
-                                            values(null, :marca, :modelo, :prop)");
+            $this->db->query("INSERT into moto (idMoto, Marca, Modelo, CC,  idPropietario)
+                                            values(null, :marca, :modelo, :cc, :prop)");
             $this->db->bind(":marca", $moto['Marca']);
             $this->db->bind(":modelo", $moto['Modelo']);
+            $this->db->bind(":cc", $moto['cc']);
             $this->db->bind(":prop", $moto['idProp']);
 
             $this->db->execute();
