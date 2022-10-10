@@ -8,7 +8,7 @@
         }
 
         public function getPagos($id){
-            $this->db->query("Select ingreso.reparaciones_idreparaciones from incidencias inner join ingreso on incidencias.idreparaciones = ingreso.reparaciones_idreparaciones where incidencias.idIncidencias = $id;");
+            $this->db->query("Select ingreso.reparaciones_idreparaciones from incidencias inner join ingreso on incidencias.idreparaciones = ingreso.reparaciones_idreparaciones where incidencias.idIncidencias = $id and Terminado = 1;");
             return $this->db->registros();
         }
         

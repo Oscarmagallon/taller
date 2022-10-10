@@ -34,7 +34,7 @@
                 }elseif(!empty($e[$i]->idPersonal) && $e[$i]->Terminado == 0 ){
                     echo "<td> En Progreso </td>";
                 }else{echo  "<td> Terminado </td>";  } ?>
-                <?php if(!empty($e[$i]->idreparaciones)):?>
+                <?php if($e[$i]->Terminado == 1):?>
                 <td><a href="<?php echo RUTA_URL?>/Pagos/pagar/<?php echo $e[$i]->idreparaciones?>">Pagar</a></td>
                 <?php endif; ?>
             </tr>

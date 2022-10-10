@@ -61,6 +61,8 @@
            $idReparacion = $ids->idReparaciones;
            $this->PeticionModelo->mecanicoRepara($meca,$idReparacion);
             $this->PeticionModelo->terminada($id);
+            $correo = 'vito96200@gmail.com';
+            $asunto = 'Reparacion';
            redireccionar("/Peticiones/verPeticionesProgreso/$idMoto");
 
         }
