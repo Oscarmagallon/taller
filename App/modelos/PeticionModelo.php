@@ -72,6 +72,11 @@
 
         }
 
+        public function getPropietario($id){
+            $this->db->query("SELECT personal.Correo, personal.Nombre from personal inner Join cliente on cliente.idPersonal = personal.idPersonal inner Join propietario on propietario.idPropietario = cliente.idPropietario inner join moto on moto.idPropietario = propietario.idPropietario where moto.idMoto = $id;");
+            return $this->db->registros();
+        }
+
         public function insertarReparacion($fecha){
             $today = date('Y/m/d');
             $this->db->query("INSERT into reparaciones values (null, '$today', '$fecha')");

@@ -1,5 +1,5 @@
 <?php
-
+include ('mail.php');
     class Peticiones extends Controlador{
 
         public function __construct(){
@@ -57,13 +57,12 @@
         public function peticionTerminada($meca,$id,$idMoto){
            
            $ids = $this->PeticionModelo->getIdReparacion();
-           //hay que pasarsela de la pestaña peticiones en progreso.
            $idReparacion = $ids->idReparaciones;
            $this->PeticionModelo->mecanicoRepara($meca,$idReparacion);
             $this->PeticionModelo->terminada($id);
-            $correo = 'vito96200@gmail.com';
-            $asunto = 'Reparacion';
-           redireccionar("/Peticiones/verPeticionesProgreso/$idMoto");
+            $this->datos['Prop'] = $this->PeticionModelo->getPropietario($idMoto);
+            enviarEmail($this->datos['Prop']);
+            redireccionar("/Peticiones/verPeticionesProgreso/$idMoto");
 
         }
 
