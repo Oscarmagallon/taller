@@ -21,7 +21,7 @@
 </head>
 <body>
 <section class="season">
-    <img src="../Tienda/img/motsmt.jpg" alt="">
+    <img  src="<?php echo RUTA_URL?>/img/motsmt.jpg">
      <div class="ovearlay"></div>
      <div class="text">
         <?php if($datos['usuarioSesion']->Rol_idRol==20) :?>
@@ -42,7 +42,7 @@
                 <div class="col-md-12">
                     <div class="bar">
                         <h2>Articulos</h2>
-                        <img alt="" src="../Tienda/img/bar.jpg">
+                        <img alt=""  src="<?php echo RUTA_URL?>/img/bar.jpg">
                     </div>
                 </div>
             </div>
@@ -67,7 +67,7 @@
 
                     <div class="col-md-3 col-sm-6 col-xs-12">
                         <div class="s_product">
-                            <img alt="" src="../Tienda/img/casco.jpg">
+                            <img alt="" height="200" src="<?php echo RUTA_URL?>/img/casco.jpg">
                             <div class="s_overlay"></div>
                             <h2>Cascos</h2>
                         </div>
@@ -82,7 +82,7 @@
 
                     <div class="col-md-3 col-sm-6 col-xs-12">
                         <div class="s_product">
-                            <img alt="" src="../Tienda/img/moto.jpg">
+                            <img alt="50" height="200" src="<?php echo RUTA_URL?>/img/moto.jpg">
                             <div class="s_overlay"></div>
                             <h2>Motos</h2>
                         </div>
@@ -140,7 +140,7 @@
                         <div class="col-md-1"></div>
                         <li><a class="col-2" href="#"><img src="../Tienda/img/marcas-aprilia.jpg"></a></li>
                         <div class="col-md-1"></div>
-                        <li><a class="col-2" href="#"><img src="../Tienda/img/marcas-yamaha.jpg"></a></li>
+                        <li><a class="col-2" href="#"><img height="200" src="<?php echo RUTA_URL?>/img/marcas-yamaha.jpg"></a></li>
                         <div class="col-md-1"></div>
                   
                     </ul>
