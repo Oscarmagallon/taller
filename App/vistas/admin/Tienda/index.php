@@ -50,7 +50,7 @@
                 <div class="row">
                     <div class="col-md-3 col-sm-6 col-xs-12">
                         <div class="s_product">
-                            <img  width="285" height="213" src="../Tienda/img/chaquetas.jpg">
+                            <img  width="285" height="213" src="<?php echo RUTA_URL?>/img/chaquetas.jpg">
                             <div class="s_overlay"></div>
                             <h2>Equipaciones de moto</h2>
                             
@@ -97,7 +97,7 @@
 
                     <div class="col-md-3 col-sm-6 col-xs-12">
                         <div class="s_product">
-                            <img alt="" src="../Tienda/img/piezas.jpg">
+                            <img alt="" src="<?php echo RUTA_URL ?>/img/piezas.jpg">
                             <div class="s_overlay"></div>
                             <h2>Piezas</h2>
                             
@@ -132,13 +132,13 @@
             <div class="col-md-12">
                 <div class="slider-container">
                     <ul id="slider">
-                        <li><a class="col-md-2" href="#"><img src="../Tienda/img/marca-kawa.jpg"></a></li>
+                        <li><a class="col-md-2" href="#"><img src="<?php echo RUTA_URL?>/img/marca-kawa.jpg"></a></li>
                         <div class="col-md-1"></div>
-                        <li><a class="col-2" href="#"><img src="../Tienda/img/marca-ktm.jpg"></a></li>
+                        <li><a class="col-2" href="#"><img src="<?php echo RUTA_URL?>/img/marca-ktm.jpg"></a></li>
                         <div class="col-md-1"></div>
-                        <li><a class="col-md-2" href="#"><img src="../Tienda/img/marca-suzuki.jpg"></a></li>
+                        <li><a class="col-md-2" href="#"><img src="<?php echo RUTA_URL?>/img/marcas-honda.jpg"></a></li>
                         <div class="col-md-1"></div>
-                        <li><a class="col-2" href="#"><img src="../Tienda/img/marcas-aprilia.jpg"></a></li>
+                        <li><a class="col-2" href="#"><img src="<?php echo RUTA_URL?>/img/marcas-aprilia.jpg"></a></li>
                         <div class="col-md-1"></div>
                         <li><a class="col-2" href="#"><img height="200" src="<?php echo RUTA_URL?>/img/marcas-yamaha.jpg"></a></li>
                         <div class="col-md-1"></div>
