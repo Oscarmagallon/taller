@@ -1,41 +1,36 @@
 <?php require_once RUTA_APP.'/vistas/inc/header.php' ?>
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">  </p><br /><br />
-<p>Centrar toda la pagina</p>    
-
 <div style="width:900px; position: relative; margin-left: auto; margin-right: auto;"> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">  </p><br /><br />
 <div class="container">
         <div class="row">
             <div class="col-3"></div>
-            <div class="col p-5 text-center"><h1><?php echo $datos['usuarioSesion']->Nombre ?></h1></div>
+            <div class="n"><p>    <b><font color="#000000" face="georgia" size="4"><marquee width="100%" scrollamount="5" bgcolor="#FFFFFF">Bienvenido <?php echo $datos['usuarioSesion']->Nombre ?></marquee>    </font></b></p><center>
+<br>
             <div class="col-3"></div>
         </div>
     	<section id="about" >
             <div class="container">
               <div class="row">
-                <div class="col-sm-6 col-md-6 col-lg-6 about-img wow fadeInLeft"  data-wow-delay="0s"  data-wow-duration="1.9s">                  
-                  <img src="logo.png" alt="">
+                <div class="col-sm-12 col-md-6 col-lg-6 about-img wow fadeInLeft"  data-wow-delay="0s"  data-wow-duration="1.9s">                  
+                  <a href="<?php echo RUTA_URL?>/Tienda"><img onmouseover="this.width=500;this.height=400;"onmouseout="this.width=200;this.height=150;" src="<?php echo RUTA_URL ?>/img/proveedores.jpg" alt="" height="150" width="200" title="Proveedores"></a>
                 </div>      
-                <div class="col-sm-6 col-md-6 col-lg-6 content wow fadeInRight"  data-wow-delay="0s"  data-wow-duration="1.9s">                
-                  <h2>Lorem ipsum dolor sit amet, consectetur adipiscing</h2>
-                  <h3>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h3>                 
+                <div class="col-sm-12 col-md-6 col-lg-6 content wow fadeInRight"  data-wow-delay="0s"  data-wow-duration="1.9s">                
+                  <a href="<?php echo RUTA_URL ?>/MotosListas"><img onmouseover="this.width=500;this.height=400;" onmouseout="this.width=200;this.height=150;" src="<?php echo RUTA_URL ?>/img/check.png" height="150" width="200" title="Motos listas"></a>
                 </div>
               </div>      
             <!-- Fila 2-->
                     <div class="row">
-                        <div class="col-sm-6 col-md-6 col-lg-6 about-img order-lg-2 wow fadeInRight"  data-wow-delay="0s"  data-wow-duration="1.9s">                         
-                            <img src="logo.png" alt="">           
+                        <div class="col-sm-12 col-md-6 col-lg-6 about-img order-lg-2 wow fadeInRight"  data-wow-delay="0s"  data-wow-duration="1.9s">                         
+                            <a href="<?php echo RUTA_URL ?>/Peticiones"><img onmouseover="this.width=500;this.height=400;" onmouseout="this.width=200;this.height=150;" src="<?php echo RUTA_URL ?>/img/incidencia.jpg" title="Ver Incidencias" height="150" width="200"></a>           
                       </div>
-                      <div class="col-sm-6 col-md-6 col-lg-6 content order-lg-1 wow fadeInLeft"  data-wow-delay="0s"  data-wow-duration="1.9s">                     
-                            <h2>Lorem ipsum dolor sit amet, consectetur adipiscing</h2>
-                            <h3>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h3>                          
+                      <div class="col-sm-12 col-md-6 col-lg-6 content order-lg-1 wow fadeInLeft"  data-wow-delay="0s"  data-wow-duration="1.9s">                     
+                            <a href="<?php echo RUTA_URL ?>/Mecanico"><img onmouseover="this.width=500;this.height=400;" onmouseout="this.width=200;this.height=150;" src="<?php echo RUTA_URL ?>/img/mecanico.jpg"  title="Añadir Mecanico" height="150" width="200"></a>                          
                       </div>                                       
                     </div>
                   </div>
 	</section>  
     <div id="pruebas">
         <p>Letras en movimento</p>
-    <div class="n"><p>    <b><font color="#000000" face="georgia" size="4"><marquee width="400" scrollamount="5" bgcolor="#FFFFFF">Aquí tu texto</marquee>    </font></b></p><center>
         <br>
         <p>imagen con zoom</p>
     <img src="logoo.jpg" onmouseover="this.width=500;this.height=400;" onmouseout="this.width=200;this.height=150;" width="200" height="100" />
