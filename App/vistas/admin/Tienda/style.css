@@ -37,3 +37,57 @@
   margin: 1px;
   
 }
+.slider.error  {
+  height: 214px;
+  margin: 110px 0 58px;
+  width: 440px;
+}
+.slider .text {
+  margin-bottom: 134px;
+  padding-left: 18px;
+  text-align: center;
+}
+.slider .text h2 {
+  color: #434343;
+  font-family: "Roboto",sans-serif;
+  font-size: 61px;
+  font-weight: 400;
+  margin-bottom: 30px;
+}
+.slider .text p {
+  color: #959595;
+  font-family: "Roboto",sans-serif;
+  font-size: 19px;
+  font-weight: 400;
+  line-height: 25px;
+  margin-bottom: 18px;
+}
+.slider .text span {
+  color: #f39c12;
+}
+.slider .text h4 {
+  color: #434343;
+  font-family: "Roboto",sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  padding: 27px 0 15px;
+}
+.slider .text input[type="search"] {
+  background: #dcdcdc;
+  border: medium none;
+  width: 245px;
+}
+.slider .text input[placeholder] {
+  font-size: 20px;
+  font-weight: 400;
+  padding: 10px;
+}
+.slider .text button {
+  background: #f39c12 none repeat scroll 0 0;
+  border: medium none;
+  color: #fff;
+  font-size: 25px;
+  font-weight: 400;
+  margin-left: -4px;
+  padding: 5px 15px 8px;
+}

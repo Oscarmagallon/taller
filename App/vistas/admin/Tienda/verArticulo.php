@@ -54,20 +54,7 @@ json_encode($datos);
       <td>$ <span>500</span></td>
     </tr>
   </template>
-                <style type="text/css">
-.nav.navbar-nav {
-  margin-top: 28px;
-}
-.navbar-nav > li > a {
-  color: #665f5f;
-  font-size: 21px;
-    font-family: 'Roboto', sans-serif;
-}
-.nav.navbar-nav a:hover {
-    background: #fff;
-    color: #f39c12
-}
-</style>
+     
                 <div class="col-md-2">
                     <div class="cart">
                         <p><i class="bi bi-cart2"></i><sup>0</sup> &#36;&nbsp;&nbsp;0.00</p>

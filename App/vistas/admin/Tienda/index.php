@@ -11,11 +11,11 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700" rel="stylesheet">
     <link rel="stylesheet" href="../Tienda/css/bootstrap.css">
-    <link rel="stylesheet" href="../Tienda/css/font-awesome.min.css">
+   <!--  <link rel="stylesheet" href="../Tienda/css/font-awesome.min.css">
     <link rel="stylesheet" href="../Tienda/css/owl.carousel.min.css">
     <link rel="stylesheet" href="../Tienda/css/owl.theme.default.min.css">
     <link rel="stylesheet" href="../Tienda/css/magnific-popup.css">
-    <link rel="stylesheet" href="../Tienda/css/jquery.bxSlider.css">
+    <link rel="stylesheet" href="../Tienda/css/jquery.bxSlider.css"> -->
     <link href="../Tienda/style.css" rel="stylesheet" type="text/css" />
    
 </head>
@@ -119,7 +119,7 @@
             <div class="col-md-12">
                 <div class="bar">
                     <h2>Podrás econtrar:</h2>
-                    <img src="../Tienda/img/bar.jpg" alt="">
+                    <img src="<?php echo RUTA_URL ?>/img/bar.jpg" alt="">
                 </div>
             </div>
         </div>
@@ -131,19 +131,13 @@
             <div class="row">
             <div class="col-md-12">
                 <div class="slider-container">
-                    <ul id="slider">
-                        <li><a class="col-md-2" href="#"><img src="<?php echo RUTA_URL?>/img/marca-kawa.jpg"></a></li>
-                        <div class="col-md-1"></div>
-                        <li><a class="col-2" href="#"><img src="<?php echo RUTA_URL?>/img/marca-ktm.jpg"></a></li>
-                        <div class="col-md-1"></div>
-                        <li><a class="col-md-2" href="#"><img src="<?php echo RUTA_URL?>/img/marcas-honda.jpg"></a></li>
-                        <div class="col-md-1"></div>
-                        <li><a class="col-2" href="#"><img src="<?php echo RUTA_URL?>/img/marcas-aprilia.jpg"></a></li>
-                        <div class="col-md-1"></div>
-                        <li><a class="col-2" href="#"><img height="200" src="<?php echo RUTA_URL?>/img/marcas-yamaha.jpg"></a></li>
-                        <div class="col-md-1"></div>
-                  
-                    </ul>
+                <marquee  scrolldelay="1" scrollamount="10" direction="left" loop="infinite" onmouseout="this.start()" onmouseover="this.stop()">
+                    <img  HSPACE="70" VSPACE="70" src="<?php echo RUTA_URL?>/img/marcas-aprilia.jpg" height ="200px" width="200px"/>
+                    <img  HSPACE="70" VSPACE="70" src="<?php echo RUTA_URL?>/img/marca-kawa.jpg" height ="200px" width="200px"/>
+                    <img  HSPACE="70" VSPACE="70" src="<?php echo RUTA_URL?>/img/marca-ktm.jpg" height ="200px" width="200px"/>
+                    <img  HSPACE="70" VSPACE="70" src="<?php echo RUTA_URL?>/img/marcas-honda.jpg" height ="200px" width="200px"/>
+                    <img  HSPACE="70" VSPACE="70" src="<?php echo RUTA_URL?>/img/marcas-yamaha.jpg" height ="200px" width="200px"/>
+                </marquee>
                 </div>
             </div>
         </div>
@@ -152,15 +146,13 @@
     
    
 </footer>
-<script src="../Tienda/js/jquery-3.1.1.min.js"></script>
+<!-- <script src="../Tienda/js/jquery-3.1.1.min.js"></script>
 <script src="../Tienda/js/owl.carousel.min.js"></script> 
 <script src="../Tienda/js/bootstrap.min.js"></script>
 <script src="../Tienda/js/jquery.magnific-popup.min.js"></script>
 <script src="../Tienda/js/jquery.bxSlider.js"></script>
-<script>
-   
-    </script>  
 <script src="../Tienda/js/active.js"></script>  
+ -->
 </body>
 </html>
 <?php require_once RUTA_APP.'/vistas/inc/footer.php'?>
