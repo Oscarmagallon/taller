@@ -29,12 +29,7 @@
                     </div>
                   </div>
 	</section>  
-    <div id="pruebas">
-        <p>Letras en movimento</p>
-        <br>
-        <p>imagen con zoom</p>
-    <img src="logoo.jpg" onmouseover="this.width=500;this.height=400;" onmouseout="this.width=200;this.height=150;" width="200" height="100" />
-    <br>
+  
     <p>cambiar de img   </p>
     <script language="javascript"> 
 imagen1=new Image 

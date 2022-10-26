@@ -87,7 +87,10 @@
         }
 
         public function borrarPiezaIngreso($tipo,$precio,$idReparacion){
-            $this->db->query("DELETE from ingreso where reparaciones_idreparaciones = $idReparacion and Ingreso = $precio and Descr = '$tipo'");
+            
+            $tipoPieza = $this -> switchh($tipo);
+            echo $tipoPieza,'<br>', $precio, '<br>' , $idReparacion;
+            $this->db->query("DELETE from ingreso where reparaciones_idreparaciones = $idReparacion and Ingreso = $precio and Descr = '$tipoPieza'");
             $this->db->execute();
         }
 
@@ -95,6 +98,27 @@
             $this->db->query("UPDATE articulos SET Vendido = 0 WHERE idArticulos = $id");
             $this->db->execute();
 
+        }
+
+        public function switchh ($tipo){
+            switch ($tipo) {
+                case '1':
+                    $tipo = 'Pieza';
+                    break;
+                
+                case '2':
+                    $tipo = 'Equipacion';
+                    break;
+                    
+                case '3':
+                    $tipo = 'Casco';
+                    break;
+
+                 case '4':
+                    $tipo = 'Moto';
+                    break;
+            }
+            return $tipo;
         }
 
         

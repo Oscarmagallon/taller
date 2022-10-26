@@ -14,7 +14,7 @@
             INNER JOIN incidencias on moto_has_incidencias.idIncidencias = incidencias.idIncidencias 
             INNER JOIN reparaciones on reparaciones.idreparaciones = incidencias.idreparaciones 
             INNER JOIN ingreso on ingreso.reparaciones_idreparaciones = reparaciones.idreparaciones 
-            where ingreso.Pagado = 0 or Ingreso.Descr not in ('Mano Obra') GROUP by Ingreso.reparaciones_idReparaciones;");
+            where ingreso.Pagado = 0 Group by incidencias.idIncidencias");
             return $this->db->registros();
             //quitar
             "SELECT * FROM `ingreso` GROUP by reparaciones_idreparaciones HAVING Ingreso.Descr not in ('Mano Obra')";
