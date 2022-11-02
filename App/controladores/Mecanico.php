@@ -20,9 +20,39 @@
 
 
         public function index(){
-            $this->vista('admin/crearMecanico',$this->datos);
-
+            $this->datos["Mecanicos"] = $this->mecanicoModelo->getMecanicos();
+            $this->vista('admin/verMecanicos',$this->datos);
         }
+
+        public function formAdd(){
+            $this->vista('Admin/crearMecanico');
+        }
+
+        public function editar($id){
+            if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+
+                $mecanicoModificado = [
+                    'id_usuario' => trim($_POST['id']),
+                    'nombre' => trim($_POST['Nombre']),
+                    'apellido' => trim($_POST['Apellido']),
+                    'email' => trim($_POST['Email']),
+                ];
+
+                $this->mecanicoModelo->editMecanico($mecanicoModificado);
+                redireccionar('/Mecanico');
+            } else {
+                //obtenemos información del usuario y el listado de roles desde del modelo
+                $this->datos['Mecanico'] = $this->mecanicoModelo->getMecanico($id);
+                $this->vista('admin/editarMecanico',$this->datos);
+            }
+        }
+
+        public function borrar($id){
+            $this->mecanicoModelo->borrarMecan($id);
+            $this->mecanicoModelo->deleteMecan($id);
+            redireccionar('/Mecanico');
+        }
+
         
         public function addMecanico(){
             $mecanicoNuevo = [
@@ -35,7 +65,7 @@
         $id = $this->mecanicoModelo->getId();
         $this->mecanicoModelo->tablaMecanico($id->idPersonal);  
 
-        redireccionar('/Admin');
+        redireccionar('/Mecanico');
 
         }
 

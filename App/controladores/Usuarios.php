@@ -73,25 +73,22 @@
 
             if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
-                $usuarioModificado = [
-                    'id_usuario' => $id,
+                $mecanicoModificado = [
+                    'id_personal' => trim($_POST['id']),
                     'nombre' => trim($_POST['nombre']),
                     'email' => trim($_POST['email']),
                     'telefono' => trim($_POST['telefono']),
                     'id_rol' => trim($_POST['rol']),
                 ];
 
-                if ($this->usuarioModelo->actualizarUsuario($usuarioModificado)){
+                if ($this->usuarioModelo->actualizarUsuario($mecanicoModificado)){
                     redireccionar('/usuarios');
                 } else {
                     die('Algo ha fallado!!!');
                 }
             } else {
                 //obtenemos información del usuario y el listado de roles desde del modelo
-                $this->datos['usuario'] = $this->usuarioModelo->obtenerUsuarioId($id);
-                $this->datos['listaRoles'] = $this->usuarioModelo->obtenerRoles();
-
-                $this->vista('usuarios/agregar_editar',$this->datos);
+                $this->vista('admin/editarMecanico',$this->datos);
             }
         }
 
