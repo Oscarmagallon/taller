@@ -40,6 +40,10 @@
             $this->vistaApi($dato); 
 
         }
+
+        public function verTodos(){
+            
+        }
         
         public function carrito(){
             $json = file_get_contents('php://input');

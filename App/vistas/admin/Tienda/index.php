@@ -36,23 +36,32 @@
      </div>
  </section>
  <br>
-<div>
+
     <div class="online">
-        <div class="col-md-3 col-sm-6 col-xs-12">
+        <div class="col-12">
             <div class="s_product">
                 <img  width="285" height="213" src="<?php echo RUTA_URL?>/img/tienda.png">
                 <h2>Explorar</h2>                   
             </div>
              <?php if ($datos['usuarioSesion']->Rol_idRol  == 10):?>
-            <h3><a href="<?php echo RUTA_URL ?>/Tienda/verArticulos/2">Ver</a></h3>
+            <h3><a href="<?php echo RUTA_URL ?>/Tienda/verTodos">Ver</a></h3>
             <?php endif; ?>
             <?php if ($datos['usuarioSesion']->Rol_idRol == 20):?>
-            <h3><a href="<?php echo RUTA_URL ?>/Tienda/verArticulos/2">Ver</a></h3>
+            <h3><a href="<?php echo RUTA_URL ?>/Tienda/verTodos">Ver</a></h3>
             <?php endif; ?>                 
         </div>
     </div>
+
+    <style>
+        .online {
+  width: 20%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+    </style>
    
-</div>
+
 <div class="related-products">
         <div class="container">
             <div class="row">
