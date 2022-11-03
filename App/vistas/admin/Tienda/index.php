@@ -52,15 +52,7 @@
         </div>
     </div>
 
-    <style>
-        .online {
-  width: 20%;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-    </style>
-   
+
 
 <div class="related-products">
         <div class="container">
@@ -138,6 +130,7 @@
                     </div>
             </div>
         </div>
+</div>
 </div>
 <section class="brands">
     <div class="container">

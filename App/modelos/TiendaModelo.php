@@ -38,6 +38,11 @@
         return $datos;
         }
 
+        public function cogerTodosTienda(){
+            $this->db->query('SELECT * from articulos');
+            return $this->db->registros();
+        }
+
         public function crearPedidoVinculado($id,$cliente){
             $this->db->query("INSERT into pedido_vinculado values ($id,CURDATE(),$cliente)");
             $this->db->execute();

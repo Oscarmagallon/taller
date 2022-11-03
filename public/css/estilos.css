@@ -6,3 +6,10 @@ thead { background-color: blue; color: #ffffff; text-align: middle; }
 tbody { padding: 12px 15px; }
 .cliente { background-color: greenyellow; color: #ffffff; text-align: middle; }
 #cliente { background-color: greenyellow; color: #ffffff; text-align: middle; }
+.online {
+width: 20%;
+display: block;
+margin-left: auto;
+margin-right: auto;
+}
+

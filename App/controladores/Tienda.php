@@ -42,7 +42,11 @@
         }
 
         public function verTodos(){
-            
+            if($this->datos['usuarioSesion']->Rol_idRol==10){
+            $this->datos['articulos'] = $this->TiendaModelo->cogerTodosTienda();
+
+            }
+            $this->vista('admin/Tienda/general',$this->datos);
         }
         
         public function carrito(){

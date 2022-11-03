@@ -17,7 +17,7 @@
             where ingreso.Pagado = 0 Group by incidencias.idIncidencias");
             return $this->db->registros();
             //quitar
-            "SELECT * FROM `ingreso` GROUP by reparaciones_idreparaciones HAVING Ingreso.Descr not in ('Mano Obra')";
+            "SELECT * FROM `ingreso` WHERE reparaciones_idreparaciones not in ( SELECT reparaciones_idreparaciones as SinManoObra FROM `ingreso` WHERE Descr = 'Mano Obra' );";
         }
 
 
