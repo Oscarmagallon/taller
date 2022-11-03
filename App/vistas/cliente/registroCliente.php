@@ -11,7 +11,7 @@
   </div>
   <div class="form-group  mx-sm-3 mb-2">
     <label for="staticEmail2" class="sr-only">Email</label>
-    <input type="text"  class="form-control-plaintext" id="staticEmail2" name="Email" value="email@example.com">
+    <input type="text"  class="form-control-plaintext" id="staticEmail2" name="Email" placeholder="email@example.com">
   </div>
   <div class="form-group mx-sm-3 mb-2">
     <label for="inputPassword2" class="sr-only">Password</label>
