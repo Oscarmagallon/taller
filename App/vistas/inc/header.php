@@ -16,6 +16,7 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
     <?php if(empty($datos['usuarioSesion'])): ?>
+      <?php print_r($datos) ?>
       <a class="navbar-brand" href="">Bienvenido a el registro de la aplicacion</a> 
     <?php endif; ?>
     <?php if(!empty($datos['usuarioSesion'])) :?>

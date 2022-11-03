@@ -1,18 +1,30 @@
 <?php require_once RUTA_APP.'/vistas/inc/header.php';?>
+ <form class="form-inline" method="Post" action="<?php echo RUTA_URL ?>/Mecanico/addMecanico">
+  <div class="form-group row">
+    <label for="name" class="col-sm-2 col-form-label">Nombre</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" name = "Nombre" id="name" placeholder="Nombre">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="ape" class="col-sm-2 col-form-label">Apellido</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" name="Apellido" id="ape" placeholder="Apellido">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="correo" class="col-sm-2 col-form-label">Correo</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" name="Email" id="correo" placeholder="Correo electrónico">
+    </div>
+  </div>
+  <br>
+  <div class="form-group row">
+    <div class="col-12">
+    <button type="submit" class="btn btn-primary  mx-sm-3 mb-2">Confirmar</button>
 
-<form class="form-inline" method="Post" action="<?php echo RUTA_URL ?>/Mecanico/addMecanico">
-<div class="form-group  mx-sm-3 mb-2">
-    <label for="staticEmail2" class="sr-only">Nombre</label>
-    <input type="text"  class="form-control-plaintext" name="Nombre"  placeholder="Nombre">
+    </div>
   </div>
-  <div class="form-group  mx-sm-3 mb-2">
-    <label for="staticEmail2" class="sr-only">Apellido</label>
-    <input type="text"  class="form-control-plaintext" name="Apellido" placeholder="Apellido">
-  </div>
-  <div class="form-group  mx-sm-3 mb-2">
-    <label for="staticEmail2" class="sr-only">Email</label>
-    <input type="text"  class="form-control-plaintext" id="staticEmail2" name="Email" value="email@example.com">
-  </div>
-  <button type="submit" class="btn btn-primary  mx-sm-3 mb-2">Confirmar</button>
 </form>
+
 <?php require_once RUTA_APP.'/vistas/inc/footer.php' ?>

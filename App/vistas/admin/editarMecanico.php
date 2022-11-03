@@ -1,18 +1,31 @@
 <?php require_once RUTA_APP.'/vistas/inc/header.php';?>
-<form class="form-inline" method="Post">
-<div class="form-group  mx-sm-3 mb-2">
-    <label for="staticEmail2" class="sr-only">Nombre</label>
-    <input type="text"  class="form-control-plaintext" value="<?php echo $datos['Mecanico']->Nombre ?>" name="Nombre">
+ <form class="form-inline" method="Post">
+  <div class="form-group row">
+    <label for="name" class="col-sm-2 col-form-label">Nombre</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" name = "Nombre" value ="<?php echo $datos['Mecanico']->Nombre ?>" id="name" placeholder="Nombre">
+    </div>
   </div>
-  <div class="form-group  mx-sm-3 mb-2">
-    <label for="staticEmail2" class="sr-only">Apellido</label>
-    <input type="text"  class="form-control-plaintext" name="Apellido" value="<?php echo $datos['Mecanico']->Apellido ?>">
+  <div class="form-group row">
+    <label for="ape" class="col-sm-2 col-form-label">Apellido</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" name="Apellido" id="ape" placeholder="Apellido" value="<?php echo $datos['Mecanico']->Apellido ?>">
+    </div>
   </div>
-  <div class="form-group  mx-sm-3 mb-2">
-    <label for="staticEmail2" class="sr-only">Email</label>
-    <input type="text"  class="form-control-plaintext" id="staticEmail2" name="Email" value="<?php echo $datos['Mecanico']->Correo ?>" >
+  <div class="form-group row">
+    <label for="correo" class="col-sm-2 col-form-label">Correo</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" value="<?php echo $datos['Mecanico']->Correo ?>" name="Email" id="correo" placeholder="Correo electrónico">
+    </div>
   </div>
-  <input type="hidden" name="id" value="<?php echo $datos['Mecanico']->idPersonal ?>">
-  <button type="submit" class="btn btn-primary  mx-sm-3 mb-2">Confirmar</button>
+  <br>
+  <div class="form-group row">
+    <div class="col-12">
+    <input type="hidden" name="id" value="<?php echo $datos['Mecanico']->idPersonal ?>">
+  <button type="submit" class="btn btn-primary  mx-sm-3 mb-2">Confirmar</button> 
+
+    </div>
+  </div>
 </form>
+
 <?php require_once RUTA_APP.'/vistas/inc/footer.php' ?>

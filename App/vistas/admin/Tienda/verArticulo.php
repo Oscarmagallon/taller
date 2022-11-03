@@ -127,9 +127,10 @@ json_encode($datos);
         var h2 = document.createElement("h2");
         var h = document.createElement("h");
         var h3 = document.createElement("h2");
-        var input = document.createElement("input")
+        var input = document.createElement("input");
         var button = document.createElement("button");
-        h2.appendChild(document.createTextNode(datos['articulos'][i]['Tipo']));
+        tipo = verTipo((datos['articulos'][i]['Tipo']));
+        h2.appendChild(document.createTextNode(tipo));
         h.appendChild(document.createTextNode(datos['articulos'][i]['Descripcion']));
         h3.appendChild(document.createTextNode(datos['articulos'][i]['Precio']));
         button.appendChild(document.createTextNode("Comprar"))
@@ -247,6 +248,27 @@ const pintarFooterCarrito = () =>{
   btnGuardar.addEventListener('click',()=>{
     guardar();
   })
+}
+
+function verTipo(tipo){
+  switch (tipo) {
+    case 1:
+        tipo = "Pieza"
+      break;
+
+    case 2:
+      tipo = "Equipacion"
+       break;
+
+    case 3:
+      tipo = "Casco"
+      break;
+
+    case 4:
+      tipo = "Moto"
+      break;
+  }
+  return tipo;
 }
 
 function guardar(){

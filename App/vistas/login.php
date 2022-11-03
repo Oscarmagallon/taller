@@ -73,7 +73,7 @@ span.psw {
 
   <form action="" method="post">
   <div class="imgcontainer">
-    <img src="localhost/taller/App/vistas/logo.png" width="200px">
+  <img width="100" height="100" src="<?php echo RUTA_URL?>/img/logo.png">
   </div>
 
   <div class="container">

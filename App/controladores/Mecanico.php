@@ -6,11 +6,7 @@
             Sesion::iniciarSesion($this->datos);
             $this->datos['rolesPermitidos'] = [10];
   
-           if (!tienePrivilegios($this->datos['usuarioSesion']->Rol_idRol,$this->datos['rolesPermitidos'])) {
-                Sesion::cerrarSesion();
-                redireccionar('/login');
-            }
-
+          
 
         $this->mecanicoModelo = $this->modelo('MecanicoModelo');
 
@@ -25,7 +21,7 @@
         }
 
         public function formAdd(){
-            $this->vista('Admin/crearMecanico');
+            $this->vista('Admin/crearMecanico', $this->datos);
         }
 
         public function editar($id){
@@ -51,6 +47,7 @@
             $this->mecanicoModelo->borrarMecan($id);
             $this->mecanicoModelo->deleteMecan($id);
             redireccionar('/Mecanico');
+           
         }
 
         

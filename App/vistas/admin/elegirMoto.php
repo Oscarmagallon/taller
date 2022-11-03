@@ -6,7 +6,7 @@
 <div class="container">
  <div class="row">
   <?php  foreach ($datos["Motos"] as $m ): ?>
-    <div class="col-3">
+    <div class="col-3 col-md-4 col-sm-6 col-12">
   <div class="card " style="width: 18rem;"> 
   <?php  foreach ($datos["Peticiones"] as $p ): ?>
     <?php if($m->idMoto == $p->idMoto ):?>

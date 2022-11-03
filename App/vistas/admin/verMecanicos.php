@@ -1,6 +1,6 @@
 <?php require_once RUTA_APP.'/vistas/inc/header.php' ?>
 <body class="container">
-<h1>Motos Listas</h1>
+<h1>Mecánicos disponibles</h1>
 <nav class="navbar navbar-light navbar-expand-lg" style="background-color: #e3f2fd;">
 <?php print_r($datos['Mecanicos']) ?>
 

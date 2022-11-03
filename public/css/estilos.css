@@ -4,3 +4,5 @@ nav{
 table { border-collapse: collapse; margin: 25px 0; font-size: 1em; font-family: sans-serif; min-width: 450px; box-shadow: 0 0 20px rgba(0, 0, 0, 0.15); }
 thead { background-color: blue; color: #ffffff; text-align: middle; }
 tbody { padding: 12px 15px; }
+.cliente { background-color: greenyellow; color: #ffffff; text-align: middle; }
+#cliente { background-color: greenyellow; color: #ffffff; text-align: middle; }

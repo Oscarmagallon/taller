@@ -5,7 +5,7 @@
         <div class="row">
             <h3>Costo Reparacion</h3>
             <table  class="table">
-                <thead class="table-dark">
+                <thead id="cliente" class="cliente">
                     <tr>
 
                         <td>Concepto</td>
