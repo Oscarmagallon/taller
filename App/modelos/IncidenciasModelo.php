@@ -35,7 +35,19 @@
     }
 
     public function estado($id){
-        $this->db->query("SELECT * FROM incidencias where idIncidencias = $id;");
-        return $this->db->registros();
+        $this->db->query("SELECT * FROM incidencias where idIncidencias = $id and incidencias.Terminado = 0");
+        return $this->db->registro();
     }
+
+    public function estadoTerminado($id){
+        $this->db->query("SELECT incidencias.idPersonal,incidencias.idIncidencias,Ingreso.Descr,incidencias.Tipo,incidencias.Terminado,reparaciones.idreparaciones, incidencias.Descripcion,moto.Marca, moto.Modelo 
+        FROM moto 
+        INNER JOIN moto_has_incidencias on moto.idMoto = moto_has_incidencias.idMoto 
+        INNER JOIN incidencias on moto_has_incidencias.idIncidencias = incidencias.idIncidencias 
+        INNER JOIN reparaciones on reparaciones.idreparaciones = incidencias.idreparaciones 
+        INNER JOIN ingreso on ingreso.reparaciones_idreparaciones = reparaciones.idreparaciones 
+        where ingreso.Pagado = 0 and incidencias.Terminado = 1 and incidencias.idIncidencias = $id");
+        return $this->db->registro();
+    }
+
 }

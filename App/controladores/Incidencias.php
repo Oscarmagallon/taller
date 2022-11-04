@@ -29,7 +29,6 @@
                 'id' =>trim($_POST['idMoto'])
             ];
             $idMoto = $peticion['id'];
-            print_r($peticion);
             $this->IncidenciasModelo->peticionIncidencia($peticion);
             $idIncidencia = $this->IncidenciasModelo->cogerUltimaId();
             $idInciden = $idIncidencia->idIncidencias;
@@ -40,9 +39,18 @@
         public function verEstado($id){
             $ids = $this->IncidenciasModelo->verEstado($id);
             for ($i=0; $i <sizeof($ids) ; $i++) { 
-                $this->datos['Estado'][$i] = $this->IncidenciasModelo->estado($ids[$i]->idIncidencias);
+                $estado[$i] = $this->IncidenciasModelo->estado($ids[$i]->idIncidencias);
             }
             $this->datos['id'] = $id;
+            $i=0;
+            foreach($estado as $e){
+                
+                print_r($e);
+                if(!empty($e)){
+                    $this->datos['Estado'][$i] = $e;
+                }
+                $i++;
+            }
             if(!empty($this->datos['Estado'])){
                 $this->vista("cliente/estado",$this->datos);
             }else{
@@ -55,6 +63,24 @@
         
         
 
+        }
+
+        public function verTerminadas($id){
+            $ids = $this->IncidenciasModelo->verEstado($id);
+            for ($i=0; $i <sizeof($ids) ; $i++) { 
+                $estado[$i] = $this->IncidenciasModelo->estadoTerminado($ids[$i]->idIncidencias);
+            };
+            $i=0;
+            foreach($estado as $e){
+                
+                print_r($e);
+                if(!empty($e)){
+                    $this->datos['Estado'][$i] = $e;
+                }
+                $i++;
+            }
+            
+            $this->vista('cliente/estadoTerminado', $this->datos);
         }
 
 
