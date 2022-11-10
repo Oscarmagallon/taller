@@ -1,8 +1,5 @@
 <?php require_once RUTA_APP.'/vistas/inc/header.php';?>
 <p>Zona dejar moto</p>
-<?php print_r($datos) ?>
-<?php require_once RUTA_APP.'/vistas/inc/header.php';?>
-<p>Zona dejar moto</p>
 <div class="container">
  <div class="row">
   <?php  foreach ($datos["Motos"] as $m ): ?>
@@ -10,7 +7,7 @@
   <div class="card " style="width: 18rem;"> 
   <?php  foreach ($datos["Peticiones"] as $p ): ?>
     <?php if($m->idMoto == $p->idMoto ):?>
-      <div class="card-header"><?php echo $p->numeroIncidencias; ?></div>
+      <div class="card-header"><p>Incidencias disponibles: <?php echo $p->numeroIncidencias; ?></p></div>
       <?php endif;?>
     <?php endforeach; ?>
       <div class="card-body">
