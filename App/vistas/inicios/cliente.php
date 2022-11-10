@@ -15,7 +15,7 @@
                 También puedes ver el estado de tu petición a tiempo real. <br>
                 Pd: Estate pendiente de tu email. Te mandaremos un mensaje cuando tengamos tu moto lista. <br>
             </p> 
-            <button class="button btn-primary"><i class="bi bi-hand-index-thumb"></i> &nbsp;<a style="color:white" href="<?php echo RUTA_URL ?>/Peticiones"> Acceder a Peticiones</a> </button>           
+            <button class="button btn-primary"><i class="bi bi-hand-index-thumb"></i> &nbsp;<a href="<?php echo RUTA_URL ?>/Peticiones" style="color:white"> Acceder a Peticiones</a> </button>           
         </div>
         <div class="col-4 col-md-4 col-sm-6 col-12">
             <h3>Tienda</h3>
