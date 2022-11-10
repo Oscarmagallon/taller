@@ -1,5 +1,6 @@
 <?php require_once RUTA_APP.'/vistas/inc/header.php';?>
-<p>Zona dejar moto</p>
+<h2>Mandar a arreglar la moto o ver estado en el que se encuentra</h2>
+<br>
 <div class="container">
  <div class="row">
   <?php  foreach ($datos["Motos"] as $m ): ?>

@@ -22,7 +22,6 @@
 <body>
 <section class="season">
     <img  src="<?php echo RUTA_URL?>/img/motsmt.jpg">
-     <div class="ovearlay"></div>
      <div class="text">
         <?php if($datos['usuarioSesion']->Rol_idRol==20) :?>
          <h2>Tienda</h2>

@@ -1,11 +1,29 @@
 <?php require_once RUTA_APP.'/vistas/inc/header.php' ?>
-<?php echo "apartado para el cliente"?>
-<br> <br>
+<link href="../Tienda/style.css" rel="stylesheet" type="text/css" />
+
 <div class="container">
-<div class = "btn-menu"> 
-        <label for="" class="icon-menu"></label>
-    </div>
+    <section class="season">
+    <img  src="<?php echo RUTA_URL?>/img/motoss.jpg">
+    </section>
+    <br>
+    <div class="row">
+        <div class="col-4">
+            <h3>Manda moto a arreglar</h3>
+            <p>Accede a la pagina que te permite generar una petición para arreglar la moto seleccionada. 
+                También puedes ver el estado de tu petición a tiempo real. <br>
+                Pd: Estate pendiente de tu email. Te mandaremos un mensaje cuando tengamos tu moto lista. <br>
+            </p> 
+            <button class="button btn-primary">Acceder a Peticiones</button>           
+        </div>
+        <div class="col-4">
+            <h3>Tienda</h3>
+            <p>Accede a la tienda de nuestra web.Te esperamos con los mejores productos a los mejores precios.¡A qué estas esperado para visitarnos!</p> 
+            <button class="button btn-primary">Acceder a la tienda</button>    
+        </div>
+        <div class="col-4">
+            <h3>Añadir Moto</h3>
+            <p>Accede el formulario de añadir moto. Una vez completado, verás tu moto en el apartado de peticiones, lista para crear una nueva peticion en caso de que fuera neccesario</p> 
+            <button class="button btn-primary">Acceder a la tienda</button>    
+        </div>
 </div>
-<a href="<?php echo RUTA_URL?>/Peticiones">Hacer Peticion Para Reparar Moto </a>
-<?php  print_r($datos['usuarioSesion']) ?>
 <?php require_once RUTA_APP.'/vistas/inc/footer.php' ?>

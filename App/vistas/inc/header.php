@@ -32,7 +32,7 @@
         </li>
 
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="<?php echo RUTA_URL?>/Peticiones">Peticiones</a>
+          <a class="nav-link active" aria-current="page" href="<?php echo RUTA_URL?>/Peticiones">Mandar moto a arregalar</a>
         </li>
 
         <li class="nav-item">
@@ -81,4 +81,4 @@
 
 </header>
 
-<br><br><br>
+<br>
