@@ -4,7 +4,6 @@
 
 <html lang="en">
 <head>
-   <?php print_r($datos['usuarioSesion'] ) ?>
     <meta charset="UTF-8">
     <title>Prodact Display</title>
     <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
@@ -34,24 +33,6 @@
          <h3>Las mejores ofertas</h3>
      </div>
  </section>
- <br>
-
-    <div class="online">
-        <div class="col-12">
-            <div class="s_product">
-                <img  width="285" height="213" src="<?php echo RUTA_URL?>/img/tienda.png">
-                <h2>Explorar</h2>                   
-            </div>
-             <?php if ($datos['usuarioSesion']->Rol_idRol  == 10):?>
-            <h3><a href="<?php echo RUTA_URL ?>/Tienda/verTodos">Ver</a></h3>
-            <?php endif; ?>
-            <?php if ($datos['usuarioSesion']->Rol_idRol == 20):?>
-            <h3><a href="<?php echo RUTA_URL ?>/Tienda/verTodos">Ver</a></h3>
-            <?php endif; ?>                 
-        </div>
-    </div>
-
-
 
 <div class="related-products">
         <div class="container">
