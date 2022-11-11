@@ -51,15 +51,8 @@
                 }
                 $i++;
             }
-            if(!empty($this->datos['Estado'])){
                 $this->vista("cliente/estado",$this->datos);
-            }else{
-                echo "<script>";
-                echo "alert('No hay Incidencias')";
-                echo "</script>";
-        
-                echo "<a href='../../Peticiones'>atras</a>";
-            }
+           
         
         
 

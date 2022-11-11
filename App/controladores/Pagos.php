@@ -1,5 +1,5 @@
 <?php
-   
+   include ('Log.php');
     class Pagos extends Controlador{
      
         
@@ -41,6 +41,8 @@
 
         public function pagar($id){
            $this->datos["reparaciones"]=$this->PagosModelo->getReparaciones($id);
+           $txt =$this->datos['usuarioSesion']->Nombre. " ".$this->datos['usuarioSesion']->Apellido." ha realizado su pago correctamente";
+           enviarLog($txt);
            $this->vista('cliente/PagarReparacion',$this->datos);
         }
 

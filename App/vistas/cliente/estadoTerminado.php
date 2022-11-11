@@ -2,7 +2,7 @@
 <body class="container">
 <h1>Estado</h1>
 <nav class="navbar navbar-light navbar-expand-lg" style="background-color: #e3f2fd;">
-<?php print_r($this->datos['Estado']) ?>
+<?php print_r($this->datos['usuarioSesion']) ?>
     <div class="container-fluid px-2">
               <form autocomplete="off" class="d-flex">
             <input class="form-control me-2" type="search" placeholder="Nombre de la marca" aria-label="Buscar">

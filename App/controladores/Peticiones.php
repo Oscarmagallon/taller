@@ -1,5 +1,6 @@
 <?php
 include ('mail.php');
+include('Log.php');
     class Peticiones extends Controlador{
 
         public function __construct(){
@@ -64,6 +65,8 @@ include ('mail.php');
             $this->PeticionModelo->terminada($id);
             $this->datos['Prop'] = $this->PeticionModelo->getPropietario($idMoto);
             enviarEmail($this->datos['Prop']);
+            $txt ="Correo de aviso moto lista enviado a ".$this->datos['Prop'][0]->Nombre. " ".$this->datos['Prop'][0]->Apellido;
+            enviarLog($txt);
             redireccionar("/Peticiones/verPeticionesProgreso/$idMoto");
 
         }
