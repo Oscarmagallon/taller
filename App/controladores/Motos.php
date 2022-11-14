@@ -24,11 +24,22 @@ class Motos extends Controlador{
             $idNueva= $this->motosModelo->getIdPropadd();
             $this->motosModelo->vincularProp($idNueva->idPropietario, $idPersonal);
             $this->datos['idPropietario'] = $idNueva->idPropietario;
-            $this->vista("cliente/addMoto",$this->datos);
+            $this->datos['Motos'] = $this->motosModelo->getMotos($this->datos['idPropietario']);
+            $this->vista("cliente/verMotos",$this->datos);
         }else{
             $this->datos['idPropietario'] = $idProp->idPropietario;
-            $this->vista("cliente/addMoto",$this->datos);
+            $this->datos['Motos'] = $this->motosModelo->getMotos($this->datos['idPropietario']);
+            $this->vista("cliente/verMotos",$this->datos);
         }
+
+        
+    }
+    public function addMotoVista(){
+        $idPersonal = $this->datos['usuarioSesion']->idPersonal;
+        $idProp = $this->motosModelo->getIdProp($idPersonal);
+            $this->datos['idPropietario'] = $idProp->idPropietario;
+            $this->vista("cliente/addMoto",$this->datos);
+        
     }
 
     public function addMoto(){
@@ -39,9 +50,36 @@ class Motos extends Controlador{
             'idProp' => trim($_POST['idProp']),
         ];
         $this->motosModelo->addMoto($motoNueva);
-        redireccionar('/Peticiones');
-
+        redireccionar('/Motos/index');
     }
+
+    public function borrarMoto($id){
+        $this->motosModelo->motoHasIncidencias($id);
+        $this->motosModelo->borrarMoto($id);
+        redireccionar('/Motos/index');
+    }
+
+    public function editarMoto($id){
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            $motoModi = [
+                'idMoto' => trim($_POST['idMoto']),
+                'Marca' => trim($_POST['Marca']),
+                'Cc' => trim($_POST['Cc']),
+                'Modelo' => trim($_POST['Modelo']),
+                'idProp' => trim($_POST['idProp']),
+            ];
+            print_r($motoModi);
+            $this->motosModelo->actualizarMoto($motoModi);
+            redireccionar('/Motos/index');
+        } else {
+            $this->datos['Moto'] = $this->motosModelo->getMoto($id);
+            $this->vista('cliente/editMoto',$this->datos);
+        }
+        
+        
+    }
+
+
 
 
 }

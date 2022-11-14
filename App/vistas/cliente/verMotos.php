@@ -13,7 +13,8 @@
     </div>
 </nav>
 <button type="button" class = "btn btn-primary">
-    <a class="enlace" href="Mecanico/formAdd">Añadir &nbsp;<i class="bi bi-person-plus-fill"></i></a> 
+    <a class="enlace" href="<?php echo RUTA_URL ?>/Motos/addMotoVista">Añadir Moto&nbsp;<i class="bi bi-plus-circle-fill"></i>
+</a> 
 </button>
 
 <style>
@@ -24,25 +25,26 @@
 <div class="col-12 table-responsive">
     <table class="table table-hover">
 
-        <thead>
+        <thead class = "cliente">
             <tr>
                 <th>Cod</th>
-                <th>Nombre</th>
-                <th>Apellido</th>
-                <th>Correo</th>
+                <th>Marca</th>
+                <th>Modelo</th>
+                <th>CC</th>
                 <th>Acciones</th>
+
             </tr>
         </thead>
         <tbody>
-            <?php foreach($datos['Mecanicos'] as $m): ?>
+            <?php foreach($datos['Motos'] as $m): ?>
             <tr>
-                <td><?php echo $m->idPersonal ?></td>
-                <td><?php echo $m->Nombre?></td>
-                <td><?php echo $m->Apellido ?></td>
-                <td><?php echo $m->Correo ?></td>
+                <td><?php echo $m->idMoto ?></td>
+                <td><?php echo $m->Marca?></td>
+                <td><?php echo $m->Modelo ?></td>
+                <td><?php echo $m->CC ?></td>
                 <td> 
-                    <a href="<?php echo RUTA_URL?>/Mecanico/editar/<?php echo $m->idPersonal ?>"><i class="bi bi-pencil-square"></i></a>
-                    <a href="<?php echo RUTA_URL?>/Mecanico/borrar/<?php echo $m->idPersonal ?>"><i class="bi bi-trash"></i></a>
+                    <a href="<?php echo RUTA_URL?>/Motos/editarMoto/<?php echo $m->idMoto ?>"><i class="bi bi-pencil-square"></i></a>
+                    <a href="<?php echo RUTA_URL?>/Motos/borrarMoto/<?php echo $m->idMoto ?>"><i class="bi bi-trash"></i></a>
                 </td>    
     
                  

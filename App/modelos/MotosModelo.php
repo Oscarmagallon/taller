@@ -42,6 +42,35 @@
 
         }
 
+        public function getMotos($prop){
+            $this->db->query("SELECT * from moto where idPropietario = $prop");
+            return $this->db->registros();
+        }
+
+        public function motoHasIncidencias($id){
+            $this->db->query("DELETE from moto_has_incidencias where idMoto = $id");
+            $this->db->execute();
+        }
+
+        public function borrarMoto($id){
+            $this->db->query("DELETE from moto where idMoto = $id");
+            $this->db->execute();
+        }
+
+        public function getMoto($id){
+            $this->db->query("SELECT * from moto where idMoto = $id");
+            return $this->db->registro();
+        }
+
+        public function actualizarMoto($moto){
+            $this->db->query("UPDATE moto set Marca = :Marca, Modelo = :Modelo, CC = :CC where idMoto = :idMoto");
+            $this->db->bind(':Marca', $moto['Marca']);
+            $this->db->bind(':Modelo', $moto['Modelo']);
+            $this->db->bind(':CC', $moto['Cc']);
+            $this->db->bind(':idMoto', $moto['idMoto']);
+            $this->db->execute();
+        }
+
 
         
        
