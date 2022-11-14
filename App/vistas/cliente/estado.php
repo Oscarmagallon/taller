@@ -1,6 +1,7 @@
 <?php require_once RUTA_APP.'/vistas/inc/header.php' ?>
 <body class="container">
 <h1>Estado</h1>
+   
 
 <?php print_r($datos['Estado']) ?>
 <nav class="navbar navbar-light navbar-expand-lg" style="background-color: #e3f2fd;">
@@ -30,6 +31,7 @@
         <tbody>
             <?php foreach($datos['Estado'] as $e): ?>
                 <?php $i =0; ?>
+                <?php $accionador = 1 ?>
             <tr>
                 <td><?php echo $e->Tipo ?></td>
                 <td><?php echo $e->Descripcion?></td>
@@ -42,7 +44,10 @@
                 
             </tr>
             <?php endforeach; 
+            
 ?>
 </body>
+
+
 
 <?php require_once RUTA_APP.'/vistas/inc/footer.php'?>
