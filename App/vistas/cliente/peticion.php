@@ -2,6 +2,7 @@
 <h2>¡Mandar a arreglar tu moto! Te estamos esperando</h2>
 <h4>¿No ves tu moto? pulsa -><a href="<?php echo RUTA_URL ?>/Motos">aqui </a><-</h4>
 <br>
+<?php print_r($datos) ?>
 <div class="container">
  <div class="row">
   <?php  foreach ($datos["Motos"] as $m ): ?>
