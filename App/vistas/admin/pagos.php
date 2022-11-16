@@ -43,7 +43,7 @@
 <h3>Total <?php echo $total ?></h3>
 
 <form method="POST" action="<?php echo RUTA_URL ?>/Pagos/manObra">
-    <label for="text">Mano de obra</label>
+    <label required for="text">Mano de obra</label>
     <input type="number" name="text" id="text">
    
     <input type ="hidden" value="<?php echo $datos['Pagos'][0]->reparaciones_idreparaciones?>" name ="idReparacion">
