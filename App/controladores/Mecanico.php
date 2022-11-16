@@ -52,7 +52,9 @@
 
         public function seguimiento($id){
             $this->datos['tareas'] = $this->mecanicoModelo->seguimiento($id);
-        
+            $this->datos['id'] = $id;
+            $this->datos["Mecanicos"] = $this->mecanicoModelo->getMecanicos();
+            $this->vista('admin/verMecanicos',$this->datos);              
         }
 
         
