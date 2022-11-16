@@ -21,6 +21,7 @@
                 <th>Pieza</th>
                 <th>Descripcion</th>
                 <th>Costo</th>
+                <th>Acciones</th>
             </tr>
         </thead>
         <tbody>
@@ -31,6 +32,7 @@
                 <td><?php echo $p->Descr ?></td>
                 <td><?php echo $p->Descr?></td>
                 <td><?php echo $p->Ingreso?></td>
+                <td><?php if($p->Descr == "Mano Obra"):?> <a href="<?php echo RUTA_URL ?>/Pagos/borrar/<?php echo $p->idIngreso ?>/<?php echo $datos['id'] ?>"><i class="bi bi-trash-fill"></i></a> <?php endif ?></td>
             </tr>
           <?php
           $total = $total+ $p->Ingreso; ?>
@@ -44,7 +46,7 @@
 
 <form method="POST" action="<?php echo RUTA_URL ?>/Pagos/manObra">
     <label required for="text">Mano de obra</label>
-    <input type="number" name="text" id="text">
+    <input type="number" min="0" name="text" id="text">
    
     <input type ="hidden" value="<?php echo $datos['Pagos'][0]->reparaciones_idreparaciones?>" name ="idReparacion">
     <input type ="hidden" value="<?php echo $datos['id']?>" name ="idMoto">

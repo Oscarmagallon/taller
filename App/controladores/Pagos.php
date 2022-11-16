@@ -39,6 +39,12 @@
             redireccionar("/Pagos/index/$idMoto");
         }
 
+        public function borrar ($idIngreso , $id){
+            $this->PagosModelo->borrarManObra($idIngreso);
+            redireccionar("/Pagos/$id");
+            
+        }
+
         public function pagar($id){
            $this->datos["reparaciones"]=$this->PagosModelo->getReparaciones($id);
            $txt =$this->datos['usuarioSesion']->Nombre. " ".$this->datos['usuarioSesion']->Apellido." ha realizado su pago correctamente";

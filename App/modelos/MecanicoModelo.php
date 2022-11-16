@@ -62,5 +62,10 @@
             $this->db->execute();
         }
 
+        public function seguimiento ($id){
+            $this->db->query("SELECT * FROM `incidencias` WHERE idPersonal = $id and Terminado = 0");
+            return $this->db->registros();
+        }
+
     }
 ?>
