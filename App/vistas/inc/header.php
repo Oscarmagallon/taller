@@ -38,10 +38,6 @@
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="<?php echo RUTA_URL?>/Tienda">Tienda</a>
         </li>
-        
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="<?php echo RUTA_URL?>/Motos">Añadir Moto</a>
-        </li>
       </ul>
     <?php endif?>
     <?php if(!empty($datos['usuarioSesion']) && $datos['usuarioSesion']->Rol_idRol == 10): ?>

@@ -50,13 +50,13 @@ class Motos extends Controlador{
             'idProp' => trim($_POST['idProp']),
         ];
         $this->motosModelo->addMoto($motoNueva);
-        redireccionar('/Motos/index');
+        redireccionar('/Peticiones');
     }
 
     public function borrarMoto($id){
         $this->motosModelo->motoHasIncidencias($id);
         $this->motosModelo->borrarMoto($id);
-        redireccionar('/Motos/index');
+        redireccionar('/Peticiones');
     }
 
     public function editarMoto($id){
@@ -70,7 +70,7 @@ class Motos extends Controlador{
             ];
             print_r($motoModi);
             $this->motosModelo->actualizarMoto($motoModi);
-            redireccionar('/Motos/index');
+            redireccionar('/Peticiones');
         } else {
             $this->datos['Moto'] = $this->motosModelo->getMoto($id);
             $this->vista('cliente/editMoto',$this->datos);

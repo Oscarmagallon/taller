@@ -25,7 +25,7 @@
             $peticion = [
                 'Tipo' => trim($_POST['tipo']),
                 'descr' => trim($_POST['descr']),
-                'fecha' =>trim($_POST['fecha']),
+                'fecha' => date('d/m/Y'),
                 'id' =>trim($_POST['idMoto'])
             ];
             $idMoto = $peticion['id'];

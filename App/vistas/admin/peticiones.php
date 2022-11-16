@@ -2,7 +2,7 @@
 <body class="container">
 <h1>Estado</h1>
 <nav class="navbar navbar-light navbar-expand-lg" style="background-color: #e3f2fd;">
-<?php print_r($datos['Peticiones'][0]->idMoto) ?>
+<?php print_r($datos['Peticiones']) ?>
 
     <div class="container-fluid px-2">
               <form autocomplete="off" class="d-flex">
@@ -28,6 +28,7 @@
             <?php foreach($datos['Peticiones'] as $e): ?>
             <?php if(empty($e->idPersonal) && $e->Terminado == 0):?>
             <tr>
+                
                 <td><?php echo $e->Tipo ?></td>
                 <td><?php echo $e->Descripcion?></td>
                 <td><?php echo $e->Fecha ?></td>    
