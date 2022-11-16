@@ -18,6 +18,11 @@
             $this->db->execute();
         }
 
+        public function borrarManObra($id){
+            $this->db->query("DELETE from ingreso where idIngreso = $id");
+            $this->db->execute();
+        }
+
         public function getReparaciones($id){
             $this->db->query("SELECT * From ingreso where reparaciones_idreparaciones = $id and Pagado = 0 ");
             return $this->db->registros();

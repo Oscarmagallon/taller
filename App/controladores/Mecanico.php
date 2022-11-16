@@ -50,6 +50,11 @@
            
         }
 
+        public function seguimiento($id){
+            $this->datos['tareas'] = $this->mecanicoModelo->seguimiento($id);
+        
+        }
+
         
         public function addMecanico(){
             $mecanicoNuevo = [

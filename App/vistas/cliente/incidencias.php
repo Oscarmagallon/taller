@@ -7,11 +7,11 @@
     <form autocomplete="off" action="<?php echo RUTA_URL?>/Incidencias/peticion" method="post" class="card-body">
         <div class="mb-3">
         <label for="tipo">Tipo: <sup>*</sup></label>
-            <input type="text" name="tipo" id="tipo" required class="form-control form-control-lg">
+            <input type="text" name="tipo" id="tipo" required class="form-control form-control-lg" placeholder="Escribe aqui el tipo de incidencia de su moto">
         </div>
         <div class="mb-3">
         <label for="descr">Descripcion:</label>
-            <input type="text" name="descr" required id="descr" class="form-control form-control-lg" >
+            <input type="text" name="descr" required id="descr" class="form-control form-control-lg" placeholder="Añade una breve descripción al fallo de su moto" >
         </div>
         <input type="hidden" name="idMoto" id="idMoto" class="form-control form-control-lg" value="<?php echo $datos['id']?>">
         <input type="submit" class="btn btn-success" value="Hacer Peticion">
