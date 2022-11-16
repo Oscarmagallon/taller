@@ -5,15 +5,15 @@
 <form class="form-inline" method="Post" action="<?php echo RUTA_URL ?>/Motos/addMoto">
 <div class="form-group  mx-sm-3 mb-2">
     <label for="staticEmail2" class="sr-only">Marca</label>
-    <input type="text"  class="form-control-plaintext" name="Marca"  placeholder="ktm">
+    <input type="text" required class="form-control-plaintext" name="Marca" required placeholder="Introduzca la marca de su moto">
   </div>
   <div class="form-group  mx-sm-3 mb-2">
     <label for="staticEmail2" class="sr-only">Modelo</label>
-    <input type="text"  class="form-control-plaintext" name="Modelo" placeholder="duke">
+    <input type="text"  class="form-control-plaintext" name="Modelo"required placeholder="Introduzca el modelo de su moto">
   </div>
   <div class="form-group  mx-sm-3 mb-2">
     <label for="staticEmail2" class="sr-only">Centimetros cubicos</label>
-    <input type="text"  class="form-control-plaintext" id="staticEmail2" name="cc" placeholder="1290">
+    <input type="text"  class="form-control-plaintext" id="staticEmail2" name="cc" required placeholder="Intorduzca los centímetros cúbicos de su moto">
   </div>
     <input type="hidden" value="<?php echo $datos['idPropietario'] ?>" name="idProp">
   <button type="submit" class="btn btn-primary  mx-sm-3 mb-2">Confirmar</button>
