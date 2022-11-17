@@ -69,23 +69,23 @@ json_encode($datos['tareas']);
         th1.appendChild(document.createTextNode('Tarea'))
         th2.appendChild(document.createTextNode('Titulo'))
         th3.appendChild(document.createTextNode('Descripción'))
-        tr2 = document.createElement('tr');
-        let i = 0;
-        for( i = 0; i<datos.length; i++){
-            console.log(datos[i])
-        td = document.createElement('td')
-        td.appendChild(document.createTextNode('Reparacion'))
-        td1 = document.createElement('td')
-        td1.appendChild(document.createTextNode(datos[i]['Tipo']))
-        td2 = document.createElement('td')
-        td2.appendChild(document.createTextNode(datos[i]['Descripcion']))
-        }
         tr.appendChild(th1);
         tr.appendChild(th2);
         tr.appendChild(th3);
+        tr2 = document.createElement('tr');
+        datos.forEach(d => {
+            console.log(datos.length)
+        td = document.createElement('td')
+        td.appendChild(document.createTextNode('Reparacion'))
+        td1 = document.createElement('td')
+        td1.appendChild(document.createTextNode(d['Tipo']))
+        td2 = document.createElement('td')
+        td2.appendChild(document.createTextNode(d['Descripcion']))
         tr2.appendChild(td)
         tr2.appendChild(td1)
         tr2.appendChild(td2)
+        })
+  
         table.appendChild(tr)
         table.appendChild(tr2)
         div.appendChild(table)
