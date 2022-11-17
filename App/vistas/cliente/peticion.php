@@ -9,7 +9,8 @@
 <div class="container">
  <div class="row">
 
-  <?php  foreach ($datos["Motos"] as $m ): ?>
+  <?php if(!empty($datos['Motos'])):
+      foreach ($datos["Motos"] as $m ): ?>
     <div class="col-3 col-md-4 col-sm-6 col-12">
   <div class="card " style="width: 18rem;"> 
       <div class="card-body">
@@ -27,9 +28,9 @@
   </div>
   
   <?php endforeach; ?>
+  <?php endif; ?>
   </div>
   </div>
-</div>
 
 
     <?php require_once RUTA_APP.'/vistas/inc/footer.php' ?>
