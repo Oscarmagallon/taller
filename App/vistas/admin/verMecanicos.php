@@ -72,9 +72,9 @@ json_encode($datos['tareas']);
         tr.appendChild(th1);
         tr.appendChild(th2);
         tr.appendChild(th3);
-        tr2 = document.createElement('tr');
+        table.appendChild(tr)
         datos.forEach(d => {
-            console.log(datos.length)
+        tr2 = document.createElement('tr');
         td = document.createElement('td')
         td.appendChild(document.createTextNode('Reparacion'))
         td1 = document.createElement('td')
@@ -84,10 +84,11 @@ json_encode($datos['tareas']);
         tr2.appendChild(td)
         tr2.appendChild(td1)
         tr2.appendChild(td2)
-        })
-  
-        table.appendChild(tr)
         table.appendChild(tr2)
+        })
+     
+        
+       
         div.appendChild(table)
     }
 </script>
