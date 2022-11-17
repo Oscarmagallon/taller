@@ -24,6 +24,7 @@
      <div class="text">
         <?php if($datos['usuarioSesion']->Rol_idRol==20) :?>
          <h2>Tienda</h2>
+         <h4 style="color:white">Bienvenido <?php echo $datos['usuarioSesion']->Nombre. " " ?> disfruta de  </h4>
          <?php endif; ?>
 
          <?php if($datos['usuarioSesion']->Rol_idRol==10) :?>
