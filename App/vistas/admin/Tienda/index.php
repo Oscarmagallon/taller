@@ -49,7 +49,7 @@
                 <div class="row">
                     <div class="col-md-3 col-sm-6 col-xs-12">
                         <div class="s_product">
-                            <img  width="285" height="213" src="<?php echo RUTA_URL?>/img/chaquetas.jpg">
+                        <a href="<?php echo RUTA_URL ?>/Tienda/verArticulos/2"><img  width="285" height="213" src="<?php echo RUTA_URL?>/img/chaquetas.jpg"></a>
                             <div class="s_overlay"></div>
                             <h2>Equipaciones de moto</h2>
                             
@@ -66,7 +66,7 @@
 
                     <div class="col-md-3 col-sm-6 col-xs-12">
                         <div class="s_product">
-                            <img alt="" height="200" src="<?php echo RUTA_URL?>/img/casco.jpg">
+                            <a href="<?php echo RUTA_URL ?>/Tienda/verArticulos/3"><img alt="" height="200" src="<?php echo RUTA_URL?>/img/casco.jpg"></a>
                             <div class="s_overlay"></div>
                             <h2>Cascos</h2>
                         </div>
@@ -81,7 +81,8 @@
 
                     <div class="col-md-3 col-sm-6 col-xs-12">
                         <div class="s_product">
-                            <img alt="50" height="200" src="<?php echo RUTA_URL?>/img/moto.jpg">
+                        <a href="<?php echo RUTA_URL ?>/Tienda/verArticulos/4"><img alt="50" height="200" src="<?php echo RUTA_URL?>/img/moto.jpg"></a>
+                            
                             <div class="s_overlay"></div>
                             <h2>Motos</h2>
                         </div>
