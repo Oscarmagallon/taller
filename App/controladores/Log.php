@@ -8,4 +8,3 @@
         fclose($logFile);
         return;
         }
-?>

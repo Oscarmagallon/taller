@@ -25,11 +25,9 @@ include('Log.php');
                 $motos = $this->PeticionModelo->getMotosCliente($codProp->idPropietario);
             $this->datos["Motos"] = $motos;
             $this->vista('cliente/peticion',$this->datos);
-            }else{
-                echo "No posees motos";
+            }else{ 
+                $this->vista('cliente/peticion',$this->datos);
             }
-           
-            
             }else{
                 redireccionar("/Peticiones/elegirMoto");
             }
@@ -104,4 +102,3 @@ include('Log.php');
 
 
     }
-?>

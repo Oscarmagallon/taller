@@ -1,10 +1,10 @@
-<?php require_once RUTA_APP.'/vistas/inc/header.php';?>
+<?php require_once RUTA_APP . '/vistas/inc/header.php'; ?>
 <?php print_r($datos['Moto']) ?>
- <form class="form-inline" method="Post">
+<form class="form-inline" method="Post">
   <div class="form-group row">
     <label for="name" class="col-sm-2 col-form-label"> &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; Marca</label>
     <div class="col-sm-10">
-      <input type="text" class="form-control" name = "Marca" required value ="<?php echo $datos['Moto']->Marca ?>" id="name" placeholder="Nombre">
+      <input type="text" class="form-control" name="Marca" required value="<?php echo $datos['Moto']->Marca ?>" id="name" placeholder="Nombre">
     </div>
   </div>
   <div class="form-group row">
@@ -22,13 +22,13 @@
   <br>
   <div class="form-group row">
     <div class="col-12">
-    <input type="hidden" name="idProp" value="<?php echo $datos['Moto']->idPropietario ?>">
-    <input type="hidden" name="idMoto" value="<?php echo $datos['Moto']->idMoto ?>">
+      <input type="hidden" name="idProp" value="<?php echo $datos['Moto']->idPropietario ?>">
+      <input type="hidden" name="idMoto" value="<?php echo $datos['Moto']->idMoto ?>">
 
-  <button type="submit" class="btn btn-primary  col-12">Confirmar</button> 
+      <button type="submit" class="btn btn-primary  col-12">Confirmar</button>
 
     </div>
   </div>
 </form>
 
-<?php require_once RUTA_APP.'/vistas/inc/footer.php' ?>
+<?php require_once RUTA_APP . '/vistas/inc/footer.php' ?>

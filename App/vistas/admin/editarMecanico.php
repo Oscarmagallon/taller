@@ -1,9 +1,9 @@
-<?php require_once RUTA_APP.'/vistas/inc/header.php';?>
- <form class="form-inline" method="Post">
+<?php require_once RUTA_APP . '/vistas/inc/header.php'; ?>
+<form class="form-inline" method="Post">
   <div class="form-group row">
     <label for="name" class="col-sm-2 col-form-label"> &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; Nombre</label>
     <div class="col-sm-10">
-      <input type="text" class="form-control" required name = "Nombre" value ="<?php echo $datos['Mecanico']->Nombre ?>" id="name" placeholder="Nombre">
+      <input type="text" class="form-control" required name="Nombre" value="<?php echo $datos['Mecanico']->Nombre ?>" id="name" placeholder="Nombre">
     </div>
   </div>
   <div class="form-group row">
@@ -21,11 +21,11 @@
   <br>
   <div class="form-group row">
     <div class="col-12">
-    <input type="hidden" name="id" value="<?php echo $datos['Mecanico']->idPersonal ?>">
-  <button type="submit" class="btn btn-primary  col-12">Confirmar</button> 
+      <input type="hidden" name="id" value="<?php echo $datos['Mecanico']->idPersonal ?>">
+      <button type="submit" class="btn btn-primary  col-12">Confirmar</button>
 
     </div>
   </div>
 </form>
 
-<?php require_once RUTA_APP.'/vistas/inc/footer.php' ?>
+<?php require_once RUTA_APP . '/vistas/inc/footer.php' ?>
