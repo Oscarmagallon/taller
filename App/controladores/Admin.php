@@ -24,6 +24,7 @@
             $listas = $this->AdminModelo->getNumListas();
             $this->datos['listas'] = count($listas);
             $this->datos['mecanicos'] = $this->AdminModelo->getMecanicos();
+            $this->datos['clientes'] = $this->AdminModelo->getUsuariosLogueados();
             $this->vista('inicios/admin',$this->datos);
 
         }

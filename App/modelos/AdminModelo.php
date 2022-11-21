@@ -18,7 +18,7 @@
             return $this->db->registros();
         }
 
-        public function getUsuariosLogeados(){
+        public function getUsuariosLogueados(){
             $this->db->query("SELECT count(idPersonal) as numClientes from cliente");
             return $this->db->registro();
         }
