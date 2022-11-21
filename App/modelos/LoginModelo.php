@@ -1,43 +1,49 @@
 <?php
 
-    class LoginModelo {
-        private $db;
+class LoginModelo
+{
+    private $db;
 
-        public function __construct(){
-            $this->db = new Base;
-        }
+    public function __construct()
+    {
+        $this->db = new Base;
+    }
 
 
-        public function loginUsu($usuario, $contra){
-            $this->db->query("SELECT * FROM Personal WHERE Nombre = :user_username and Contraseña = :user_pass" );
-            $this->db->bind(':user_username',$usuario);
-            $this->db->bind(':user_pass',$contra);
-            return $this->db->registro();
-        }
+    public function loginUsu($usuario, $contra)
+    {
+        $this->db->query("SELECT * FROM Personal WHERE Nombre = :user_username and Contraseña = :user_pass");
+        $this->db->bind(':user_username', $usuario);
+        $this->db->bind(':user_pass', $contra);
+        return $this->db->registro();
+    }
 
-        public function addCliente($cliente){
-            $this->db->query("INSERT into Personal (idPersonal, Nombre, Apellido, Contraseña, Rol_idRol, Correo)
+    public function addCliente($cliente)
+    {
+        $this->db->query("INSERT into Personal (idPersonal, Nombre, Apellido, Contraseña, Rol_idRol, Correo)
                                      values(null,:nombre,:apellido, :contra, 20 , :correo)");
-            $this->db->bind(':nombre',$cliente['nombre']);
-            $this->db->bind(':apellido',$cliente['apellido']);
-            $this->db->bind(':correo',$cliente['email']);
-            $this->db->bind(':contra',$cliente['contra']);
+        $this->db->bind(':nombre', $cliente['nombre']);
+        $this->db->bind(':apellido', $cliente['apellido']);
+        $this->db->bind(':correo', $cliente['email']);
+        $this->db->bind(':contra', $cliente['contra']);
 
-            $this->db->execute();
-        }
+        $this->db->execute();
+    }
 
-        public function getId(){
-            $this->db->query("SELECT idPersonal FROM Personal ORDER BY idPersonal DESC LIMIT 1");
-            return $this->db->registro();
-        }
+    public function getId()
+    {
+        $this->db->query("SELECT idPersonal FROM Personal ORDER BY idPersonal DESC LIMIT 1");
+        return $this->db->registro();
+    }
 
-        public function addClienteApp($id){
-            $this->db->query("INSERT into cliente (idPersonal,idPropietario)
+    public function addClienteApp($id)
+    {
+        $this->db->query("INSERT into cliente (idPersonal,idPropietario)
                                      values ($id, null)");
-            $this->db->execute();
-        }
+        $this->db->execute();
+    }
 
-        /*
+    /*
         public function registroSesion($id_usuario){
             $this->db->query("INSERT INTO sesiones (id_sesion, id_usuario, fecha_inicio) 
                                         VALUES (:id_sesion, :id_usuario, NOW())");
@@ -66,4 +72,4 @@
                 return false;
             }
         }*/
-    }
+}

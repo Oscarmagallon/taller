@@ -11,7 +11,8 @@ require 'PHPMailer/src/Exception.php';
 require 'PHPMailer/src/PHPMailer.php';
 require 'PHPMailer/src/SMTP.php';
 
-function enviarEmail ($correo){
+function enviarEmail($correo)
+{
     // Inicio
     $mail = new PHPMailer(true);
 
@@ -21,13 +22,13 @@ function enviarEmail ($correo){
         $mail->Host  = 'smtp.gmail.com';                     // Servidor SMTP
         $mail->SMTPAuth  = true;                                       // Identificacion SMTP
         $mail->Username  = 'vito96200@gmail.com';                  // Usuario SMTP
-        $mail->Password  = 'kqsenagovaldlqta';	          // Contraseña SMTP
+        $mail->Password  = 'kqsenagovaldlqta';              // Contraseña SMTP
         $mail->SMTPSecure = 'tls';
         $mail->Port  = 587;
         $mail->setFrom('vito96200@gmail.com', 'Oscar');                // Remitente del correo
 
         // Destinatarios
-        $mail->addAddress($correo[0]->Correo,$correo[0]->Nombre );  // Email y nombre del destinatario
+        $mail->addAddress($correo[0]->Correo, $correo[0]->Nombre);  // Email y nombre del destinatario
 
         // Contenido del correo
         $mail->isHTML(true);
