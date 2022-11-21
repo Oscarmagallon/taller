@@ -96,7 +96,7 @@
 
                     <div class="col-md-3 col-sm-6 col-xs-12">
                         <div class="s_product">
-                            <img alt="" src="<?php echo RUTA_URL ?>/img/piezas.jpg">
+                            <a href="<?php echo RUTA_URL ?>/Tienda/verArticulos/1"> <img alt="" src="<?php echo RUTA_URL ?>/img/piezas.jpg"></a>
                             <div class="s_overlay"></div>
                             <h2>Piezas</h2>
                             
