@@ -27,7 +27,7 @@
                 </tfoot>
             </table>
             <?php if (!$total == 0) : ?>
-                <h3>Total &nbsp;<?php echo $total ?>&nbsp;&nbsp;<a href="<?php echo RUTA_URL ?>/Pagos/pagosCliente/<?php echo $datos['reparaciones'][0]->reparaciones_idreparaciones ?>">Pagar<i class="bi bi-cash-stack"></i></a></h3>
+                <h3>Total &nbsp;<?php echo $total ?>&nbsp;&nbsp;<a href="<?php echo RUTA_URL ?>/Pagos/pagosCliente/<?php echo $datos['reparaciones'][0]->reparaciones_idreparaciones ?>"><button class="btn btn-primary">Pagar <i class="bi bi-cash-stack"></i></button></a></h3>
             <?php endif ?>
             <p>No hay ningun coste para la moto</p>
         </div>
