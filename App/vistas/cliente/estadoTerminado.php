@@ -2,16 +2,7 @@
 
 <body class="container">
     <h1>Estado</h1>
-    <nav class="navbar navbar-light navbar-expand-lg" style="background-color: #e3f2fd;">
-        <?php print_r($this->datos['usuarioSesion']) ?>
-        <div class="container-fluid px-2">
-            <form autocomplete="off" class="d-flex">
-                <input class="form-control me-2" type="search" placeholder="Nombre de la marca" aria-label="Buscar">
-                <button class="btn btn-outline-primary" type="submit">Buscar</button>
-            </form>
-
-        </div>
-    </nav>
+    <h4>Motos listas para pagar y recojer. Haga click para ver la factura</h4>
     <div class="col-12 table-responsive">
         <table class="table table-hover">
 
@@ -24,6 +15,9 @@
                 </tr>
             </thead>
             <tbody>
+                <?php
+                if(!empty($datos['Estado'])):?>
+
                 <?php foreach ($datos['Estado'] as $e) : ?>
                     <tr>
                         <td><?php echo $e->Tipo ?></td>
@@ -40,6 +34,7 @@
                         <?php endif; ?>
                     </tr>
                 <?php endforeach;
+                endif
                 ?>
 </body>
 

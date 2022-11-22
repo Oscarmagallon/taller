@@ -33,7 +33,7 @@
                         <td><?php echo $p->Descr ?></td>
                         <td><?php echo $p->Descr ?></td>
                         <td><?php echo $p->Ingreso ?></td>
-                        <td><?php if ($p->Descr == "Mano Obra") : ?> <a href="<?php echo RUTA_URL ?>/Pagos/borrar/<?php echo $p->idIngreso ?>/<?php echo $datos['id'] ?>"><i class="bi bi-trash-fill"></i></a> <?php endif ?></td>
+                        <td><?php if ($p->Descr == "Mano Obra") : ?> <a onclick="return confirm_delete()" href="<?php echo RUTA_URL ?>/Pagos/borrar/<?php echo $p->idIngreso ?>/<?php echo $datos['id'] ?>"><i class="bi bi-trash-fill"></i></a> <?php endif ?></td>
                     </tr>
                     <?php
                     $total = $total + $p->Ingreso; ?>

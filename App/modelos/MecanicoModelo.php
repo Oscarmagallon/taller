@@ -30,10 +30,23 @@ class MecanicoModelo
         $this->db->execute();
     }
 
+    public function mecanIncidencias($id)
+    {
+        $this->db->query('UPDATE incidencias set idPersonal= null where idPersonal = :id');
+        $this->db->bind(':id', $id);
+        $this->db->execute();
+    }
+
     public function borrarMecan($id)
     {
         $this->db->query('DELETE from mecanico where idMecanico = :id');
         $this->db->bind(':id', $id);
+        $this->db->execute();
+    }
+
+    public function mecanicoHasReparaciones($id){
+        $this->db->query('DELETE from mecanico_has_reparaciones where idMecanico = :id');
+        $this->db->bind(':id' , $id);
         $this->db->execute();
     }
 

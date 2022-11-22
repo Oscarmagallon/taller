@@ -3,3 +3,14 @@
 </body>
 
 </html>
+
+
+    <script>
+        function confirm_delete(){
+        if(confirm("Seguro que deseas eliminar el objeto?") === true){
+            return true;
+        }else{
+            return false;
+       }
+     }
+    </script>

@@ -34,7 +34,7 @@
                             <td><?php echo $e->Descripcion ?></td>
                             <td><?php echo $e->Fecha ?></td>
                             <td><a href="<?php echo RUTA_URL ?>/Peticiones/anadirMecanico/<?php echo $e->idIncidencias ?>/<?php echo $datos['Peticiones'][0]->idMoto ?>"><i class="bi bi-person-plus"></i></a>
-                                <a href="<?php echo RUTA_URL ?>/Peticiones/eliminarPeticion/<?php echo $e->idIncidencias ?>"><i class="bi bi-trash"></i></a>
+                                <a onclick="return confirm_delete()" href="<?php echo RUTA_URL ?>/Peticiones/eliminarPeticion/<?php echo $e->idIncidencias ?>"><i class="bi bi-trash"></i></a>
                             </td>
 
 

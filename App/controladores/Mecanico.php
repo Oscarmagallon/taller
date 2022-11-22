@@ -44,11 +44,15 @@
         }
 
         public function borrar($id){
+            $this->mecanicoModelo->mecanIncidencias($id);
+            $this->mecanicoModelo->mecanicoHasReparaciones($id);
             $this->mecanicoModelo->borrarMecan($id);
             $this->mecanicoModelo->deleteMecan($id);
             redireccionar('/Mecanico');
            
         }
+
+       
 
         public function seguimiento($id){
             $this->datos['tareas'] = $this->mecanicoModelo->seguimiento($id);

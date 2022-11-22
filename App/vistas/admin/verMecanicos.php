@@ -39,7 +39,7 @@
                         <td><?php echo $m->Correo ?></td>
                         <td>
                             <a href="<?php echo RUTA_URL ?>/Mecanico/editar/<?php echo $m->idPersonal ?>"><i class="bi bi-pencil-square"></i></a>
-                            <a href="<?php echo RUTA_URL ?>/Mecanico/borrar/<?php echo $m->idPersonal ?>"><i class="bi bi-trash"></i></a>
+                            <a onclick="return confirm_delete()" href="<?php echo RUTA_URL ?>/Mecanico/borrar/<?php echo $m->idPersonal ?>"><i class="bi bi-trash"></i></a>
                         </td>
 
 
