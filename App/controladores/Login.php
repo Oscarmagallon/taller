@@ -54,8 +54,8 @@ class Login extends Controlador
         $this->vista("admin/Tienda/indexNoLog",$this->datos);
     }
 
-    public function verArticulo($clase){
-        $this->datos['articulos'] = $this->LoginModelo->getArticulosTienda($clase);
+    public function verArticulos($clase){
+        $this->datos['articulos'] = $this->loginModelo->getArticulosTienda($clase);
         $this->vista("admin/Tienda/verArticulo",$this->datos);
     }
 

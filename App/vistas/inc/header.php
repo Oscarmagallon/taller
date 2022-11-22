@@ -18,7 +18,7 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <div class="container-fluid">
         <?php if (empty($datos['usuarioSesion'])) : ?>
-          <a class="navbar-brand" href="">Bienvenido a el registro de la aplicacion</a>
+          <a class="navbar-brand" href="">¡Registrate!, Te estamos esperando</a>
         <?php endif; ?>
         <?php if (!empty($datos['usuarioSesion'])) : ?>
           <a class="navbar-brand" href="">Bienvenido <?php print_r($datos['usuarioSesion']->Nombre) ?></a>
