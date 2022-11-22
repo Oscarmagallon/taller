@@ -1,3 +1,5 @@
+
+<div class ="container">
 <?php require_once RUTA_APP . '/vistas/inc/header.php'; ?>
 <form class="form-inline" method="Post" action="<?php echo RUTA_URL ?>/Mecanico/addMecanico">
   <div class="form-group row">
@@ -26,5 +28,6 @@
     </div>
   </div>
 </form>
+</div>
 
 <?php require_once RUTA_APP . '/vistas/inc/footer.php' ?>

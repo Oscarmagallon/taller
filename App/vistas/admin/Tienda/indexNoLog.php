@@ -5,9 +5,10 @@
 
 
 <html lang="en">
-
+<center>
 <head>
     <meta charset="UTF-8">
+    <title>Prodact Display</title>
     <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700" rel="stylesheet">
@@ -17,22 +18,25 @@
     <link rel="stylesheet" href="../Tienda/css/owl.theme.default.min.css">
     <link rel="stylesheet" href="../Tienda/css/magnific-popup.css">
     <link rel="stylesheet" href="../Tienda/css/jquery.bxSlider.css"> -->
-    <link href="../Tienda/style.css" rel="stylesheet" type="text/css" />
+  
 
 </head>
+<style>
+    .centrado{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+}
 
+    
+</style>
 <body>
     <section class="season">
         <img src="<?php echo RUTA_URL ?>/img/motsmt.jpg">
-        <div class="text">
-            <?php if ($datos['usuarioSesion']->Rol_idRol == 20) : ?>
-                <h2>Tienda</h2>
-                <h4 style="color:white">Bienvenido <?php echo $datos['usuarioSesion']->Nombre . " " ?> disfruta de </h4>
-            <?php endif; ?>
-
-            <?php if ($datos['usuarioSesion']->Rol_idRol == 10) : ?>
-                <h2>Proveedores</h2>
-            <?php endif; ?>
+        <div class="centrado">
+            <h2>Hechale un vistazo a nuestra tienda</h2>
 
             <h3>Las mejores ofertas</h3>
         </div>
@@ -52,67 +56,44 @@
                 <div class="row">
                     <div class="col-md-3 col-sm-6 col-xs-12">
                         <div class="s_product">
-                            <a href="<?php echo RUTA_URL ?>/Tienda/verArticulos/2"><img width="285" height="213" src="<?php echo RUTA_URL ?>/img/chaquetas.jpg"></a>
+                            <a href="<?php echo RUTA_URL ?>/Login/verArticulos/2"><img width="285" height="213" src="<?php echo RUTA_URL ?>/img/chaquetas.jpg"></a>
                             <div class="s_overlay"></div>
                             <h2>Equipaciones de moto</h2>
 
                         </div>
-                        <?php if ($datos['usuarioSesion']->Rol_idRol  == 10) : ?>
-                            <h3><a href="<?php echo RUTA_URL ?>/Tienda/verArticulos/2">Ver</a></h3>
-                        <?php endif; ?>
-
-                        <?php if ($datos['usuarioSesion']->Rol_idRol == 20) : ?>
-                            <h3><a href="<?php echo RUTA_URL ?>/Tienda/verArticulos/2">Ver</a></h3>
-                        <?php endif; ?>
-
-                    </div>
+                            <h3><a href="<?php echo RUTA_URL ?>/Login/verArticulos/2">Ver</a></h3>
+                        </div>
 
                     <div class="col-md-3 col-sm-6 col-xs-12">
                         <div class="s_product">
-                            <a href="<?php echo RUTA_URL ?>/Tienda/verArticulos/3"><img alt="" height="200" src="<?php echo RUTA_URL ?>/img/casco.jpg"></a>
+                            <a href="<?php echo RUTA_URL ?>/Login/verArticulos/3"><img alt="" height="200" src="<?php echo RUTA_URL ?>/img/casco.jpg"></a>
                             <div class="s_overlay"></div>
                             <h2>Cascos</h2>
                         </div>
-                        <?php if ($datos['usuarioSesion']->Rol_idRol  == 10) : ?>
-                            <h3><a href="<?php echo RUTA_URL ?>/Tienda/verArticulos/3">Ver</a></h3>
-                        <?php endif; ?>
-
-                        <?php if ($datos['usuarioSesion']->Rol_idRol == 20) : ?>
-                            <h3><a href="<?php echo RUTA_URL ?>/Tienda/verArticulos/3">Ver</a></h3>
-                        <?php endif; ?>
+                            <h3><a href="<?php echo RUTA_URL ?>/Login/verArticulos/3">Ver</a></h3>
+            
                     </div>
 
                     <div class="col-md-3 col-sm-6 col-xs-12">
                         <div class="s_product">
-                            <a href="<?php echo RUTA_URL ?>/Tienda/verArticulos/4"><img alt="50" height="200" src="<?php echo RUTA_URL ?>/img/moto.jpg"></a>
+                            <a href="<?php echo RUTA_URL ?>/Login/verArticulos/4"><img alt="50" height="200" src="<?php echo RUTA_URL ?>/img/moto.jpg"></a>
 
                             <div class="s_overlay"></div>
                             <h2>Motos</h2>
                         </div>
-                        <?php if ($datos['usuarioSesion']->Rol_idRol  == 10) : ?>
-                            <h3><a href="<?php echo RUTA_URL ?>/Tienda/verArticulos/4">Ver</a></h3>
-                        <?php endif; ?>
-
-                        <?php if ($datos['usuarioSesion']->Rol_idRol == 20) : ?>
-                            <h3><a href="<?php echo RUTA_URL ?>/Tienda/verArticulos/4">Ver</a></h3>
-                        <?php endif; ?>
-                    </div>
+                            <h3><a href="<?php echo RUTA_URL ?>/Login/verArticulos/4">Ver</a></h3>
+                        </div>
 
                     <div class="col-md-3 col-sm-6 col-xs-12">
                         <div class="s_product">
-                            <a href="<?php echo RUTA_URL ?>/Tienda/verArticulos/1"> <img alt="" src="<?php echo RUTA_URL ?>/img/piezas.jpg"></a>
+                            <a href="<?php echo RUTA_URL ?>/Login/verArticulos/1"> <img alt="" src="<?php echo RUTA_URL ?>/img/piezas.jpg"></a>
                             <div class="s_overlay"></div>
                             <h2>Piezas</h2>
 
                         </div>
-                        <?php if ($datos['usuarioSesion']->Rol_idRol  == 10) : ?>
-                            <h3><a href="<?php echo RUTA_URL ?>/Tienda/verArticulos/1">Ver</a></h3>
-                        <?php endif; ?>
+                            <h3><a href="<?php echo RUTA_URL ?>/Login/verArticulos/1">Ver</a></h3>
 
-                        <?php if ($datos['usuarioSesion']->Rol_idRol == 20) : ?>
-                            <h3><a href="<?php echo RUTA_URL ?>/Tienda/verArticulos/1">Ver</a></h3>
-                        <?php endif; ?>
-                    </div>
+                        </div>
                 </div>
             </div>
         </div>
@@ -162,3 +143,4 @@
 
 </html>
 <?php require_once RUTA_APP . '/vistas/inc/footer.php' ?>
+</center>

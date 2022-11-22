@@ -1,3 +1,4 @@
+<div class = "container">
 <?php require_once RUTA_APP . '/vistas/inc/header.php'; ?>
 <div style="width:900px; position: relative; margin-left: auto; margin-right: auto;">
   <h1>Rellene el formulario con los datos de su moto</h1>
@@ -19,3 +20,4 @@
     <button type="submit" class="btn btn-primary  mx-sm-3 mb-2">Confirmar</button>
   </form>
   <?php require_once RUTA_APP . '/vistas/inc/footer.php' ?>
+  </div>
