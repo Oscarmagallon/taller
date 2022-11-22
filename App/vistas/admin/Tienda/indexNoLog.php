@@ -56,42 +56,42 @@
                 <div class="row">
                     <div class="col-md-3 col-sm-6 col-xs-12">
                         <div class="s_product">
-                            <a href="<?php echo RUTA_URL ?>/Tienda/verArticulos/2"><img width="285" height="213" src="<?php echo RUTA_URL ?>/img/chaquetas.jpg"></a>
+                            <a href="<?php echo RUTA_URL ?>/Login/verArticulos/2"><img width="285" height="213" src="<?php echo RUTA_URL ?>/img/chaquetas.jpg"></a>
                             <div class="s_overlay"></div>
                             <h2>Equipaciones de moto</h2>
 
                         </div>
-                            <h3><a href="<?php echo RUTA_URL ?>/Tienda/verArticulos/2">Ver</a></h3>
+                            <h3><a href="<?php echo RUTA_URL ?>/Login/verArticulos/2">Ver</a></h3>
                         </div>
 
                     <div class="col-md-3 col-sm-6 col-xs-12">
                         <div class="s_product">
-                            <a href="<?php echo RUTA_URL ?>/Tienda/verArticulos/3"><img alt="" height="200" src="<?php echo RUTA_URL ?>/img/casco.jpg"></a>
+                            <a href="<?php echo RUTA_URL ?>/Login/verArticulos/3"><img alt="" height="200" src="<?php echo RUTA_URL ?>/img/casco.jpg"></a>
                             <div class="s_overlay"></div>
                             <h2>Cascos</h2>
                         </div>
-                            <h3><a href="<?php echo RUTA_URL ?>/Tienda/verArticulos/3">Ver</a></h3>
+                            <h3><a href="<?php echo RUTA_URL ?>/Login/verArticulos/3">Ver</a></h3>
             
                     </div>
 
                     <div class="col-md-3 col-sm-6 col-xs-12">
                         <div class="s_product">
-                            <a href="<?php echo RUTA_URL ?>/Tienda/verArticulos/4"><img alt="50" height="200" src="<?php echo RUTA_URL ?>/img/moto.jpg"></a>
+                            <a href="<?php echo RUTA_URL ?>/Login/verArticulos/4"><img alt="50" height="200" src="<?php echo RUTA_URL ?>/img/moto.jpg"></a>
 
                             <div class="s_overlay"></div>
                             <h2>Motos</h2>
                         </div>
-                            <h3><a href="<?php echo RUTA_URL ?>/Tienda/verArticulos/4">Ver</a></h3>
+                            <h3><a href="<?php echo RUTA_URL ?>/Login/verArticulos/4">Ver</a></h3>
                         </div>
 
                     <div class="col-md-3 col-sm-6 col-xs-12">
                         <div class="s_product">
-                            <a href="<?php echo RUTA_URL ?>/Tienda/verArticulos/1"> <img alt="" src="<?php echo RUTA_URL ?>/img/piezas.jpg"></a>
+                            <a href="<?php echo RUTA_URL ?>/Login/verArticulos/1"> <img alt="" src="<?php echo RUTA_URL ?>/img/piezas.jpg"></a>
                             <div class="s_overlay"></div>
                             <h2>Piezas</h2>
 
                         </div>
-                            <h3><a href="<?php echo RUTA_URL ?>/Tienda/verArticulos/1">Ver</a></h3>
+                            <h3><a href="<?php echo RUTA_URL ?>/Login/verArticulos/1">Ver</a></h3>
 
                         </div>
                 </div>
