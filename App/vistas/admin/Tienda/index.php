@@ -1,5 +1,7 @@
-<?php require_once RUTA_APP . '/vistas/inc/header.php' ?>
+
 <!DOCTYPE html>
+<div class="container" >
+<?php require_once RUTA_APP . '/vistas/inc/header.php' ?>
 
 
 <html lang="en">
@@ -157,6 +159,7 @@
 <script src="../Tienda/js/active.js"></script>  
  -->
 </body>
+</div>
 
 </html>
 <?php require_once RUTA_APP . '/vistas/inc/footer.php' ?>
