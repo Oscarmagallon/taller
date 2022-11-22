@@ -140,7 +140,7 @@
       h.appendChild(document.createTextNode(datos['articulos'][i]['Descripcion']));
       h3.appendChild(document.createTextNode(datos['articulos'][i]['Precio']));
       button.appendChild(document.createTextNode("Comprar"))
-      imagen.setAttribute("src", '<?php echo RUTA_URL?>/public/img/piston.jpg')
+      imagen.setAttribute("src", '<?php echo RUTA_URL?>/public/img/<?php echo $datos['articulos'][0]->Tipo ?>.jpg')
       imagen.setAttribute("height", "80")
       imagen.setAttribute("width", "80")
 
