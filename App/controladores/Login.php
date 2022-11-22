@@ -46,6 +46,19 @@ class Login extends Controlador
         $this->vista("cliente/registroCliente", $this->datos);
     }
 
+    public function conocenos(){
+        $this->vista('inicios/noLogueado');
+    }
+
+    public function tienda(){
+        $this->vista("admin/Tienda/indexNoLog",$this->datos);
+    }
+
+    public function verArticulos($clase){
+        $this->datos['articulos'] = $this->loginModelo->getArticulosTienda($clase);
+        $this->vista("admin/Tienda/verArticulo",$this->datos);
+    }
+
     public function registrar()
     {
         $usuarioNuevo = [

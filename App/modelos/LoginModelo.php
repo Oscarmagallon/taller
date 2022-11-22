@@ -43,6 +43,12 @@ class LoginModelo
         $this->db->execute();
     }
 
+    public function getArticulosTienda($clase)
+    {
+        $this->db->query("SELECT idArticulos as idArticulosProvedores,Tipo, Precio, descr as Descripcion from articulos where Tipo = '$clase' and Vendido = 0");
+        return $this->db->registros();
+    }
+
     /*
         public function registroSesion($id_usuario){
             $this->db->query("INSERT INTO sesiones (id_sesion, id_usuario, fecha_inicio) 

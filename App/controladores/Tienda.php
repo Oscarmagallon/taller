@@ -48,7 +48,7 @@
            if ($this->datos['usuarioSesion']->Rol_idRol == 10){
             $carrito =  $this->TiendaModelo->obtenerProveedorCarrito($datos);
             $cod =  $this->datos['usuarioSesion']->idPersonal;            
-            $this->TiendaModelo->addArtiSculos($carrito);
+            $this->TiendaModelo->addArticulos($carrito);
             $this->TiendaModelo->rellenarGasto($carrito,$cod);
             $this->vistaApi($datos);
            }else{

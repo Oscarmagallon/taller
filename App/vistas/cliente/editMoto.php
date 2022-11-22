@@ -1,5 +1,6 @@
+<div class ="container">
 <?php require_once RUTA_APP . '/vistas/inc/header.php'; ?>
-<?php print_r($datos['Moto']) ?>
+<h1>Modifique los datos de su moto</h1>
 <form class="form-inline" method="Post">
   <div class="form-group row">
     <label for="name" class="col-sm-2 col-form-label"> &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; Marca</label>
@@ -32,3 +33,4 @@
 </form>
 
 <?php require_once RUTA_APP . '/vistas/inc/footer.php' ?>
+</div>

@@ -76,6 +76,7 @@
 <div class="container">
   <div class="jumbotron">
     <h1>Login</h1>
+    <p>¿Quieres saber quien somos antes de resgistrarte? <a href="<?php RUTA_URL ?>/Taller/Login/conocenos">conocenos</a> </p>
   </div>
 
   <form action="" method="post">

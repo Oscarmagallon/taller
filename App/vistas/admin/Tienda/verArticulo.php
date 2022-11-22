@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<div class ="container">
 <head>
   <?php require_once RUTA_APP . '/vistas/inc/header.php';
   json_encode($datos);
@@ -107,7 +107,7 @@
   </div>
   </section>
 </body>
-
+</div>
 </html>
 <script>
   let datoss = '<?php echo json_encode($datos['articulos']); ?>';
@@ -133,12 +133,17 @@
       var h3 = document.createElement("h2");
       var input = document.createElement("input");
       var button = document.createElement("button");
-      tipo = verTipo((datos['articulos'][i]['Tipo']));
-      h2.appendChild(document.createTextNode(tipo));
+      var tipo = datos['articulos'][i]['Tipo']
+      var t = verTipo(tipo)
+
+      h2.appendChild(document.createTextNode(t));
       h.appendChild(document.createTextNode(datos['articulos'][i]['Descripcion']));
       h3.appendChild(document.createTextNode(datos['articulos'][i]['Precio']));
       button.appendChild(document.createTextNode("Comprar"))
-      imagen.setAttribute("src", 'img/marca-ktm.jpg')
+      imagen.setAttribute("src", '<?php echo RUTA_URL?>/public/img/<?php echo $datos['articulos'][0]->Tipo ?>.jpg')
+      imagen.setAttribute("height", "80")
+      imagen.setAttribute("width", "80")
+
       div2.setAttribute("class", 'col-4');
       button.setAttribute("class", 'btn-comprar');
       h2.setAttribute("class", 'h2');
@@ -262,8 +267,10 @@
   }
 
   function verTipo(tipo) {
+    console.log(tipo)
     switch (tipo) {
       case 1:
+        console.log('estamos en el case 1')
         tipo = "Pieza"
         break;
 
