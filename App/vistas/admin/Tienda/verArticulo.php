@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<div class ="container">
 <head>
   <?php require_once RUTA_APP . '/vistas/inc/header.php';
   json_encode($datos);
@@ -107,7 +107,7 @@
   </div>
   </section>
 </body>
-
+</div>
 </html>
 <script>
   let datoss = '<?php echo json_encode($datos['articulos']); ?>';
