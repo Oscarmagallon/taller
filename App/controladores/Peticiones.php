@@ -57,12 +57,13 @@ include('Log.php');
 
         public function peticionTerminada($meca,$id,$idMoto){
            
-           $ids = $this->PeticionModelo->getIdReparacion();
-           $idReparacion = $ids->idReparaciones;
-           $this->PeticionModelo->mecanicoRepara($meca,$idReparacion);
+            $ids = $this->PeticionModelo->getIdReparacion();
+            $idReparacion = $ids->idReparaciones;
+            $this->PeticionModelo->mecanicoRepara($meca,$idReparacion);
             $this->PeticionModelo->terminada($id);
             $this->datos['Prop'] = $this->PeticionModelo->getPropietario($idMoto);
-            enviarEmail($this->datos['Prop']);
+            $mensaje = "Buenas su moto esta lista, entre en la web para ver los detalles";
+            enviarEmail($this->datos['Prop'],$mensaje);
             $txt ="Correo de aviso moto lista enviado a ".$this->datos['Prop'][0]->Nombre. " ".$this->datos['Prop'][0]->Apellido;
             enviarLog($txt);
             redireccionar("/Peticiones/verPeticionesProgreso/$idMoto");
