@@ -270,7 +270,6 @@
     console.log(tipo)
     switch (tipo) {
       case 1:
-        console.log('estamos en el case 1')
         tipo = "Pieza"
         break;
 
