@@ -22,7 +22,7 @@ function enviarEmail($correo)
         $mail->Host  = 'smtp.gmail.com';                     // Servidor SMTP
         $mail->SMTPAuth  = true;                                       // Identificacion SMTP
         $mail->Username  = 'vito96200@gmail.com';                  // Usuario SMTP
-        $mail->Password  = 'kqsenagovaldlqta';              // Contraseña SMTP
+        $mail->Password  = 'bjxqhnlesochylim';              // Contraseña SMTP
         $mail->SMTPSecure = 'tls';
         $mail->Port  = 587;
         $mail->setFrom('vito96200@gmail.com', 'Oscar');                // Remitente del correo
