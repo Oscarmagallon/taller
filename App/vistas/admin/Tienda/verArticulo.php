@@ -121,6 +121,8 @@
   const templateFooter = document.getElementById('template-footer').content;
   const templateCarrito = document.getElementById('template-carrito').content;
 
+
+//creamos la estructura de la página
   function pintarPag() {
     let datoss = '<?php echo json_encode($datos); ?>';
     let datos = JSON.parse(datoss);
@@ -182,10 +184,10 @@
     btnAccion(e);
   })
 
-  //miramos que vengan de un boton
+  //si el click viene de un boton de compra de un articulo
   const addCarrito = e => {
     if (e.target.classList.contains('btn-comprar')) {
-      setCarrito(e.target.parentElement) //cogemos los elementos que engloba
+      setCarrito(e.target.parentElement) //cogemos ese click y los elementos que engloba
     }
     e.stopPropagation()
   }
@@ -212,6 +214,7 @@
     console.log(carrito);
     cards.innerHTML = '';
     Object.values(carrito).forEach(producto => {
+      //vamos seleccionando los elementos ya creado en el html y los vamos rellenando con datos del carrito
       templateCarrito.querySelector('th').textContent = producto.id;
       templateCarrito.querySelectorAll('td')[0].textContent = producto.tipo;
       templateCarrito.querySelectorAll('td')[1].textContent = producto.cantidad;
@@ -348,6 +351,7 @@
 
   }
 
+  //funcion asincrona para guardar el carrito, mandando los datos a el controlador
   function guardarCarrito(carrito) {
 
     fetch(`<?php echo RUTA_URL ?>/Tienda/carrito`, {
