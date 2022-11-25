@@ -91,6 +91,26 @@ class TiendaModelo
         }
     }
 
+    public function addArticulo($articulo){
+        $this->db->query('INSERT into articulosproveedor values(:codigo, :precio, :descrip, :tipo)');
+        $this->db->bind(':precio', $articulo['precio']);
+        $this->db->bind(':descrip', $articulo['descripcion']);
+        $this->db->bind(':tipo', $articulo['tipo']);
+        $this->db->bind(':codigo', $articulo['codigo']);
+        $this->db->execute();
+    }
+
+    public function getCodigo(){
+        $this->db->query("SELECT max(idArticulosProvedores) as id FROM articulosproveedor");
+        return $this->db->registro();
+    }
+
+    public function proveedorHasArticulo($id){
+        $this->db->query('INSERT into articulostieneproveedor values (1,:id)');
+        $this->db->bind(':id', $id);
+        $this->db->execute();
+    }
+
     public function addIngresoCarrito($id, $tipo, $precio)
     {
         switch ($tipo) {

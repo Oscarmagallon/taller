@@ -37,10 +37,19 @@
             <h3>Las mejores ofertas</h3>
         </div>
     </section>
-
+    <?php if($datos['usuarioSesion']->Rol_idRol == 10 ):?>
+    <br> <br>
+    <center>
+        <a href="<?php echo RUTA_URL ?>/Tienda/addArticulo">
+            <img src="<?php echo RUTA_URL ?>/img/tienda.png" height="213" width="213" alt="">
+            <h2>Añadir articulo</h2>
+        </a>
+    </center>
+    <?php endif ?>
     <div class="related-products">
         <div class="container">
             <div class="row">
+                
                 <div class="col-md-12">
                     <div class="bar">
                         <h2>Articulos</h2>

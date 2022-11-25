@@ -40,6 +40,26 @@
             $this->vistaApi($dato); 
 
         }
+
+        public function addArticulo(){
+            if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+                $codigo = $this->TiendaModelo->getCodigo();
+                $codigo->id ++;
+                $articulo = [
+                    'tipo' => trim($_POST['tipo']),
+                    'descripcion' => trim($_POST['descripcion']),
+                    'precio' => trim($_POST['precio']),
+                    'codigo'=> $codigo->id,
+                ];
+                $this->TiendaModelo->addArticulo($articulo);
+                $this->TiendaModelo->proveedorHasArticulo($codigo->id);
+                redireccionar("/Tienda");
+          
+            } else {
+                $this->vista('admin/agregarPieza', $this->datos);
+            }
+        }
+        
         
         public function carrito(){
             $json = file_get_contents('php://input');
