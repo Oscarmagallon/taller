@@ -90,6 +90,11 @@ class PeticionModelo
         return $this->db->registros();
     }
 
+    public function propietario ($id){
+        $this->db->query("SELECT personal.Nombre, personal.Correo from incidencias INNER JOIN moto_has_incidencias on incidencias.idIncidencias = moto_has_incidencias.idIncidencias INNER JOIN moto on moto.idMoto = moto_has_incidencias.idMoto inner join propietario on moto.idPropietario = propietario.idPropietario INNER JOIN cliente on cliente.idPropietario = propietario.idPropietario inner join personal on cliente.idPersonal = personal.idPersonal where incidencias.idIncidencias= $id;");
+        return $this->db->registros();
+    }
+
     public function insertarReparacion($fecha)
     {
         $today = date('Y/m/d');

@@ -100,7 +100,6 @@ include('Log.php');
             $mensaje = "La petición de su moto a sido rechazada, puede volver a mandar otra peticion en cualquier momento";
             enviarEmail($this->datos['Prop'],$mensaje);
             redireccionar("/Peticiones");
-//SELECT personal.Nombre, personal.Correo from incidencias INNER JOIN moto_has_incidencias on incidencias.idIncidencias = moto_has_incidencias.idIncidencias INNER JOIN moto on moto.idMoto = moto_has_incidencias.idMoto inner join propietario on moto.idPropietario = propietario.idPropietario INNER JOIN cliente on cliente.idPropietario = propietario.idPropietario inner join personal on cliente.idPersonal = personal.idPersonal where incidencias.idIncidencias=4;
         }
 
 
