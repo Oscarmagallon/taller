@@ -52,13 +52,14 @@
             if(!empty($idReparacion->idreparaciones)){
                 $this->PiezasModelo->borrarPiezaIngreso($tipo,$precio,$idReparacion->idreparaciones);
             }
-            
             //Ponemos la pieza disponible otra vez
             $this->PiezasModelo->piezaDisponible($id);
             $idsPiezas = $this->PiezasModelo->piezasMoto($idMoto);
             $this->datos['piezasMoto'] = $this->PiezasModelo->getPiezasMoto($idsPiezas);
             $this->datos['id'] = $idMoto;
             $this->vista("admin/verPiezas",$this->datos);
+            redireccionar("/Piezas/verPiezas/$idMoto");
+
 
         }
 
