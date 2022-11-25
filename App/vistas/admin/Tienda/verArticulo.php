@@ -37,9 +37,18 @@
             </button>
           </td>
           <td>
-            <button class="btn btn-success btn-sm" id="aceptar-carrito">
-              Aceptar
-            </button>
+            <?php if(empty($datos['usuarioSesion']->Rol_idRol)): ?>
+              <div title="Debes registrarte para comprar">
+                <button class="btn btn-success btn-sm" disabled title="Debes registrarte para comprar" id="aceptar-carrito">
+                    Aceptar
+                </button>
+              </div>
+            <?php endif; ?>
+            <?php if(!empty($datos['usuarioSesion']->Rol_idRol)): ?>
+              <button class="btn btn-success btn-sm" id="aceptar-carrito">
+                  Aceptar
+              </button>
+            <?php endif; ?>
           </td>
           <td class="font-weight-bold">$ <span></td>
         </template>
