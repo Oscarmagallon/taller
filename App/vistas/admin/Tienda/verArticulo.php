@@ -296,22 +296,6 @@
       case 4:
         tipo = "Moto"
         break;
-
-        case "1":
-        tipo = "Pieza"
-        break;
-
-      case "2":
-        tipo = "Equipacion"
-        break;
-
-      case "3":
-        tipo = "Casco"
-        break;
-
-      case "4":
-        tipo = "Moto"
-        break;
     }
     return tipo;
   }
