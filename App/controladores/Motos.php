@@ -17,6 +17,8 @@ class Motos extends Controlador{
         $idPersonal = $this->datos['usuarioSesion']->idPersonal;
         $idProp = $this->motosModelo->getIdProp($idPersonal);
 
+        print_r($idProp->idPropietario);
+
         if(empty($idProp->idPropietario)){
             $nombre = $this->datos['usuarioSesion']->Nombre;
             $apellido = $this->datos['usuarioSesion']->Apellido;
@@ -25,7 +27,7 @@ class Motos extends Controlador{
             $this->motosModelo->vincularProp($idNueva->idPropietario, $idPersonal);
             $this->datos['idPropietario'] = $idNueva->idPropietario;
             $this->datos['Motos'] = $this->motosModelo->getMotos($this->datos['idPropietario']);
-            $this->vista("cliente/verMotos",$this->datos);
+            $this->vista("cliente/addMoto",$this->datos);
         }else{
             $this->datos['idPropietario'] = $idProp->idPropietario;
             $this->datos['Motos'] = $this->motosModelo->getMotos($this->datos['idPropietario']);
@@ -37,8 +39,11 @@ class Motos extends Controlador{
     public function addMotoVista(){
         $idPersonal = $this->datos['usuarioSesion']->idPersonal;
         $idProp = $this->motosModelo->getIdProp($idPersonal);
-            $this->datos['idPropietario'] = $idProp->idPropietario;
-            $this->vista("cliente/addMoto",$this->datos);
+        $this->datos['idPropietario'] = $idProp->idPropietario;
+        if(empty($idProp->idPropietario)){
+            redireccionar('/Motos');
+        }
+        $this->vista("cliente/addMoto",$this->datos);
         
     }
 
