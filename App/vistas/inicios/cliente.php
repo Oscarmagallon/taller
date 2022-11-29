@@ -23,6 +23,7 @@
             <button class="button btn-primary"><i class="bi bi-hand-index-thumb"></i> &nbsp;<a href="<?php echo RUTA_URL ?>/Tienda" style="color:white"></i>Acceder a la tienda</a></button>
         </div>
     </div>
+
+                
     <?php require_once RUTA_APP . '/vistas/inc/footer.php' ?>
 
-    
