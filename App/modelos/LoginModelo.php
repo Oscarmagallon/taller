@@ -30,6 +30,11 @@ class LoginModelo
         $this->db->execute();
     }
 
+    public function getEmail($id){
+        $this->db->query("SELECT nombre, correo from personal where idPersonal = $id");
+        return $this->db->registros();
+    }
+
     public function getId()
     {
         $this->db->query("SELECT idPersonal FROM Personal ORDER BY idPersonal DESC LIMIT 1");

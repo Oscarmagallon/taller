@@ -1,23 +1,16 @@
 <div class="container">
   <?php require_once RUTA_APP . '/vistas/inc/header.php' ?>
-  <div style="width:900px; position: relative; margin-left: auto; margin-right: auto;">
     <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
     </p><br /><br />
-    <div class="row">
 
       <div class="n">
-        <p> <b>
-            <font color="#000000" face="georgia" size="4" </font>
-          </b></p>
-        <center>
           <h2>Bienvenido de nuevo Admin</h2>
           <br>
           <div class="col-3"></div>
       </div>
       <section id="about">
-        <div class="container">
           <div class="row">
-            <div class="col-sm-12 col-md-6 col-lg-6 content wow fadeInRight">
+            <div class="col-sm-12 col-md-6 col-lg-3 content wow fadeInRight">
               <div class="card " style="width: 18rem;">
                 <div class="card-body">
                   <h1>Peticiones disponibles</h1>
@@ -32,7 +25,7 @@
               </div>
 
             </div>
-            <div class="col-sm-12 col-md-6 col-lg-6 content wow fadeInRight">
+            <div class="col-sm-12 col-md-6 col-lg-3 content wow fadeInRight">
               <div class="card " style="width: 18rem;">
                 <div class="card-body">
                   <h1> Mecanicos registrados</h1>
@@ -45,10 +38,9 @@
                 </div>
               </div>
             </div>
-          </div>
+         
           <!-- Fila 2-->
-          <div class="row">
-            <div class="col-sm-12 col-md-6 col-lg-6 content wow fadeInRight">
+            <div class="col-sm-12 col-md-6 col-lg-3 content wow fadeInRight">
               <div class="card " style="width: 18rem;">
                 <div class="card-body">
                   <h3>Motos listas</h3>
@@ -63,7 +55,7 @@
             </div>
 
 
-            <div class="col-sm-12 col-md-6 col-lg-6 content wow fadeInRight" data-wow-delay="0s" data-wow-duration="1.9s">
+            <div class="col-sm-12 col-md-6 col-lg-3 content wow fadeInRight" data-wow-delay="0s" data-wow-duration="1.9s">
               <div class="card " style="width: 18rem;">
                 <div class="card-body">
                   <h3>Clientes registrados</h3>
@@ -75,9 +67,7 @@
                   <img class="card-img-bottom" src="<?php echo RUTA_URL ?>/img/user.png" style="height:100%">
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
+    
       </section>
     </div>
     <?php require_once RUTA_APP . '/vistas/inc/footer.php' ?>

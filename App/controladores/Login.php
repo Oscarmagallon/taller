@@ -1,5 +1,5 @@
 <?php
-
+include('mail.php');
 class Login extends Controlador
 {
 
@@ -71,6 +71,9 @@ class Login extends Controlador
         $this->loginModelo->addCliente($usuarioNuevo);
         $id = $this->loginModelo->getId();
         $this->loginModelo->addClienteApp($id->idPersonal);
+        $email = $this->loginModelo->getEmail($id->idPersonal);
+        $mensaje = "Bienvenido a nuestra aplicación de taller. Disfruta de todos sus servicios. Un honor contar contigo";
+        enviarEmail($email,$mensaje);
         redireccionar('/Login');
     }
 }
