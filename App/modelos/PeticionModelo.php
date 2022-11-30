@@ -16,9 +16,15 @@ class PeticionModelo
         return $this->db->registro();
     }
 
+    public function getHistorial($id)
+    {
+        $this->db->query("SELECT incidencias.Tipo, incidencias.Descripcion, incidencias.Fecha, articulos.Tipo as pieza from moto INNER JOIN moto_has_incidencias on moto.idMoto = moto_has_incidencias.idMoto inner JOIN incidencias on incidencias.idIncidencias = moto_has_incidencias.idIncidencias inner JOIN reparaciones on incidencias.idreparaciones = reparaciones.idreparaciones inner join pieza on reparaciones.idreparaciones= pieza.idreparaciones inner JOIN articulos on articulos.idArticulos = pieza.idArticulos where moto.idMoto = $id");
+        return $this->db->registros();
+    }
+
     public function getMotos()
     {
-        $this->db->query("SELECT * from moto ");
+        $this->db->query("SELECT * from moto order by idMoto desc");
         return $this->db->registros();
     }
 
@@ -49,6 +55,11 @@ class PeticionModelo
     public function getPeticionesMoto()
     {
         $this->db->query("SELECT moto.idMoto,count(incidencias.idIncidencias) as numeroIncidencias FROM incidencias INNER JOIN moto_has_incidencias ON moto_has_incidencias.idIncidencias = incidencias.idIncidencias INNER JOIN moto ON moto.idMoto = moto_has_incidencias.idMoto where incidencias.Terminado = 0 GROUP by moto.idMoto;");
+        return $this->db->registros();
+    }
+
+    public function getMotosIncidencia(){
+        $this->db->query("SELECT moto.*,count(incidencias.idIncidencias) as numeroIncidencias FROM incidencias INNER JOIN moto_has_incidencias ON moto_has_incidencias.idIncidencias = incidencias.idIncidencias INNER JOIN moto ON moto.idMoto = moto_has_incidencias.idMoto where incidencias.Terminado = 0 GROUP by moto.idMoto;");
         return $this->db->registros();
     }
 

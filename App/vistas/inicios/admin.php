@@ -2,7 +2,20 @@
   <?php require_once RUTA_APP . '/vistas/inc/header.php' ?>
     <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
     </p><br /><br />
-
+    <?php if(!$datos['peticiones']->numIncidencias == 0): ?>
+      <style>
+          .notificacionIncidencias{
+            color:red;
+          }
+      </style>
+      <?php endif ?>
+      <?php if(!$datos['listas']== 0): ?>
+      <style>
+          .notificacionListas{
+            color:red;
+          }
+      </style>
+      <?php endif ?>
       <div class="n">
           <h2>Bienvenido de nuevo Admin</h2>
           <br>
@@ -15,9 +28,9 @@
                 <div class="card-body">
                   <h1>Peticiones disponibles</h1>
                   <div class="card-text">
-                    <h4>Hay <?php echo $datos['peticiones']->numIncidencias ?> peticiones</h4>
+                    <h4>Hay <p class ="notificacionIncidencias"><?php echo $datos['peticiones']->numIncidencias ?></p> peticiones</h4>
                     <p>Para ver el progreso o aceptar/denegar una nueva petición de un cliente.</p>
-                    <a href="<?php echo RUTA_URL ?>/Peticiones"><button class="btn btn-primary">Peticiones</button></a><br>
+                    <a href="<?php echo RUTA_URL ?>/Peticiones/motosConIncidencia"><button class="btn btn-primary">Peticiones</button></a><br>
                   </div>
                   <img class="card-img-bottom" src="<?php echo RUTA_URL ?>/img/incidencia.jpg" style="height:100%">
                   <br>
@@ -45,7 +58,7 @@
                 <div class="card-body">
                   <h3>Motos listas</h3>
                   <div class="card-text">
-                    <h4>Hay <?php echo $datos['listas'] ?> motos listas para pagar</h4>
+                    <h4>Hay  <p class="notificacionListas"> <?php echo $datos['listas'] ?></p> motos listas para pagar</h4>
                     <p>Vaya a esta ventana para ver las motos que se encuentran listas para recoger asi como las piezas añadidas.</p>
                     <a href="<?php echo RUTA_URL ?>/MotosListas"><button class="btn btn-primary">Ver Listas</button></a><br>
                   </div>

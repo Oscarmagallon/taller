@@ -47,9 +47,13 @@
               <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="<?php echo RUTA_URL ?>/Admin">Home</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="<?php echo RUTA_URL ?>/Peticiones">Peticiones</a>
-              </li>
+              <div class="dropdown">
+              <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">Peticiones</a>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                <li><a class="dropdown-item" href="<?php echo RUTA_URL ?>/Peticiones/motosConIncidencia">Peticiones en curso</a></li>
+                <li><a class="dropdown-item" href="<?php echo RUTA_URL ?>/Peticiones ">Peticiones</a></li>
+              </ul>
+            </div>
               <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="<?php echo RUTA_URL ?>/MotosListas">Motos Listas</a>
               </li>
@@ -60,6 +64,7 @@
                 <a class="nav-link active" aria-current="page" href="<?php echo RUTA_URL ?>/Mecanico">Añadir Mecanicos</a>
               </li>
             </ul>
+
           <?php endif ?>
           <?php if (!empty($datos['usuarioSesion'])) : ?>
             <ul class="d-flex navbar-nav ms-auto mb-2 mb-md-0 col-md-2">
@@ -79,3 +84,4 @@
 
   </header>
 <br>
+

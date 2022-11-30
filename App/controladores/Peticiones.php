@@ -41,6 +41,17 @@ include('Log.php');
             $this->vista('admin/elegirMoto',$this->datos);
         }
 
+        public function motosConIncidencia(){
+            $this->datos["Peticiones"] = $this->PeticionModelo->getMotosIncidencia();
+            $this->vista('admin/elegirMotoIncidencia',$this->datos);
+        }
+
+        public function verHistorial ($id){
+            $this->datos['historial'] = $this->PeticionModelo->getHistorial($id);
+            $this->vista('admin/historial', $this->datos);
+        }
+
+
         public function verPeticiones($id){
         
         $this->datos['Peticiones'] = $this->PeticionModelo->getPeticiones($id);

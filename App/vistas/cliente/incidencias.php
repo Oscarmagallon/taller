@@ -13,7 +13,7 @@
        
         <div class="mb-3" id ="anadir_cabana">
         <label for="tipo">Descripcion: <sup>*</sup></label>
-            <input type="text" name="descr" id="descr" required class="form-control form-control-lg" placeholder="Escribe aqui el tipo de incidencia de su moto">
+            <input type="text" name="descr" id="descr" class="form-control form-control-lg" placeholder="Escribe aqui el tipo de incidencia de su moto">
         </div>
         <input type="hidden" name="idMoto" id="idMoto" class="form-control form-control-lg" value="<?php echo $datos['id'] ?>">
         <input type="submit" class="btn btn-success" value="Hacer Peticion">
