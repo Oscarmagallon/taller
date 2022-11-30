@@ -18,7 +18,7 @@ class PeticionModelo
 
     public function getHistorial($id)
     {
-        $this->db->query("SELECT incidencias.Tipo, incidencias.Descripcion, incidencias.Fecha, articulos.Tipo as pieza from moto INNER JOIN moto_has_incidencias on moto.idMoto = moto_has_incidencias.idMoto inner JOIN incidencias on incidencias.idIncidencias = moto_has_incidencias.idIncidencias inner JOIN reparaciones on incidencias.idreparaciones = reparaciones.idreparaciones inner join pieza on reparaciones.idreparaciones= pieza.idreparaciones inner JOIN articulos on articulos.idArticulos = pieza.idArticulos where moto.idMoto = $id");
+        $this->db->query("SELECT incidencias.Tipo, incidencias.Descripcion, incidencias.Fecha, articulos.descr as pieza from moto INNER JOIN moto_has_incidencias on moto.idMoto = moto_has_incidencias.idMoto inner JOIN incidencias on incidencias.idIncidencias = moto_has_incidencias.idIncidencias inner JOIN reparaciones on incidencias.idreparaciones = reparaciones.idreparaciones inner join pieza on reparaciones.idreparaciones= pieza.idreparaciones inner JOIN articulos on articulos.idArticulos = pieza.idArticulos where moto.idMoto = $id");
         return $this->db->registros();
     }
 
