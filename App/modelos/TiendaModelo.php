@@ -149,7 +149,7 @@ class TiendaModelo
     }
 
     public function pedidosVinculados($id){
-        $this->db->query("SELECT articulos.pedido_vinculado, pedido_vinculado.reservado from cliente inner JOIN pedido_vinculado on cliente.idPersonal = pedido_vinculado.Cliente_idPersonal inner join articulos on articulos.pedido_vinculado = pedido_vinculado.idPedido_vinculado where articulos.Vendido = 0 and pedido_vinculado.reservado <> 3 and cliente.idPersonal = $id group by articulos.pedido_vinculado;");
+        $this->db->query("SELECT articulos.pedido_vinculado, pedido_vinculado.reservado from cliente inner JOIN pedido_vinculado on cliente.idPersonal = pedido_vinculado.Cliente_idPersonal inner join articulos on articulos.pedido_vinculado = pedido_vinculado.idPedido_vinculado where pedido_vinculado.reservado <> 3 and cliente.idPersonal = $id group by articulos.pedido_vinculado;");
         return $this->db->registros();
     }
 
