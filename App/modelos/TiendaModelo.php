@@ -52,7 +52,7 @@ class TiendaModelo
 
     public function crearPedidoVinculado($id, $cliente)
     {
-        $this->db->query("INSERT into pedido_vinculado values ($id,CURDATE(),$cliente)");
+        $this->db->query("INSERT into pedido_vinculado values ($id,CURDATE(),$cliente,0)");
         $this->db->execute();
     }
 
@@ -138,8 +138,23 @@ class TiendaModelo
 
     public function addPedidoArticulo($id, $pedido)
     {
-        $this->db->query("UPDATE articulos SET pedido_vinculado = $pedido, Vendido = 1
+        $this->db->query("UPDATE articulos SET pedido_vinculado = $pedido 
                           where idArticulos = $id");
         $this->db->execute();
+    }
+
+    public function getArticulosPedido($id){
+        $this->db->query("SELECT * from articulos WHERE articulos.pedido_vinculado = $id");
+        return $this->db->registros();
+    }
+
+    public function pedidosVinculados($id){
+        $this->db->query("SELECT articulos.pedido_vinculado, pedido_vinculado.reservado from cliente inner JOIN pedido_vinculado on cliente.idPersonal = pedido_vinculado.Cliente_idPersonal inner join articulos on articulos.pedido_vinculado = pedido_vinculado.idPedido_vinculado where articulos.Vendido = 0 and pedido_vinculado.reservado <> 3 and cliente.idPersonal = $id group by articulos.pedido_vinculado;");
+        return $this->db->registros();
+    }
+
+    public function pedidosClientes(){
+        $this->db->query('SELECT personal.Nombre, pedido_vinculado.idPedido_vinculado from personal inner join cliente on personal.idPersonal = cliente.idPersonal inner join pedido_vinculado on cliente.idPersonal = pedido_vinculado.Cliente_idPersonal inner join articulos on pedido_vinculado.idPedido_vinculado = articulos.pedido_vinculado where pedido_vinculado.reservado <> 3  GROUP by pedido_vinculado.idPedido_vinculado;');
+        return $this->db->registros();
     }
 }

@@ -59,6 +59,17 @@
                 $this->vista('admin/agregarPieza', $this->datos);
             }
         }
+
+        public function pedidos($id){
+            $this->datos['articulos'] = $this->TiendaModelo->pedidosVinculados($id);
+            $this->vista('cliente/pedidos', $this->datos);
+
+        }
+
+        public function verArticulosPedido($id){
+            $this->datos['articulos'] = $this->TiendaModelo->getArticulosPedido($id);
+            $this->vista('cliente/articulosPedido',$this->datos);
+        }
         
         
         public function carrito(){
@@ -87,10 +98,24 @@
             $this->TiendaModelo->crearPedidoVinculado($idPedido->idPedido_vinculado,$cliente);
             foreach($datos as $c){
                $this->TiendaModelo->addPedidoArticulo($c['id'], $idPedido->idPedido_vinculado);
-               $this->TiendaModelo->addIngresoCarrito($idPedido->idPedido_vinculado, $c['tipo'], $c['precio']);
+               //$this->TiendaModelo->addIngresoCarrito($idPedido->idPedido_vinculado, $c['tipo'], $c['precio']);
             }
             //$this->TiendaModelo->pedidoVinculado();
            }
+        }
+
+        public function aceptarPedidoAdmin(){
+            $this->datos['pedidos'] = $this->TiendaModelo->pedidosClientes();
+            $this->vista('admin/aceptarPedidos', $this->datos);
+        }
+
+        public function aceptarDenegarPedidos($num, $id){
+            if($num == 1){
+                $this->TiendaModelo->reservarPedido($id);
+            }else{
+                $this->TiendaModelo->denegarPedido($id);
+
+            }
         }
 
 

@@ -40,6 +40,10 @@
               <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="<?php echo RUTA_URL ?>/Tienda">Tienda</a>
               </li>
+              
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="<?php echo RUTA_URL ?>/Tienda/pedidos/<?php echo $datos['usuarioSesion']->idPersonal ?>">Pedidos</a>
+              </li>
             </ul>
           <?php endif ?>
           <?php if (!empty($datos['usuarioSesion']) && $datos['usuarioSesion']->Rol_idRol == 10) : ?>
@@ -62,6 +66,9 @@
               </li>
               <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="<?php echo RUTA_URL ?>/Mecanico">Añadir Mecanicos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="<?php echo RUTA_URL ?>/Tienda/aceptarPedidoAdmin">Peticion pedidos</a>
               </li>
             </ul>
 
