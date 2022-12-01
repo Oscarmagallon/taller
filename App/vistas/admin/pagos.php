@@ -2,17 +2,7 @@
 
 <body class="container">
     <h1>Estado</h1>
-    <nav class="navbar navbar-light navbar-expand-lg" style="background-color: #e3f2fd;">
-        <?php print_r($datos['ingresos']) ?>
-
-        <div class="container-fluid px-2">
-            <form autocomplete="off" class="d-flex">
-                <input class="form-control me-2" type="search" placeholder="Nombre de la marca" aria-label="Buscar">
-                <button class="btn btn-outline-primary" type="submit">Buscar</button>
-            </form>
-
-        </div>
-    </nav>
+    <h4>Aqui se encuentran las piezas añadidas a esta moto. Con la posibilidad de añadir mano de obra</h4>
 
     <div class="col-12 table-responsive">
         <table class="table table-hover">
