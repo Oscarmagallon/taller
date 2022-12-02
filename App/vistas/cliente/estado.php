@@ -1,21 +1,8 @@
 <?php require_once RUTA_APP . '/vistas/inc/header.php' ?>
 
 <body class="container">
-    <h1>Estado</h1>
-    <nav class="navbar navbar-light navbar-expand-lg" style="background-color: #e3f2fd;">
-
-        <div class="container-fluid px-2">
-            <form autocomplete="off" class="d-flex">
-                <input class="form-control me-2" type="search" placeholder="Nombre de la marca" aria-label="Buscar">
-                <button class="btn btn-outline-primary" type="submit">Buscar</button>
-            </form>
-
-        </div>
-    </nav>
-
-    <a href="<?php echo RUTA_URL ?>/Incidencias/verTerminadas/<?php echo $datos['id'] ?>">
-        <h4>Ver listas para pagar</h4>
-    </a>
+    <h1>Estado</h1> <br>
+    <input type="button" class="btn btn-primary" name="nueva_cabana" id="nueva_cabana" value="Mostrar Listas"/>
 
     <div class="col-12 table-responsive">
         <table class="table table-hover">
@@ -50,8 +37,53 @@
                 endif
 
                 ?>
+            </tbody>
+        </table>
+    </div>
+    <div class="mb-3" id ="anadir_cabana">
+            <table class="table table-hover">
+
+            <thead class="cliente" id="cliente">
+                <tr>
+                    <th>Tipo</th>
+                    <th>Descripcion</th>
+                    <th>Estado</th>
+                    <th>Pagar</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php if (!empty($datos['EstadoTerminado'])) :
+                    foreach ($datos['EstadoTerminado'] as $e) : ?>
+                        <?php $i = 0; ?>
+                        <?php $accionador = 1 ?>
+                        <tr>
+                            <td><?php echo $e->Tipo ?></td>
+                            <td><?php echo $e->Descripcion ?></td>
+                            <td> <p>Terminado</p> </td>
+                            <td> <a href="<?php echo RUTA_URL ?>/Pagos/pagar/<?php echo $e->idreparaciones ?>">Pagar</a> </td>
+
+                        </tr>
+                <?php endforeach;
+                endif
+
+                ?>
+            </tbody>
+        </table>
+        </div>
 </body>
-
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script>
+  $(document).ready(function() {
+    $('#anadir_cabana').hide();
+    $("#n   ueva_cabana").val('Mostrar');
+    $("#nueva_cabana").on("click", function(e) {
+      var $boton = $(this);
+      $('#anadir_cabana').animate({width: [ "toggle", "swing" ]}, 500, function() {
+        $boton.val($(this).is(':visible') ? 'Ocultar' : 'Mostrar');
+      });
+      e.preventDefault();
+    });
+  });
+</script>
 
 <?php require_once RUTA_APP . '/vistas/inc/footer.php' ?>

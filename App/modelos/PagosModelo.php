@@ -39,4 +39,5 @@ class PagosModelo
         $this->db->query("UPDATE ingreso SET Pagado = 1  WHERE reparaciones_idreparaciones = $id");
         $this->db->execute();
     }
+
 }

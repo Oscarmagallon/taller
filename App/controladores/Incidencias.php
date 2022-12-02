@@ -52,14 +52,7 @@
                 }
                 $i++;
             }}
-                $this->vista("cliente/estado",$this->datos);
-           
-        
-        
 
-        }
-
-        public function verTerminadas($id){
             $ids = $this->IncidenciasModelo->verEstado($id);
             for ($i=0; $i <sizeof($ids) ; $i++) { 
                 $estado[$i] = $this->IncidenciasModelo->estadoTerminado($ids[$i]->idIncidencias);
@@ -70,12 +63,15 @@
                 
                 print_r($e);
                 if(!empty($e)){
-                    $this->datos['Estado'][$i] = $e;
+                    $this->datos['EstadoTerminado'][$i] = $e;
                 }
                 $i++;
             }}
-            
-            $this->vista('cliente/estadoTerminado', $this->datos);
+                $this->vista("cliente/estado",$this->datos);
+           
+        
+        
+
         }
 
 
