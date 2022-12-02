@@ -65,6 +65,7 @@
                 $estado[$i] = $this->IncidenciasModelo->estadoTerminado($ids[$i]->idIncidencias);
             };
             $i=0;
+            if(!empty($estado)){
             foreach($estado as $e){
                 
                 print_r($e);
@@ -72,7 +73,7 @@
                     $this->datos['Estado'][$i] = $e;
                 }
                 $i++;
-            }
+            }}
             
             $this->vista('cliente/estadoTerminado', $this->datos);
         }

@@ -1,5 +1,5 @@
 <?php
-
+    include('mail.php');
     class Tienda extends Controlador{
 
         public function __construct(){
@@ -111,11 +111,24 @@
 
         public function aceptarDenegarPedidos($num, $id){
             if($num == 1){
+                $this->TiendaModelo->marcarArticulos($id);
                 $this->TiendaModelo->reservarPedido($id);
+                redireccionar('/Tienda/aceptarPedidoAdmin', $this->datos);
             }else{
                 $this->TiendaModelo->denegarPedido($id);
-
+                $this->TiendaModelo->quitarReserva($id);
+                $mensaje = "El pedido ha sido rechazado por algun motivo (Falta de stock, error en el precio...). Para realizar otro pedido no dudes en visitar nuestra página. Gracias";
+                $this->datos['prop'] = $this->TiendaModelo->getPropietario($id);
+                enviarEmail($this->datos['prop'],$mensaje);
+                redireccionar('/Tienda/aceptarPedidoAdmin', $this->datos);
             }
+        }
+
+        public function pagarPedido($id){
+            $precio = $this->TiendaModelo->precioPedido($id);
+            $this->TiendaModelo->ingresoPedido($precio->precioTotal, $id);
+            $this->TiendaModelo->finalizarPedido($id);
+            redireccionar("/Tienda/pedidos/".$this->datos['usuarioSesion']->idPersonal, $this->datos);
         }
 
 

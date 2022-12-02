@@ -154,7 +154,52 @@ class TiendaModelo
     }
 
     public function pedidosClientes(){
-        $this->db->query('SELECT personal.Nombre, pedido_vinculado.idPedido_vinculado from personal inner join cliente on personal.idPersonal = cliente.idPersonal inner join pedido_vinculado on cliente.idPersonal = pedido_vinculado.Cliente_idPersonal inner join articulos on pedido_vinculado.idPedido_vinculado = articulos.pedido_vinculado where pedido_vinculado.reservado <> 3  GROUP by pedido_vinculado.idPedido_vinculado;');
+        $this->db->query('SELECT personal.Nombre, pedido_vinculado.idPedido_vinculado, pedido_vinculado.reservado from personal inner join cliente on personal.idPersonal = cliente.idPersonal inner join pedido_vinculado on cliente.idPersonal = pedido_vinculado.Cliente_idPersonal inner join articulos on pedido_vinculado.idPedido_vinculado = articulos.pedido_vinculado where pedido_vinculado.reservado <> 3  GROUP by pedido_vinculado.idPedido_vinculado;');
         return $this->db->registros();
+    }
+
+    public function marcarArticulos($id){
+        $this->db->query('UPDATE articulos set vendido = 1 where pedido_vinculado = :id');
+        $this->db->bind(':id', $id);
+        $this->db->execute();
+    }
+
+    public function reservarPedido($id){
+     $this->db->query('UPDATE pedido_vinculado set reservado = 1 where idPedido_vinculado = :id');
+     $this->db->bind(':id', $id);
+     $this->db->execute();
+    }
+
+    public function denegarPedido($id){
+        $this->db->query('UPDATE articulos set vendido = 0, pedido_vinculado = null where pedido_vinculado = :id');
+        $this->db->bind(':id', $id);
+        $this->db->execute();
+    }   
+
+    public function quitarReserva($id){
+        $this->db->query('UPDATE pedido_vinculado set reservado = 2 where idPedido_vinculado = :id');
+        $this->db->bind(':id', $id);
+        $this->db->execute();
+        
+    }
+
+    public function getPropietario($id){
+        $this->db->query("SELECT personal.Nombre, personal.Correo from pedido_vinculado inner JOIN cliente on cliente.idPersonal = pedido_vinculado.Cliente_idPersonal INNER JOIN personal on cliente.idPersonal = personal.idPersonal WHERE idPedido_vinculado = $id");
+        return $this->db->registros();
+    }
+
+    public function precioPedido($id){
+        $this->db->query("SELECT sum(articulos.Precio) as precioTotal from articulos WHERE articulos.pedido_vinculado = $id");
+        return $this->db->registro();
+    }
+
+    public function ingresoPedido($precio, $id){
+        $this->db->query("INSERT into ingreso values(null,'Pedido Online', $precio, $id, null, 1)");
+        $this->db->execute();
+    }
+
+    public function finalizarPedido($id){
+        $this->db->query("UPDATE pedido_vinculado set reservado = 3 where idPedido_vinculado = $id");
+        $this->db->execute();
     }
 }

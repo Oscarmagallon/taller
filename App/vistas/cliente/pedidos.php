@@ -20,7 +20,7 @@
                         <tr>
                             <td><?php echo $e->pedido_vinculado ?></td>
                             <td><a href="<?php echo RUTA_URL ?>/Tienda/verArticulosPedido/<?php echo $e->pedido_vinculado?>">Ver listado</a></td>
-                            <td><?php if($e->reservado == 0): ?> En espera de aceptacion <?php endif; ?><?php if($e->reservado == 1): ?> <a href="">Pagar</a> <?php endif; ?><?php if($e->reservado == 2): ?> <p>Denegado, vuelva a pedir</p> <?php endif; ?></td>
+                            <td><?php if($e->reservado == 0): ?> En espera de aceptacion <?php endif; ?><?php if($e->reservado == 1): ?> <a href="<?php echo RUTA_URL ?>/Tienda/pagarPedido/<?php echo $e->pedido_vinculado ?>">Pagar</a> <?php endif; ?><?php if($e->reservado == 2): ?> <p>Denegado, vuelva a pedir</p> <?php endif; ?></td>
                         </tr>
                 <?php endforeach;
                 endif
