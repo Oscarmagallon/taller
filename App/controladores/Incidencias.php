@@ -43,6 +43,7 @@
             }
             $this->datos['id'] = $id;
             $i=0;
+            if(!empty($estado)){
             foreach($estado as $e){
                 
                 print_r($e);
@@ -50,7 +51,7 @@
                     $this->datos['Estado'][$i] = $e;
                 }
                 $i++;
-            }
+            }}
                 $this->vista("cliente/estado",$this->datos);
            
         
