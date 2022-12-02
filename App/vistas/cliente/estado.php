@@ -2,8 +2,6 @@
 
 <body class="container">
     <h1>Estado</h1> <br>
-    <input type="button" class="btn btn-primary" name="nueva_cabana" id="nueva_cabana" value="Mostrar Listas"/>
-
     <div class="col-12 table-responsive">
         <table class="table table-hover">
 
@@ -40,6 +38,12 @@
             </tbody>
         </table>
     </div>
+    <?php 
+    $numListas = 0;
+    if (!empty($datos['EstadoTerminado']))
+    {$numListas = count($datos['EstadoTerminado']);} ?>
+    <input type="button" class="btn btn-primary" name="nueva_cabana" id="nueva_cabana" value="Mostrar las <?php echo $numListas ?> Listas"/>
+
     <div class="mb-3" id ="anadir_cabana">
             <table class="table table-hover">
 
@@ -75,11 +79,11 @@
 <script>
   $(document).ready(function() {
     $('#anadir_cabana').hide();
-    $("#n   ueva_cabana").val('Mostrar');
+    $("#n   ueva_cabana").val('Mostrar Listas');
     $("#nueva_cabana").on("click", function(e) {
       var $boton = $(this);
       $('#anadir_cabana').animate({width: [ "toggle", "swing" ]}, 500, function() {
-        $boton.val($(this).is(':visible') ? 'Ocultar' : 'Mostrar');
+        $boton.val($(this).is(':visible') ? 'Ocultar motos listas' : 'Mostrar Listas');
       });
       e.preventDefault();
     });
