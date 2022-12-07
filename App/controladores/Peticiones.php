@@ -67,7 +67,8 @@ include('Log.php');
             }
 
         public function peticionTerminada($meca,$id,$idMoto){
-           
+            $fecha =  date('Y/m/d');
+            $this->PeticionModelo->insertarReparacion($fecha);
             $ids = $this->PeticionModelo->getIdReparacion();
             $idReparacion = $ids->idReparaciones;
             $this->PeticionModelo->mecanicoRepara($meca,$idReparacion);
@@ -87,9 +88,7 @@ include('Log.php');
         public function anadirMecanico($id,$idMoto){
             if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 $mecanico = $_POST['mecanico'];
-                $fecha = $_POST['fecha'];
                 $this->datos['peticion'] = $this->PeticionModelo->addMecanico($id,$mecanico);
-                $this->PeticionModelo->insertarReparacion($fecha);
                 $ids = $this->PeticionModelo->getIdReparacion();
                 $idReparacion = $ids->idReparaciones;
                 $this->PeticionModelo->reparaciones($id,$idReparacion);
