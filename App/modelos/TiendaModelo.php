@@ -76,9 +76,7 @@ class TiendaModelo
 
     public function addArticulos($carrito)
     {
-        //print_r($carrito[9]['tipo']);
-        //print_r(sizeof($carrito));
-        print_r($carrito);
+
 
         foreach ($carrito as $c) {
             $precio = $c->Precio + $c->Precio * 0.3;

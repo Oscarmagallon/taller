@@ -2,8 +2,6 @@
 
 <body class="container">
     <h1>Estado</h1>
-    <?php print_r($datos); ?>
-
 
     <div class="col-12 table-responsive">
         <table class="table table-hover">

@@ -21,7 +21,7 @@
           <a class="navbar-brand" href="">¡Registrate!, Te estamos esperando</a>
         <?php endif; ?>
         <?php if (!empty($datos['usuarioSesion'])) : ?>
-          <a class="navbar-brand" href="">Bienvenido <?php print_r($datos['usuarioSesion']->Nombre) ?></a>
+          <a class="navbar-brand" href="">Bienvenido <?php echo($datos['usuarioSesion']->Nombre) ?></a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>

@@ -17,7 +17,6 @@ class Motos extends Controlador{
         $idPersonal = $this->datos['usuarioSesion']->idPersonal;
         $idProp = $this->motosModelo->getIdProp($idPersonal);
 
-        print_r($idProp->idPropietario);
 
         if(empty($idProp->idPropietario)){
             $nombre = $this->datos['usuarioSesion']->Nombre;
@@ -73,7 +72,6 @@ class Motos extends Controlador{
                 'Modelo' => trim($_POST['Modelo']),
                 'idProp' => trim($_POST['idProp']),
             ];
-            print_r($motoModi);
             $this->motosModelo->actualizarMoto($motoModi);
             redireccionar('/Peticiones');
         } else {

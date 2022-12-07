@@ -28,7 +28,6 @@
                 $this->datos['articulos'] = $this->TiendaModelo->getArticulosTienda($clase);
 
             }
-            //print_r($this->datos['articulos']);
             $this->vista("admin/Tienda/verArticulo", $this->datos);
         }
 
@@ -75,7 +74,6 @@
         public function carrito(){
             $json = file_get_contents('php://input');
             $datos = json_decode($json,true);//true devuelve array
-            print_r($datos);
            if ($this->datos['usuarioSesion']->Rol_idRol == 10){
             $carrito =  $this->TiendaModelo->obtenerProveedorCarrito($datos);
             $cod =  $this->datos['usuarioSesion']->idPersonal;            

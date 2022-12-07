@@ -22,7 +22,7 @@
 
 <body>
   </section>
-  <?php print_r($datos) ?>
+
 
   <div class="clear"></div>
   <section class="header">

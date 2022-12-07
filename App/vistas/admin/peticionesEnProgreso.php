@@ -3,7 +3,6 @@
 <body class="container">
     <h1>Estado</h1>
     <nav class="navbar navbar-light navbar-expand-lg" style="background-color: #e3f2fd;">
-        <?php print_r($datos) ?>
         <style>
             table {
                 border-collapse: collapse;

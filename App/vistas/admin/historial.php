@@ -2,7 +2,6 @@
 <?php require_once RUTA_APP . '/vistas/inc/header.php' ?>
 
     <h1>Estado</h1>
-    <?php print_r($this->datos['historial']) ?>
     <div class="col-12 table-responsive">
         <table class="table table-hover">
 

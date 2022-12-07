@@ -46,7 +46,6 @@
             if(!empty($estado)){
             foreach($estado as $e){
                 
-                print_r($e);
                 if(!empty($e)){
                     $this->datos['Estado'][$i] = $e;
                 }
@@ -61,7 +60,6 @@
             if(!empty($estado)){
             foreach($estado as $e){
                 
-                print_r($e);
                 if(!empty($e)){
                     $this->datos['EstadoTerminado'][$i] = $e;
                 }

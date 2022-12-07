@@ -3,7 +3,6 @@
   <h1>Incidencias disponibles</h1>
   <h4>En esta página se las motos con alguna incidencia <br>
       Para ver mas informacion pichar sobre ver peticiones</h4>
-    <?php print_r($datos) ?>
   <div class="row">
     <?php foreach ($datos["Peticiones"] as $m) : ?>
       <div class="col-3 col-md-4 col-sm-6 col-12">

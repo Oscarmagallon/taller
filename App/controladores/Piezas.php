@@ -38,7 +38,6 @@
         public function verPiezas($id){
            $this->datos['ids'] = $this->PiezasModelo->getPiezasMoto($id);
            $this->datos['piezasMoto'] = $this->PiezasModelo->getPiezasConId($this->datos['ids']);
-           print_r($this->datos['piezasMoto']);
            $this->datos['id'] = $id;
            $this->vista("admin/verPiezas",$this->datos);
         }

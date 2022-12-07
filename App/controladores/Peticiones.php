@@ -17,7 +17,6 @@ include('Log.php');
 
 
         public function index(){
-            //print_r($this->datos['usuarioSesion']);
             if($this->datos['usuarioSesion']->Rol_idRol == 20){
             $idPersonal = $this->datos['usuarioSesion']->idPersonal;
             $codProp = $this->PeticionModelo->getProp($idPersonal);

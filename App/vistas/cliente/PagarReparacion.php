@@ -1,6 +1,4 @@
 <?php require_once RUTA_APP . '/vistas/inc/header.php'; ?>
-<?php print_r($datos) ?>
-
 <body>
     <div class="container">
         <div class="row">
