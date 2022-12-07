@@ -70,6 +70,9 @@
               <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="<?php echo RUTA_URL ?>/Tienda/aceptarPedidoAdmin">Peticion pedidos</a>
               </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="<?php echo RUTA_URL ?>/Correo">Mandar correo</a>
+              </li>
             </ul>
 
           <?php endif ?>
