@@ -1,5 +1,5 @@
 <?php
-
+include('mail.php');
     class Correo extends Controlador{
 
         public function __construct(){
