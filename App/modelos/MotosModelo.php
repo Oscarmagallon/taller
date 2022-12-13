@@ -17,8 +17,8 @@ class MotosModelo
 
     public function addPropietario($nombre, $apellido)
     {
-        $this->db->query("INSERT into propietario (idPropietario, Correo, Nombre, Apellido)
-                                      values(null, null, '$nombre', '$apellido')");
+        $this->db->query("INSERT into propietario (idPropietario, Nombre, Apellido)
+                                      values(null, '$nombre', '$apellido')");
         $this->db->execute();
     }
 

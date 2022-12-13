@@ -16,8 +16,9 @@ class Motos extends Controlador{
     public function index(){
         $idPersonal = $this->datos['usuarioSesion']->idPersonal;
         $idProp = $this->motosModelo->getIdProp($idPersonal);
-
-
+        
+        
+        
         if(empty($idProp->idPropietario)){
             $nombre = $this->datos['usuarioSesion']->Nombre;
             $apellido = $this->datos['usuarioSesion']->Apellido;

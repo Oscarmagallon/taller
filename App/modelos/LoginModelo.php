@@ -31,7 +31,7 @@ class LoginModelo
     }
 
     public function getEmail($id){
-        $this->db->query("SELECT nombre, correo from personal where idPersonal = $id");
+        $this->db->query("SELECT nombre as Nombre, correo as Correo from personal where idPersonal = $id");
         return $this->db->registros();
     }
 
