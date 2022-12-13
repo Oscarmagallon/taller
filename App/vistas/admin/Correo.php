@@ -12,6 +12,8 @@
                    
             </select>
             <br>
+            <input class = "col-12 form-control" placeholder="Cabecera del mensaje" name ="cabecera" type="text">
+            <br>
             <input class = "col-12 form-control" placeholder="Escribe tu mensaje" name ="mensaje" type="text">
             <br>
             <button class="btn btn-primary">Enviar Correo</button>

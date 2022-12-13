@@ -117,7 +117,8 @@
                 $this->TiendaModelo->quitarReserva($id);
                 $mensaje = "El pedido ha sido rechazado por algun motivo (Falta de stock, error en el precio...). Para realizar otro pedido no dudes en visitar nuestra página. Gracias";
                 $this->datos['prop'] = $this->TiendaModelo->getPropietario($id);
-                enviarEmail($this->datos['prop'],$mensaje);
+                $cabecera = "Pedido";
+                enviarEmail($this->datos['prop'],$mensaje, $cabecera);
                 redireccionar('/Tienda/aceptarPedidoAdmin', $this->datos);
             }
         }

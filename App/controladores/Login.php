@@ -73,7 +73,8 @@ class Login extends Controlador
         $this->loginModelo->addClienteApp($id->idPersonal);
         $email = $this->loginModelo->getEmail($id->idPersonal);
         $mensaje = "Bienvenido a nuestra aplicación de taller. Disfruta de todos sus servicios. Un honor contar contigo";
-        enviarEmail($email,$mensaje);
+        $cabecera = "Registro";
+        enviarEmail($email,$mensaje,$cabecera);
         redireccionar('/Login');
     }
 }

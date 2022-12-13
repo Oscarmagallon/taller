@@ -23,9 +23,10 @@ include('mail.php');
 
         public function correo(){
             $id =  $_POST['correo'];
+            $cabecera = $_POST['cabecera'];
             $mensaje =  $_POST['mensaje'];
             $prop = $this->CorreoModelo->getProp($id);
-            enviarEmail($prop,$mensaje);
+            enviarEmail($prop,$mensaje, $cabecera);
             redireccionar('/Correo');
         }
 

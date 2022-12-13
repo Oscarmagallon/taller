@@ -11,7 +11,7 @@ require 'PHPMailer/src/Exception.php';
 require 'PHPMailer/src/PHPMailer.php';
 require 'PHPMailer/src/SMTP.php';
 
-function enviarEmail($correo,$men)
+function enviarEmail($correo,$men,$cabecera)
 {
     // Inicio
     $mail = new PHPMailer(true);
@@ -32,7 +32,7 @@ function enviarEmail($correo,$men)
 
         // Contenido del correo
         $mail->isHTML(true);
-        $mail->Subject = 'Reparacion';
+        $mail->Subject = $cabecera;
         $mail->Body  = $men;
         $mail->AltBody = 'Contenido del correo en texto plano para los clientes de correo que no soporten HTML';
         $mail->send();

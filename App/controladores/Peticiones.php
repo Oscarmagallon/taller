@@ -66,15 +66,14 @@ include('Log.php');
             }
 
         public function peticionTerminada($meca,$id,$idMoto){
-            $fecha =  date('Y/m/d');
-            $this->PeticionModelo->insertarReparacion($fecha);
             $ids = $this->PeticionModelo->getIdReparacion();
             $idReparacion = $ids->idReparaciones;
             $this->PeticionModelo->mecanicoRepara($meca,$idReparacion);
             $this->PeticionModelo->terminada($id);
             $this->datos['Prop'] = $this->PeticionModelo->getPropietario($idMoto);
             $mensaje = "Buenas su moto esta lista, entre en la web para ver los detalles";
-            enviarEmail($this->datos['Prop'],$mensaje);
+            $cabecera = "Reparacion";
+            enviarEmail($this->datos['Prop'],$mensaje, $cabecera);
             $txt ="Correo de aviso moto lista enviado a ".$this->datos['Prop'][0]->Nombre. " ".$this->datos['Prop'][0]->Apellido;
             enviarLog($txt);
             redireccionar("/Peticiones/verPeticionesProgreso/$idMoto");
@@ -86,6 +85,8 @@ include('Log.php');
      
         public function anadirMecanico($id,$idMoto){
             if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+                $fecha =  date('Y/m/d');
+                $this->PeticionModelo->insertarReparacion($fecha);
                 $mecanico = $_POST['mecanico'];
                 $this->datos['peticion'] = $this->PeticionModelo->addMecanico($id,$mecanico);
                 $ids = $this->PeticionModelo->getIdReparacion();
@@ -107,7 +108,8 @@ include('Log.php');
             $this->PeticionModelo ->eliminarPeticionIncidencias($id);
             $this->datos['Prop'] = $this->PeticionModelo->propietario($id);
             $mensaje = "La petición de su moto a sido rechazada, puede volver a mandar otra peticion en cualquier momento";
-            enviarEmail($this->datos['Prop'],$mensaje);
+            $cabecera = "Reparacion";
+            enviarEmail($this->datos['Prop'],$mensaje, $cabecera);
             redireccionar("/Peticiones");
         }
 
