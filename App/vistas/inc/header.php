@@ -52,7 +52,7 @@
                 <a class="nav-link active" aria-current="page" href="<?php echo RUTA_URL ?>/Admin">Home</a>
               </li>
               <div class="dropdown">
-              <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">Peticiones</a>
+              <a class="btn dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">Peticiones</a>
               <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                 <li><a class="dropdown-item" href="<?php echo RUTA_URL ?>/Peticiones/motosConIncidencia">Peticiones en curso</a></li>
                 <li><a class="dropdown-item" href="<?php echo RUTA_URL ?>/Peticiones ">Peticiones</a></li>

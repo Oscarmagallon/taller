@@ -17,8 +17,6 @@
       </style>
       <?php endif ?>
       <div class="n">
-          <h2>Bienvenido de nuevo Admin</h2>
-          <br>
           <div class="col-3"></div>
       </div>
       <section id="about">
@@ -27,8 +25,14 @@
               <div class="card " style="width: 18rem;">
                 <div class="card-body">
                   <h1>Peticiones disponibles</h1>
+  
+                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                  <?php echo $datos['peticiones']->numIncidencias ?>
+                  <span class="visually-hidden">unread messages</span>
+                </span>
+
                   <div class="card-text">
-                    <h4>Hay <p class ="notificacionIncidencias"><?php echo $datos['peticiones']->numIncidencias ?></p> peticiones</h4>
+                   
                     <p>Para ver el progreso o aceptar/denegar una nueva petición de un cliente.</p>
                     <a href="<?php echo RUTA_URL ?>/Peticiones/motosConIncidencia"><button class="btn btn-primary">Peticiones</button></a><br>
                   </div>

@@ -6,7 +6,7 @@
     // Ruta url, Ejemplo: http://localhost/daw2_mvc
     define('RUTA_URL', 'http://localhost/taller');
 
-    define('NOMBRE_SITIO', 'CRUD MVC - DAW2 Alcañiz');
+    define('NOMBRE_SITIO', 'Proyecto taller de motos DAW');
 
 
     // Configuracion de la Base de Datos
