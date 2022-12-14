@@ -42,7 +42,8 @@
                 <?php endforeach; ?>
 
 </body>
+<?php if(!empty($datos['Peticiones'])): ?>
 <a href="<?php echo RUTA_URL ?>/Peticiones/verPeticionesProgreso/<?php echo $datos['Peticiones'][0]->idMoto ?>">Ver reparaciones en Progreso</a>
-
+<?php endif; ?>
 
 <?php require_once RUTA_APP . '/vistas/inc/footer.php' ?>

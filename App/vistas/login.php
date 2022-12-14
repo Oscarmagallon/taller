@@ -81,7 +81,7 @@
 
   <form action="" method="post">
     <div class="imgcontainer">
-      <img width="100" height="100" src="<?php echo RUTA_URL ?>/img/logo.png">
+      <img width="100" height="100" src="<?php echo RUTA_URL ?>/img/bicicleta.png">
     </div>
 
     <div class="container">

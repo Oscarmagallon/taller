@@ -21,7 +21,7 @@
       </div>
       <section id="about">
           <div class="row">
-            <div class="col-sm-12 col-md-6 col-lg-3 content wow fadeInRight">
+            <div class="col-sm-12 col-md-6 col-xl-6 col-xxl-3 content wow fadeInRightt">
               <div class="card " style="width: 18rem;">
                 <div class="card-body">
                   <h1>Peticiones disponibles</h1>
@@ -33,7 +33,7 @@
 
                   <div class="card-text">
                    
-                    <p>Para ver el progreso o aceptar/denegar una nueva petición de un cliente.</p>
+                    <p>Aceptar/denegar nueva petición de un cliente.</p>
                     <a href="<?php echo RUTA_URL ?>/Peticiones/motosConIncidencia"><button class="btn btn-primary">Peticiones</button></a><br>
                   </div>
                   <img class="card-img-bottom" src="<?php echo RUTA_URL ?>/img/incidencia.jpg" style="height:100%">
@@ -42,12 +42,15 @@
               </div>
 
             </div>
-            <div class="col-sm-12 col-md-6 col-lg-3 content wow fadeInRight">
+            <div class="col-sm-12 col-md-6 col-xl-6 col-xxl-3 content wow fadeInRight">
               <div class="card " style="width: 18rem;">
                 <div class="card-body">
                   <h1> Mecanicos registrados</h1>
                   <div class="card-text">
-                    <h4>Hay <?php echo $datos['mecanicos']->numMecanicos ?> mecanicos registrados en la aplicación</h4>
+                  <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                  <?php echo $datos['mecanicos']->numMecanicos ?>
+                  <span class="visually-hidden">unread messages</span>
+                </span>
                     <p>Gestiona los mecanicos registrados en la aplición.</p>
                     <a href="<?php echo RUTA_URL ?>/Mecanico"><button class="btn btn-primary">Mecanicos</button></a><br>
                   </div>
@@ -57,12 +60,15 @@
             </div>
          
           <!-- Fila 2-->
-            <div class="col-sm-12 col-md-6 col-lg-3 content wow fadeInRight">
+            <div class="col-sm-12 col-md-6 col-xl-6 col-xxl-3 content wow fadeInRight">
               <div class="card " style="width: 18rem;">
                 <div class="card-body">
-                  <h3>Motos listas</h3>
+                  <h1>Motos listas</h1>
                   <div class="card-text">
-                    <h4>Hay  <p class="notificacionListas"> <?php echo $datos['listas'] ?></p> motos listas para pagar</h4>
+                  <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                  <?php echo $datos['listas'] ?>
+                  <span class="visually-hidden">unread messages</span>
+                </span>
                     <p>Vaya a esta ventana para ver las motos que se encuentran listas para recoger asi como las piezas añadidas.</p>
                     <a href="<?php echo RUTA_URL ?>/MotosListas"><button class="btn btn-primary">Ver Listas</button></a><br>
                   </div>
@@ -72,14 +78,17 @@
             </div>
 
 
-            <div class="col-sm-12 col-md-6 col-lg-3 content wow fadeInRight" data-wow-delay="0s" data-wow-duration="1.9s">
+            <div class="col-sm-12 col-md-6 col-xl-6 col-xxl-3 content wow fadeInRight" data-wow-delay="0s" data-wow-duration="1.9s">
               <div class="card " style="width: 18rem;">
                 <div class="card-body">
-                  <h3>Clientes registrados</h3>
+                  <h1>Clientes registrados</h1>
                   <div class="card-text">
-                    <h4>Hay <?php echo $datos['clientes']->numClientes ?> clientes dados de alta en la aplicación</h4>
+                  <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                  <?php echo $datos['clientes']->numClientes ?>
+                  <span class="visually-hidden">unread messages</span>
+                </span>
                     <p>Cada vez que se loguee un usuario nuevo subirá en contador de arriba</p>
-                    <a href="<?php echo RUTA_URL ?>/Admin"><button class="btn btn-primary">Okay!</button></a><br>
+                    <a href="#"><button class="btn btn-primary">Okay!</button></a><br>
                   </div>
                   <img class="card-img-bottom" src="<?php echo RUTA_URL ?>/img/user.png" style="height:100%">
                 </div>

@@ -21,6 +21,10 @@
           <a class="navbar-brand" href="">¡Registrate!, Te estamos esperando</a>
         <?php endif; ?>
         <?php if (!empty($datos['usuarioSesion'])) : ?>
+          <div class="imgcontainer">
+            <img width="50px" height="50px" src="<?php echo RUTA_URL ?>/img/bicicleta.png">
+          </div>
+          <div><span style="visibility:hidden">............</span></div>
           <a class="navbar-brand" href="">Bienvenido <?php echo($datos['usuarioSesion']->Nombre) ?></a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>

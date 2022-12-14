@@ -9,9 +9,10 @@
         <div class="card " style="width: 18rem;">
           <?php foreach ($datos["Peticiones"] as $p) : ?>
             <?php if ($m->idMoto == $p->idMoto) : ?>
-              <div class="card-header">
-                <p>Incidencias disponibles: <?php echo $p->numeroIncidencias; ?></p>
-              </div>
+              <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                  <?php echo $p->numeroIncidencias?>
+                  <span class="visually-hidden">unread messages</span>
+                </span>
             <?php endif; ?>
           <?php endforeach; ?>
           <div class="card-body">
