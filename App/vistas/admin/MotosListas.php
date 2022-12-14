@@ -1,5 +1,5 @@
 <?php require_once RUTA_APP . '/vistas/inc/header.php'; ?>
-
+<?php print_r($datos['descr']) ?>
 <body class="container">
     <h1>Motos Listas</h1>
     <h4>Estas motos ya estan reparadas a la espera de añadir un coste</h4>

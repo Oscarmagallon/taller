@@ -20,4 +20,10 @@ class MotosListasModelo
             where ingreso.Pagado = 0 or reparaciones_idreparaciones not in ( SELECT reparaciones_idreparaciones as SinManoObra FROM `ingreso` WHERE Descr = 'Mano Obra' ) Group by incidencias.idIncidencias");
         return $this->db->registros();
     }
+
+    public function getDescr($id){
+        print_r($id);
+        $this->db->query("SELECT Ingreso.Descr, incidencias.idIncidencias from ingreso INNER JOIN reparaciones on reparaciones.idreparaciones = Ingreso.reparaciones_idreparaciones INNER join incidencias on incidencias.idreparaciones = reparaciones.idreparaciones where incidencias.idIncidencias = $id");
+        return $this->db->registros();
+    }
 }

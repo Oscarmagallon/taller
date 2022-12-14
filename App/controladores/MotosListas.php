@@ -17,7 +17,16 @@
 
         public function index(){
             $this->datos['Listas'] = $this->MotosListasModelo->MotosListas();
-
+            $articulos = [];
+            $i = 0;
+            foreach ($this->datos['Listas'] as $in) {
+                $articulos[] = $in->idIncidencias;
+            }
+            foreach ($articulos as $a ){
+                $this->datos['descr'][$i] = $this->MotosListasModelo->getDescr($a);
+                $i++;
+            }
+            print_r($this->datos['descr']);
 
             $this->vista("Admin/MotosListas",$this->datos);
             
