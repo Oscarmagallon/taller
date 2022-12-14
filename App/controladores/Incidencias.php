@@ -17,7 +17,8 @@
 
         public function index($id){
             $this->datos["id"] = $id;
-           $this->vista('cliente/incidencias',$this->datos);
+            $this->datos["moto"] = $this->IncidenciasModelo->getMoto($id);
+            $this->vista('cliente/incidencias',$this->datos);
 
         }
 
@@ -53,6 +54,7 @@
             }}
 
             $ids = $this->IncidenciasModelo->verEstado($id);
+            $this->datos['moto'] = $this->IncidenciasModelo->getMoto($id);
             for ($i=0; $i <sizeof($ids) ; $i++) { 
                 $estado[$i] = $this->IncidenciasModelo->estadoTerminado($ids[$i]->idIncidencias);
             };

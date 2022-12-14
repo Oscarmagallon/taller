@@ -9,6 +9,11 @@ class IncidenciasModelo
         $this->db = new Base;
     }
 
+    public function getMoto($id){
+        $this->db->query("SELECT * from moto where idMoto = $id");
+        return $this->db->registro();
+    }
+
 
     public function peticionIncidencia($peticion)
     {

@@ -58,8 +58,7 @@
                 </div>
               </div>
             </div>
-         
-          <!-- Fila 2-->
+
             <div class="col-sm-12 col-md-6 col-xl-6 col-xxl-3 content wow fadeInRight">
               <div class="card " style="width: 18rem;">
                 <div class="card-body">
@@ -93,7 +92,7 @@
                   <img class="card-img-bottom" src="<?php echo RUTA_URL ?>/img/user.png" style="height:100%">
                 </div>
               </div>
-    
+            </div>
       </section>
     </div>
     <?php require_once RUTA_APP . '/vistas/inc/footer.php' ?>

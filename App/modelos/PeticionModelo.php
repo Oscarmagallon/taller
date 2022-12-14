@@ -95,6 +95,11 @@ class PeticionModelo
         $this->db->execute();
     }
 
+    public function getMoto($idMoto){
+        $this->db->query("SELECT * from moto where idMoto = $idMoto");
+        return $this->db->registro();
+    }
+
     public function getPropietario($id)
     {
         $this->db->query("SELECT personal.Correo, personal.Nombre from personal inner Join cliente on cliente.idPersonal = personal.idPersonal inner Join propietario on propietario.idPropietario = cliente.idPropietario inner join moto on moto.idPropietario = propietario.idPropietario where moto.idMoto = $id;");

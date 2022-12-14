@@ -19,6 +19,7 @@
             $this->datos["MotoPeticion"] = $moto;
             $this->datos['Piezas'] = $this->PiezasModelo->getPiezas();
             $this->datos['Peticiones'] = $this->PiezasModelo->getPeticiones($id);
+            $this->datos['moto'] = $this->PiezasModelo->getMoto($id);
             $this->vista("admin/addPiezas", $this->datos);
             
             }
@@ -39,6 +40,7 @@
            $this->datos['ids'] = $this->PiezasModelo->getPiezasMoto($id);
            $this->datos['piezasMoto'] = $this->PiezasModelo->getPiezasConId($this->datos['ids']);
            $this->datos['id'] = $id;
+           $this->datos['moto'] = $this->PiezasModelo->getMoto($id);
            $this->vista("admin/verPiezas",$this->datos);
         }
             
@@ -56,7 +58,6 @@
             $idsPiezas = $this->PiezasModelo->piezasMoto($idMoto);
             $this->datos['piezasMoto'] = $this->PiezasModelo->getPiezasMoto($idsPiezas);
             $this->datos['id'] = $idMoto;
-            $this->vista("admin/verPiezas",$this->datos);
             redireccionar("/Piezas/verPiezas/$idMoto");
 
 

@@ -25,7 +25,7 @@
            }else{
             $this->datos['ingresos']=[];
            }
-     
+           $this->datos['moto'] = $this->PagosModelo->getMoto($id);
            $this->vista('admin/pagos',$this->datos);
             }
             

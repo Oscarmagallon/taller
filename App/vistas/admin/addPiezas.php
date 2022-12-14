@@ -1,7 +1,7 @@
 <?php require_once RUTA_APP . '/vistas/inc/header.php' ?>
 
 <body class="container">
-    <h1>Elegir pieza para añadir</h1>
+    <h1>Elegir pieza a añadir a la moto <?php echo $datos['moto']->Marca." ".$datos['moto']->Modelo." ".$datos['moto']->CC ?></h1>
     <?php json_encode($datos); ?>
     <div class="col-12 table-responsive">
         <table class="table table-hover">

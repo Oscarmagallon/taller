@@ -1,10 +1,9 @@
 <?php require_once RUTA_APP . '/vistas/inc/header.php' ?>
 
-<body class="container">
-    <h1>Estado</h1> <br>
+<div class="container">
+    <h1>Estado de la moto <?php echo $datos['moto']->Marca." ".$datos['moto']->Modelo." ".$datos['moto']->CC  ?></h1> <br>
     <div class="col-12 table-responsive">
         <table class="table table-hover">
-
             <thead class="cliente" id="cliente">
                 <tr>
                     <th>Tipo</th>
@@ -42,9 +41,9 @@
     $numListas = 0;
     if (!empty($datos['EstadoTerminado']))
     {$numListas = count($datos['EstadoTerminado']);} ?>
-    <input type="button" class="btn btn-primary" name="nueva_cabana" id="nueva_cabana" value="Mostrar las <?php echo $numListas ?> Listas"/>
+    <input type="button" class="btn btn-primary" name="nueva_cabana" id="nueva_cabana" value="Ocultar las motos Listas"/>
 
-    <div class="mb-3" id ="anadir_cabana">
+    <div class="" id ="anadir_cabana">
             <table class="table table-hover">
 
             <thead class="cliente" id="cliente">
@@ -74,18 +73,17 @@
             </tbody>
         </table>
         </div>
-</body>
+    </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script>
   $(document).ready(function() {
     $('#anadir_cabana').show();
-    $("#nueva_cabana").val('Ocultar Listas');
+    $("#nueva_cabana").val('Ocultar las motos listas');
     $("#nueva_cabana").on("click", function(e) {
       var $boton = $(this);
       $('#anadir_cabana').animate({width: [ "toggle", "swing" ]}, 500, function() {
-        $boton.val($(this).is(':visible') ? 'Ocultar motos listas' : 'Mostrar Listas');
+        $boton.val($(this).is(':visible') ? 'Ocultar las motos listas' : 'Mostrar las motos listas');
       });
-      e.preventDefault();
     });
   });
 </script>

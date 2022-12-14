@@ -47,6 +47,7 @@ include('Log.php');
 
         public function verHistorial ($id){
             $this->datos['historial'] = $this->PeticionModelo->getHistorial($id);
+            $this->datos['moto'] = $this->PeticionModelo->getMoto($id);
             $this->vista('admin/historial', $this->datos);
         }
 
@@ -55,13 +56,13 @@ include('Log.php');
         
         $this->datos['Peticiones'] = $this->PeticionModelo->getPeticiones($id);
         $this->datos['Mecanicos'] = $this->PeticionModelo->getMecanicos();
+        $this->datos['moto'] = $this->PeticionModelo->getMoto($id);
         $this->vista('admin/peticiones',$this->datos);
         }
 
         public function verPeticionesProgreso($id){
             $this->datos['Peticiones'] = $this->PeticionModelo->getPeticionesReparaciones($id);
-            //cargar esto en modelo y llevarlo a peticiones en progreso
-            //SELECT reparaciones.idreparaciones,incidencias.idIncidencias, incidencias.Tipo, incidencias.Descripcion FROM reparaciones INNER JOIN incidencias ON incidencias.idreparaciones = reparaciones.idreparaciones;
+            $this->datos['moto'] = $this->PeticionModelo->getMoto($id);
             $this->vista('admin/peticionesEnProgreso',$this->datos);
             }
 

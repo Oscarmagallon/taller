@@ -1,8 +1,7 @@
 <?php require_once RUTA_APP . '/vistas/inc/header.php' ?>
 
 <body class="container">
-    <h1>Estado</h1>
-    <nav class="navbar navbar-light navbar-expand-lg" style="background-color: #e3f2fd;">
+    <h1>Estado de la moto <?php echo $datos['moto']->Marca." ".$datos['moto']->Modelo." ".$datos['moto']->CC  ?></h1>
         <style>
             table {
                 border-collapse: collapse;
@@ -23,15 +22,6 @@
                 padding: 12px 15px;
             }
         </style>
-
-        <div class="container-fluid px-2">
-            <form autocomplete="off" class="d-flex">
-                <input class="form-control me-2" type="search" placeholder="Nombre de la marca" aria-label="Buscar">
-                <button class="btn btn-outline-primary" type="submit">Buscar</button>
-            </form>
-
-        </div>
-    </nav>
 
     <div class="col-12 table-responsive">
         <table class="table table-hover">

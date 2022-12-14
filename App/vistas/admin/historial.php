@@ -1,7 +1,7 @@
 <body class="container">
 <?php require_once RUTA_APP . '/vistas/inc/header.php' ?>
 
-    <h1>Estado</h1>
+    <h1>Estado de la moto <?php echo $datos['moto']->Marca." ".$datos['moto']->Modelo." ".$datos['moto']->CC  ?></h1>
     <div class="col-12 table-responsive">
         <table class="table table-hover">
 

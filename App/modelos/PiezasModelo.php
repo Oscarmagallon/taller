@@ -63,6 +63,11 @@ class PiezasModelo
         $this->db->execute();
     }
 
+    public function getMoto($id){
+        $this->db->query("SELECT moto.Marca, moto.Modelo, moto.CC FROM moto inner join moto_has_incidencias on moto.idMoto = moto_has_incidencias.idMoto INNER join incidencias on incidencias.idIncidencias = moto_has_incidencias.idIncidencias where incidencias.idIncidencias=$id;");
+        return $this->db->registro();
+    }
+
     public function piezasMoto($id)
     {
         $this->db->query("SELECT idArticulos from pieza INNER JOIN reparaciones on pieza.idreparaciones = reparaciones.idreparaciones INNER JOIN incidencias ON reparaciones.idreparaciones = incidencias.idreparaciones INNER JOIN moto_has_incidencias on moto_has_incidencias.idIncidencias = incidencias.idIncidencias INNER JOIN moto on moto_has_incidencias.idMoto = moto.idMoto WHERE moto.idMoto =$id;");
@@ -74,6 +79,8 @@ class PiezasModelo
         $this->db->query("select Ingreso.reparaciones_idreparaciones from incidencias inner join reparaciones on incidencias.idreparaciones = reparaciones.idreparaciones inner join Ingreso on reparaciones.idreparaciones = Ingreso.reparaciones_idreparaciones where incidencias.idIncidencias = '$id'");
         return $this->db->registros();
     }
+
+
 
     public function getPiezasConId($ids)
     {

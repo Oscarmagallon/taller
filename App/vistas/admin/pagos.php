@@ -1,7 +1,7 @@
 <?php require_once RUTA_APP . '/vistas/inc/header.php' ?>
 
 <body class="container">
-    <h1>Estado</h1>
+    <h1>Moto <?php echo $datos['moto']->Marca." ".$datos['moto']->Modelo." ".$datos['moto']->CC  ?></h1>
     <h4>Aqui se encuentran las piezas añadidas a esta moto. Con la posibilidad de añadir mano de obra</h4>
 
     <div class="col-12 table-responsive">

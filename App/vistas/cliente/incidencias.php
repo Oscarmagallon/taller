@@ -1,6 +1,6 @@
 <?php require_once RUTA_APP . '/vistas/inc/header.php' ?>
 <center>
-<h2>Rellena la tabla con informacion sobre la incidencia</h2>
+<h2>Rellena la tabla con informacion sobre la incidencia de la moto <?php echo $datos['moto']->Marca." ".$datos['moto']->Modelo." ".$datos['moto']->CC  ?></h2>
 <h4>Si tienes mas informacion sobre el fallo pinchar boton  <input type="button" class="button8" name="nueva_cabana" id="nueva_cabana" value="Mostrar"/></h4>
 </center>
 <div class="card bg-light mt-5 w-75 card-center" style=" margin: auto;">

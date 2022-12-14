@@ -28,6 +28,11 @@ class PagosModelo
         $this->db->execute();
     }
 
+    public function getMoto($id){
+        $this->db->query("SELECT moto.Marca, moto.Modelo, moto.CC FROM moto inner join moto_has_incidencias on moto.idMoto = moto_has_incidencias.idMoto INNER join incidencias on incidencias.idIncidencias = moto_has_incidencias.idIncidencias where incidencias.idIncidencias=$id;");
+        return $this->db->registro();
+    }
+
     public function getReparaciones($id)
     {
         $this->db->query("SELECT * From ingreso where reparaciones_idreparaciones = $id and Pagado = 0 ");
