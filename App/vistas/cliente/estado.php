@@ -78,8 +78,8 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script>
   $(document).ready(function() {
-    $('#anadir_cabana').hide();
-    $("#n   ueva_cabana").val('Mostrar Listas');
+    $('#anadir_cabana').show();
+    $("#nueva_cabana").val('Ocultar Listas');
     $("#nueva_cabana").on("click", function(e) {
       var $boton = $(this);
       $('#anadir_cabana').animate({width: [ "toggle", "swing" ]}, 500, function() {
