@@ -1,3 +1,4 @@
+<div class = "container">
 <?php require_once RUTA_APP . '/vistas/inc/header.php' ?>
 <center>
 <h2>Rellena la tabla con informacion sobre la incidencia de la moto <?php echo $datos['moto']->Marca." ".$datos['moto']->Modelo." ".$datos['moto']->CC  ?></h2>
@@ -22,9 +23,9 @@
 </div>
 
 <?php require_once RUTA_APP . '/vistas/inc/footer.php' ?>
+</div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-
 <script>
   $(document).ready(function() {
     $('#anadir_cabana').hide();

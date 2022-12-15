@@ -68,9 +68,7 @@
         </template>
 
         <div class="col-md-2">
-          <div class="cart">
-            <p><i class="bi bi-cart2"></i><sup>0</sup> &#36;&nbsp;&nbsp;0.00</p>
-          </div>
+        
         </div>
       </div>
     </div>
