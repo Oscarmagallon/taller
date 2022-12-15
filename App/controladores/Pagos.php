@@ -34,7 +34,6 @@
             $manoObra = $_POST['text'];
             $id = $_POST['idReparacion'];
             $idMoto = $_POST['idMoto'];
-            echo $idMoto;
             $this->PagosModelo->addManObra($id,$manoObra);
             redireccionar("/Pagos/index/$idMoto");
         }

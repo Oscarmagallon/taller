@@ -10,7 +10,6 @@
         <?php if (!empty($datos["piezasMoto"])) : ?>
             <?php foreach ($datos["piezasMoto"] as $p) : ?>
                 <?php
-                print_r($p->Tipo);
                 switch ($p->Tipo) {
                     case '1':
                         $articulo = 'Pieza';

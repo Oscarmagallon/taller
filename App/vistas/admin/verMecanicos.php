@@ -59,13 +59,10 @@
         tr = document.createElement('tr')
         th1 = document.createElement('th')
         th2 = document.createElement('th')
-        th3 = document.createElement('th')
         th1.appendChild(document.createTextNode('Tarea'))
         th2.appendChild(document.createTextNode('Titulo'))
-        th3.appendChild(document.createTextNode('Descripción'))
         tr.appendChild(th1);
         tr.appendChild(th2);
-        tr.appendChild(th3);
         table.appendChild(tr)
         datos.forEach(d => {
             tr2 = document.createElement('tr');
@@ -73,11 +70,8 @@
             td.appendChild(document.createTextNode('Reparacion'))
             td1 = document.createElement('td')
             td1.appendChild(document.createTextNode(d['Tipo']))
-            td2 = document.createElement('td')
-            td2.appendChild(document.createTextNode(d['Descripcion']))
             tr2.appendChild(td)
             tr2.appendChild(td1)
-            tr2.appendChild(td2)
             table.appendChild(tr2)
         })
 

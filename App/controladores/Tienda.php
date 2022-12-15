@@ -21,7 +21,6 @@
             }
 
         public function verArticulos($clase){
-            echo $this->datos['usuarioSesion']->Rol_idRol;
             if($this->datos['usuarioSesion']->Rol_idRol==10){
                 $this->datos['articulos'] = $this->TiendaModelo->getArticulos($clase);
             }else{

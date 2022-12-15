@@ -26,7 +26,6 @@
                 $this->datos['descr'][$i] = $this->MotosListasModelo->getDescr($a);
                 $i++;
             }
-            print_r($this->datos['descr']);
 
             $this->vista("Admin/MotosListas",$this->datos);
             

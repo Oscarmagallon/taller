@@ -50,7 +50,7 @@
               </button>
             <?php endif; ?>
           </td>
-          <td class="font-weight-bold">$ <span></td>
+          <td class="font-weight-bold">€ <span></td>
         </template>
         <template id="template-carrito">
           <tr>
@@ -63,7 +63,7 @@
               <button class="btn btn-danger btn-sm">-</button>
 
             </td>
-            <td>$ <span>500</span></td>
+            <td>€ <span>500</span></td>
           </tr>
         </template>
 
