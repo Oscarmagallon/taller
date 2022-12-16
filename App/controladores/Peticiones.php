@@ -37,6 +37,12 @@ include('Log.php');
             $motos = $this->PeticionModelo->getMotos();
             $this->datos["Motos"] = $motos;
             $this->datos['Peticiones'] = $this->PeticionModelo->getPeticionesMoto();
+            $this->datos['Pet'] = $this->PeticionModelo->getPeticioness();
+            $this->datos['nums'] =[];
+            foreach( $this->datos['Pet'] as $e){
+                array_push($this->datos['nums'],(int)$e->idMoto);
+            
+            }
             $this->vista('admin/elegirMoto',$this->datos);
         }
 

@@ -46,6 +46,12 @@ class PeticionModelo
         $this->db->query("SELECT incidencias.*, Moto.idMoto FROM incidencias INNER JOIN moto_has_incidencias ON incidencias.idIncidencias = moto_has_incidencias.idIncidencias INNER JOIN moto on moto_has_incidencias.idMoto = moto.idMoto WHERE moto.idMoto = $id");
         return $this->db->registros();
     }
+
+    public function getPeticioness(){
+        $this->db->query("SELECT moto.idMoto FROM incidencias INNER JOIN moto_has_incidencias ON moto_has_incidencias.idIncidencias = incidencias.idIncidencias INNER JOIN moto ON moto.idMoto = moto_has_incidencias.idMoto where incidencias.Terminado = 0 GROUP by moto.idMoto;");
+        return $this->db->registros();
+    }
+
     public function getPeticionesReparaciones($id)
     {
         $this->db->query("SELECT incidencias.Terminado, personal.Nombre, incidencias.Fecha,incidencias.idPersonal,reparaciones.idreparaciones,incidencias.idIncidencias, incidencias.Tipo, incidencias.Descripcion,moto.idMoto FROM reparaciones INNER JOIN incidencias ON incidencias.idreparaciones = reparaciones.idreparaciones INNER JOIN personal on incidencias.idPersonal = personal.idPersonal inner JOIN moto_has_incidencias ON moto_has_incidencias.idIncidencias = incidencias.idIncidencias INNER JOIN moto ON moto.idMoto = moto_has_incidencias.idMoto where moto.idMoto = $id;");

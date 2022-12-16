@@ -15,7 +15,7 @@
             <h5 class="card-title"><?php echo $m->Marca ?></h5>
             <p class="card-text"><?php echo $m->Marca; echo "  ";echo $m->Modelo;echo "  ";echo $m->CC;  ?></p>
             <a href="<?php echo RUTA_URL ?>/Peticiones/verPeticiones/<?php echo $m->idMoto ?>" class="btn btn-primary">Ver Peticiones</a>
-            <img class="card-img-bottom" src="http://2.bp.blogspot.com/_EZ16vWYvHHg/S9Rmg1NUc9I/AAAAAAAALP4/VcIsVqptCtw/s1600/www.BancodeImagenesGratuitas.com+-Motocicletas-2.jpg" style="height:100%">
+            <img src="<?php echo RUTA_URL ?>/img/rotas.png" height="250px">
             <br>
           </div>
         </div>

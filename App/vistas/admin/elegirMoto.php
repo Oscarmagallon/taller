@@ -20,11 +20,22 @@
             <p class="card-text"><?php echo $m->Marca; echo "  ";echo $m->Modelo;echo "  ";echo $m->CC;  ?></p>
             <a href="<?php echo RUTA_URL ?>/Peticiones/verPeticiones/<?php echo $m->idMoto ?>" class="btn btn-primary">Ver Peticiones</a>
             <a href="<?php echo RUTA_URL ?>/Peticiones/verHistorial/<?php echo $m->idMoto ?>" class="btn btn-primary">Ver historial</a>
-            <img class="card-img-bottom" src="http://2.bp.blogspot.com/_EZ16vWYvHHg/S9Rmg1NUc9I/AAAAAAAALP4/VcIsVqptCtw/s1600/www.BancodeImagenesGratuitas.com+-Motocicletas-2.jpg" style="height:100%">
-            <br>
+            <?php $cont = 0 ?>
+            <?php if(in_array($m->idMoto, $datos["nums"])):?>
+              <?php $cont = 1 ?>
+              <img src="<?php echo RUTA_URL ?>/img/rotas.png" height="250px">
+            <?php endif ?>
+
+            <?php if($cont == 0):?>
+              <img src="<?php echo RUTA_URL ?>/img/arregladas.png" height="250px">
+              <?php $cont = 0; ?>
+            <?php endif ?>
+              
+        
           </div>
         </div>
       </div>
+      
     <?php endforeach; ?>
   </div>
 </div>
