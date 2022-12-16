@@ -79,10 +79,9 @@ class TiendaModelo
 
 
         foreach ($carrito as $c) {
-            $precio = $c->Precio + $c->Precio * 0.3;
             $this->db->query("INSERT into articulos values (null, :tipo, :precio, :descr,null,:proveedor,0)");
             $this->db->bind(":tipo", $c->Tipo);
-            $this->db->bind(":precio", $precio);
+            $this->db->bind(":precio",$c->Precio);
             $this->db->bind(":descr", $c->Descripcion);
             $this->db->bind(":proveedor", $c->Provedores_idProvedores);
             $this->db->execute();
