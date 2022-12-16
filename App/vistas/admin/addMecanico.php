@@ -1,8 +1,7 @@
 <?php require_once RUTA_APP . '/vistas/inc/header.php' ?>
 
 <body class="container">
-    <h1>Estado</h1>
-
+    <h1>Añade mecanico a la reparacion</h1>
     <div class="col-12 table-responsive">
         <table class="table table-hover">
 

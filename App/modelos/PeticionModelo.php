@@ -47,6 +47,11 @@ class PeticionModelo
         return $this->db->registros();
     }
 
+    public function getNoDisponibles(){
+        $this->db->query("SELECT incidencias.idPersonal from incidencias WHERE incidencias.Terminado = 0 AND incidencias.idPersonal not like 'NULL'");
+        return $this->db->registros();
+    }
+
     public function getPeticioness(){
         $this->db->query("SELECT moto.idMoto FROM incidencias INNER JOIN moto_has_incidencias ON moto_has_incidencias.idIncidencias = incidencias.idIncidencias INNER JOIN moto ON moto.idMoto = moto_has_incidencias.idMoto where incidencias.Terminado = 0 GROUP by moto.idMoto;");
         return $this->db->registros();

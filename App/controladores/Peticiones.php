@@ -106,6 +106,7 @@ include('Log.php');
                 $this->datos['idMoto'] = $idMoto;
                 $this->datos['peticion'] = $this->PeticionModelo->getPeticion($id);
                 $this->datos['Mecanicos'] = $this->PeticionModelo->getMecanicos();
+                $this->datos['Disponibles'] = "";
                 $this->vista('admin/addMecanico', $this->datos);
             }
         }
