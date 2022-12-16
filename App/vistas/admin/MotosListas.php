@@ -1,5 +1,8 @@
 <?php require_once RUTA_APP . '/vistas/inc/header.php'; ?>
-<?php print_r($datos['descr']) ?>
+<?php print_r($datos['nums']) ?>
+<br>
+<br>
+<?php print_r($datos['Listas']) ?>
 <body class="container">
     <h1>Motos Listas</h1>
     <h4>Estas motos ya estan reparadas a la espera de añadir un coste</h4>
@@ -25,8 +28,18 @@
                             <td><?php echo $m->Descripcion ?></td>
                             <td><?php echo $m->Marca ?></td>
                             <td><?php echo $m->Modelo ?></td>
-                            <td> <a href="<?php echo RUTA_URL ?>/Pagos/<?php echo $m->idIncidencias ?>"> Añadir Coste</a></td>
+                            <?php $cont = 0; ?>
+                            <?php if(in_array($m->idIncidencias, $datos["nums"])):?>
+                                <?php $cont = 1 ?>
+                                <td><p>A la espera del pago </p></td>
+                            <?php endif ?>
 
+                            <?php if($cont == 0):?>
+                                <td><a href="<?php echo RUTA_URL ?>/Pagos/<?php echo $m->idIncidencias ?>">Pagar</a></td>
+                                <?php $cont = 0; ?>
+                            <?php endif ?>                       
+                           
+                    
 
                         </tr>
 

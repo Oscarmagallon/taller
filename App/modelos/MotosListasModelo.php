@@ -21,9 +21,8 @@ class MotosListasModelo
         return $this->db->registros();
     }
 
-    public function getDescr($id){
-        print_r($id);
-        $this->db->query("SELECT Ingreso.Descr, incidencias.idIncidencias from ingreso INNER JOIN reparaciones on reparaciones.idreparaciones = Ingreso.reparaciones_idreparaciones INNER join incidencias on incidencias.idreparaciones = reparaciones.idreparaciones where incidencias.idIncidencias = $id");
+    public function getDescr(){
+        $this->db->query("SELECT incidencias.idIncidencias from ingreso INNER JOIN reparaciones on reparaciones.idreparaciones = Ingreso.reparaciones_idreparaciones INNER join incidencias on incidencias.idreparaciones = reparaciones.idreparaciones where incidencias.Terminado = 1 and ingreso.Descr like 'Mano Obra';");
         return $this->db->registros();
     }
 }

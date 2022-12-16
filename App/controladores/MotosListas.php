@@ -22,11 +22,11 @@
             foreach ($this->datos['Listas'] as $in) {
                 $articulos[] = $in->idIncidencias;
             }
-            foreach ($articulos as $a ){
-                $this->datos['descr'][$i] = $this->MotosListasModelo->getDescr($a);
-                $i++;
+            $this->datos['descr'] = $this->MotosListasModelo->getDescr();
+            $this->datos['nums'] = [];
+            foreach( $this->datos['descr'] as $d){
+                array_push($this->datos['nums'], (int)$d->idIncidencias);
             }
-
             $this->vista("Admin/MotosListas",$this->datos);
             
             }
