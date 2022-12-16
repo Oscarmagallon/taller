@@ -106,7 +106,25 @@ include('Log.php');
                 $this->datos['idMoto'] = $idMoto;
                 $this->datos['peticion'] = $this->PeticionModelo->getPeticion($id);
                 $this->datos['Mecanicos'] = $this->PeticionModelo->getMecanicos();
-                $this->datos['Disponibles'] = "";
+                $this->datos['NoDisp'] = $this->PeticionModelo->getNoDisponibles();
+                $this->datos['Disponibles'] = [];
+                $this->datos['Bueno'] = [];
+                $this->datos['MecanicosDisponibles']=[];
+                foreach($this->datos['NoDisp'] as $d){  
+                    array_push($this->datos['Disponibles'], (int)$d->idPersonal);   
+                }
+                foreach($this->datos['Mecanicos'] as $m){
+                     if(in_array($m->idPersonal, $this->datos["Disponibles"])){
+                        
+                     }else{
+                        array_push($this->datos['Bueno'], (int)$m->idPersonal);
+                     }
+                }
+                foreach($this->datos['Bueno'] as $b){
+                    
+                    $mecanico= $this->PeticionModelo->getMecanicosDisponiblesAhora($b);
+                    array_push($this->datos['MecanicosDisponibles'], $mecanico[0]);
+                }
                 $this->vista('admin/addMecanico', $this->datos);
             }
         }

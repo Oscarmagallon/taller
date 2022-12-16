@@ -24,7 +24,7 @@
                     <form method="POST" action="<?php echo RUTA_URL ?>/Peticiones/anadirMecanico/<?php echo $datos['peticion'][0]->idIncidencias ?>/<?php echo $datos['idMoto'] ?>">
                         <td>
                             <select name="mecanico" id="mecanico">
-                                <?php foreach ($datos['Mecanicos'] as $m) : ?>
+                                <?php foreach ($datos['MecanicosDisponibles'] as $m) : ?>
                                     <option value="<?php echo $m->idPersonal ?>"><?php echo $m->Nombre ?></option>
                                 <?php endforeach ?>
                             </select>
