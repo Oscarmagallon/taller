@@ -23,8 +23,10 @@ include('Log.php');
             if(!empty($codProp->idPropietario)){
                 $motos = $this->PeticionModelo->getMotosCliente($codProp->idPropietario);
             $this->datos["Motos"] = $motos;
+            $this->datos['Propietario'] = $codProp->idPropietario;
             $this->vista('cliente/peticion',$this->datos);
             }else{ 
+                $this->datos['Propietario'] = $codProp->idPropietario;
                 $this->vista('cliente/peticion',$this->datos);
             }
             }else{

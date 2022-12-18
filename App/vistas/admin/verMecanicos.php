@@ -1,26 +1,6 @@
 <?php require_once RUTA_APP . '/vistas/inc/header.php' ?>
 
 <body class="container">
-
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <form action="">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Añade un nuevo mecanico a la app</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-       
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Añadir Mecanico</button>
-      </div>
-    </div>
-  </div>
-  </form>
-</div>
     <h1>Mecánicos</h1>
     <h4>Gestiona los mecánicos dados de alta en la aplicación</h4>
     <br>
@@ -29,9 +9,9 @@
         json_encode($datos['tareas']);
     } ?>
 
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-  Añadir Mecanico <i class="bi bi-person-plus-fill"></i>
-</button>
+    <button type="button" class="btn btn-primary">
+        <a class="enlace" href="<?php echo RUTA_URL ?>/Mecanico/formAdd">Añadir &nbsp;<i class="bi bi-person-plus-fill"></i></a>
+    </button>
 
     <style>
         .enlace {

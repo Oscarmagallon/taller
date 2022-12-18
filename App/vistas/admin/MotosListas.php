@@ -33,7 +33,7 @@
                             <?php endif ?>
 
                             <?php if($cont == 0):?>
-                                <td><a href="<?php echo RUTA_URL ?>/Pagos/<?php echo $m->idIncidencias ?>">Pagar</a></td>
+                                <td><a href="<?php echo RUTA_URL ?>/Pagos/<?php echo $m->idIncidencias ?>">Ver listado</a></td>
                                 <?php $cont = 0; ?>
                             <?php endif ?>                       
                            

@@ -195,6 +195,7 @@
   const addCarrito = e => {
     if (e.target.classList.contains('btn-comprar')) {
       setCarrito(e.target.parentElement) //cogemos ese click y los elementos que engloba
+      console.log(e.target.parentElement);
     }
     e.stopPropagation()
   }
