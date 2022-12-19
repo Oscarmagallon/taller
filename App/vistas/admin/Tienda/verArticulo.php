@@ -278,7 +278,6 @@
   }
 
   function verTipo(tipo) {
-    console.log(tipo)
     switch (tipo) {
       case 1:
         tipo = "Pieza"
@@ -304,9 +303,9 @@
     guardarCarrito(carrito);
     //gracias a libreria de sweetAlert en el header
     swal({
-      title: "Compra realizada",
-      text: "La compra ha sido relizada con éxito",
-      icon: "success"
+      title: "Pedido realizado",
+      text:  "El producto a sido pedido",
+      icon:  "success"
     });
 
     //vaciamos el carrito una vez comprado
