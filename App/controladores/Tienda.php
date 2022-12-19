@@ -114,7 +114,7 @@
             }else{
                 $this->TiendaModelo->denegarPedido($id);
                 $this->TiendaModelo->quitarReserva($id);
-                $mensaje = "El pedido ha sido rechazado por algun motivo (Falta de stock, error en el precio...). Para realizar otro pedido no dudes en visitar nuestra página. Gracias";
+                $mensaje = "El pedido ha sido rechazado por algun motivo (Falta de stock, error en el precio...). Para realizar otro pedido no dudes en visitar nuestra pagina. Gracias";
                 $this->datos['prop'] = $this->TiendaModelo->getPropietario($id);
                 $cabecera = "Pedido";
                 enviarEmail($this->datos['prop'],$mensaje, $cabecera);

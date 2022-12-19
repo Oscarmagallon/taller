@@ -5,7 +5,7 @@
     <div class="col-12 table-responsive">
         <table class="table table-hover">
 
-            <thead class="cliente" id="cliente">
+            <thead>
                 <tr>
                     <th>Tipo</th>
                     <th>Descripcion</th>
