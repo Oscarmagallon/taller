@@ -1,6 +1,7 @@
-<?php require_once RUTA_APP . '/vistas/inc/header.php' ?>
 
 <body class="container">
+<?php require_once RUTA_APP . '/vistas/inc/header.php' ?>
+
     <h1>Moto <?php echo $datos['moto']->Marca." ".$datos['moto']->Modelo." ".$datos['moto']->CC  ?></h1>
     <h4>Aqui se encuentran las piezas añadidas a esta moto. Con la posibilidad de añadir mano de obra</h4>
 
@@ -18,7 +19,7 @@
             <tbody>
                 <?php $total = 0 ?>
                 <?php foreach ($datos['ingresos'] as $p) : ?>
-
+                    <?php print_r($p) ?>
                     <tr>
                         <td><?php echo $p->Descr ?></td>
                         <td><?php echo $p->Descr ?></td>

@@ -1,6 +1,6 @@
+<div class="container">
 <?php require_once RUTA_APP . '/vistas/inc/header.php'; ?>
 <body>
-    <div class="container">
         <div class="row">
             <h3>Costo Reparacion</h3>
             <table class="table">

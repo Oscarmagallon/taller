@@ -1,7 +1,7 @@
 <?php require_once RUTA_APP . '/vistas/inc/header.php' ?>
 
 <body class="container">
-    <h1>Estado</h1>
+    <h1>Estado de los pedidos</h1>
 
     <div class="col-12 table-responsive">
         <table class="table table-hover">
